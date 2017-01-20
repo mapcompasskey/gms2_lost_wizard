@@ -14,6 +14,7 @@ global.PLAYER = noone;
 //global.LEFT = -1;
 //global.UP = -1;
 //global.DOWN = 1;
+global.GRAV = 500;
 global.TICK = 0;
 global.TILE_SIZE = 16;
 //global.SCORE = 0;
@@ -65,7 +66,7 @@ while (more_rooms)
 }
 */
 
-global.VIEW_SCALE = 2;
+global.VIEW_SCALE = 4;
 global.BG_COLOR = make_color_rgb(24, 23, 76); // dark purple
 global.WINDOW_WIDTH = window_get_width();
 global.WINDOW_HEIGHT = window_get_height();

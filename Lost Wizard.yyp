@@ -873,6 +873,25 @@
                 "resourcePath": "sprites\\spr_collision\\spr_collision.yy",
                 "resourceType": "GMSprite"
             }
+        },
+        {
+            "Key": "90af6ee8-9b9e-48cf-993a-fcf1eb04570b",
+            "Value": {
+                "id": "497691f9-9416-4c7f-896f-5f28d41bc761",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "scripts\\scr_entity_movement_collision\\scr_entity_movement_collision.yy",
+                "resourceType": "GMScript"
+            }
         }
     ],
     "room_order": [
@@ -886,6 +905,7 @@
         "a60921e0-992b-4f7c-801c-1b4aa4c846ab",
         "08cf6893-7a0c-4ea2-bf5f-903c629539db",
         "c57b3ed2-04e0-4f46-98db-3b30a27f1aa1",
+        "90af6ee8-9b9e-48cf-993a-fcf1eb04570b",
         "28e4b675-562f-4356-ae1e-cccdc9909f9b",
         "91e4f3fc-da84-4d6f-92ef-ab739e4372a2"
     ],
