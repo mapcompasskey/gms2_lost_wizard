@@ -1,80 +1,199 @@
 /// @scr_entity_movement_collision()
 
+var steps = 0;
+var wd = 0;
+var hg = 0;
 var pos_x = 0;
 var pos_y = 0;
+var t1 = 0;
+var t2 = 0;
+var platform_tile = 2;
 
-// if falling
-if (my > 0)
+// if moving vertically
+if (my != 0)
 {
-	pos_y = round(y + sprite_bbox_bottom + my);
-
-	pos_x = round(x + sprite_bbox_left);
-	var t1 = tilemap_get_at_pixel(tilemap, pos_x, pos_y) & tile_index_mask;
-	
-	pos_x = round(x + sprite_bbox_right);
-	var t2 = tilemap_get_at_pixel(tilemap, pos_x, pos_y) & tile_index_mask;
-	
-	if (t1 != 0 || t2 != 0)
+	// if moving more than the height of the sprite
+	// check the path, in increments, for any collisions
+	steps = 1;
+	hg = (bbox_bottom - bbox_top);
+	if (abs(my) > hg)
 	{
-		my = ((pos_y & ~not_tile_size) - 1) - sprite_bbox_bottom - y;
-		velocity_y = 0;
+		steps = ceil(abs(my) / hg);
+	}
+	
+	for (var i = 1; i <= steps; i++)
+	{
+		// if falling
+		if (my > 0)
+		{
+			pos_y = round(y + sprite_bbox_bottom + ((my / steps) * i));
+		}
+		// else, if rising
+		else
+		{
+			pos_y = round(y + sprite_bbox_top + ((my / steps) * i));
+		}
 		
-		grounded = true;
+		// check left edge
+		pos_x = round(x + sprite_bbox_left);
+		t1 = tilemap_get_at_pixel(tilemap, pos_x, pos_y) & tile_index_mask;
+		
+		// check right edge
+		pos_x = round(x + sprite_bbox_right);
+		t2 = tilemap_get_at_pixel(tilemap, pos_x, pos_y) & tile_index_mask;
+		
+		/** /
+		if (t1 != 0 || t2 != 0)
+		{
+			// if falling
+			if (my > 0)
+			{
+				my = ((pos_y & ~not_tile_size) - 1) - sprite_bbox_bottom - y;
+				velocity_y = 0;
+				grounded = true;
+				break;
+			}
+			// else, if rising
+			else
+			{
+				// if collision with anything but one-way platforms
+				if (t1 != platform_tile && t2 != platform_tile)
+				{
+					my = ((pos_y + tile_size) & ~not_tile_size) - sprite_bbox_top - y;
+					velocity_y = 0;
+					break;
+				}
+			}
+		}
+		/**/
+		
+		/**/
+		if (t1 != 0 || t2 != 0)
+		{
+			// if falling
+			if (my > 0)
+			{
+				// *this is the only one that appears to work
+				
+				// check the result won't push the entity up
+				var result_y = ((pos_y & ~not_tile_size) - 1) - sprite_bbox_bottom;
+				if (result_y >= bbox_bottom)
+				{
+					my = result_y - y;
+					velocity_y = 0;
+					grounded = true;
+					break;
+				}
+			}
+			// else, if rising
+			else
+			{
+				// if colliding with anything but one-way platforms
+				if (t1 != platform_tile && t2 != platform_tile)
+				{
+					my = ((pos_y + tile_size) & ~not_tile_size) - sprite_bbox_top - y;
+					velocity_y = 0;
+					break;
+					/*
+					// check the result won't push the entity down
+					var result_y = ((pos_y + tile_size) & ~not_tile_size) - sprite_bbox_top;
+					if (result_y <= bbox_top)
+					{
+						my = result_y - y;
+						velocity_y = 0;
+						break;
+					}
+					*/
+				}
+			}
+		}
+		/**/
 	}
 }
 
-// else, if rising
-else if (my < 0)
+// if moving horizontally
+if (mx != 0)
 {
-	pos_y = round(y + sprite_bbox_top + my);
-	
-	pos_x = round(x + sprite_bbox_left);
-	var t1 = tilemap_get_at_pixel(tilemap, pos_x, pos_y) & tile_index_mask;
-	
-	pos_x = round(x + sprite_bbox_right);
-	var t2 = tilemap_get_at_pixel(tilemap, pos_x, pos_y) & tile_index_mask;
-	
-	if (t1 != 0 || t2 != 0)
+	// if moving more than the width of the sprite
+	// check the path, in increments, for any collisions
+	steps = 1;
+	wd = (bbox_right - bbox_left);
+	if (abs(mx) > wd)
 	{
-		my = ((pos_y + tile_size) & ~not_tile_size) - sprite_bbox_top - y;
-		velocity_y = 0;
+		steps = ceil(abs(mx) / wd);
+	}
+	
+	for (var i = 1; i <= steps; i++)
+	{
+		// if moving right
+		if (mx > 0)
+		{
+			pos_x = round(x + ((mx / steps) * i) + sprite_bbox_right);
+		}
+		// else, if moving left
+		else
+		{
+			pos_x = round(x + ((mx / steps) * i) + sprite_bbox_left);
+		}
+		
+		// check top edge
+		pos_y = round(y + sprite_bbox_top + my);
+		t1 = tilemap_get_at_pixel(tilemap, pos_x, pos_y) & tile_index_mask;
+		
+		// check bottom edge
+		pos_y = round(y + sprite_bbox_bottom + my);
+		t2 = tilemap_get_at_pixel(tilemap, pos_x, pos_y) & tile_index_mask;
+		
+		if (t1 != 0 || t2 != 0)
+		{
+			// if collision with anything but one-way platforms
+			if (t1 != platform_tile && t2 != platform_tile)
+			{
+				/*
+				// if moving right
+				if (mx > 0)
+				{
+					mx = ((pos_x & ~not_tile_size) - 1) - sprite_bbox_right - x;
+				}
+				// else, if moving left
+				else
+				{
+					mx = ((pos_x + tile_size) & ~not_tile_size) - sprite_bbox_left - x;
+				}
+			
+				velocity_x = 0;
+				break;
+				*/
+				
+				
+				// *this doesn't work - it seems to make horizontal collision not work at all
+				
+				// if moving right
+				if (mx > 0)
+				{
+					//mx = ((pos_x & ~not_tile_size) - 1) - sprite_bbox_right - x;
+					var result_x = ((pos_x & ~not_tile_size) - 1) - sprite_bbox_right;
+					if (result_x >= bbox_right)
+					{
+						mx = result_x - x;
+						velocity_x = 0;
+						break;
+					}
+				}
+				// else, if moving left
+				else
+				{
+					//mx = ((pos_x + tile_size) & ~not_tile_size) - sprite_bbox_left - x;
+					var result_x = ((pos_x + tile_size) & ~not_tile_size) - sprite_bbox_left;
+					if (result_x <= bbox_left)
+					{
+						mx = result_x - x;
+						velocity_x = 0;
+						break;
+					}
+				}
+				
+			}
+		}
 	}
 }
-
-
-// if moving right
-if (mx > 0)
-{
-	pos_x = round(x + sprite_bbox_right + mx);
-	
-	pos_y = round(y + sprite_bbox_top + my);
-	var t1 = tilemap_get_at_pixel(tilemap, pos_x, pos_y) & tile_index_mask;
-	
-	pos_y = round(y + sprite_bbox_bottom + my);
-	var t2 = tilemap_get_at_pixel(tilemap, pos_x, pos_y) & tile_index_mask;
-	
-	if (t1 != 0 || t2 != 0)
-	{
-		mx = ((pos_x & ~not_tile_size) - 1) - sprite_bbox_right - x;
-		velocity_x = 0;
-	}
-}
-
-// else, if moving left
-else if (mx < 0)
-{
-	pos_x = round(x + sprite_bbox_left + mx);
-	
-	pos_y = round(y + sprite_bbox_top + my);
-	var t1 = tilemap_get_at_pixel(tilemap, pos_x, pos_y) & tile_index_mask;
-	
-	pos_y = round(y + sprite_bbox_bottom + my);
-	var t2 = tilemap_get_at_pixel(tilemap, pos_x, pos_y) & tile_index_mask;
-	
-	if (t1 != 0 || t2 != 0)
-	{
-		mx = ((pos_x + tile_size) & ~not_tile_size) - sprite_bbox_left - x;
-		velocity_x = 0;
-	}
-}
-

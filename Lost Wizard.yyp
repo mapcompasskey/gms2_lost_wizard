@@ -892,6 +892,44 @@
                 "resourcePath": "scripts\\scr_entity_movement_collision\\scr_entity_movement_collision.yy",
                 "resourceType": "GMScript"
             }
+        },
+        {
+            "Key": "c48dc8b3-7c72-4cf3-ab33-f075dfd93277",
+            "Value": {
+                "id": "b093a0ad-c652-4bcb-aad5-fb56307c4f57",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "scripts\\scr_entity_movement_collision_1\\scr_entity_movement_collision_1.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "dd947eaf-3295-4eaf-86e0-1205ee7181ff",
+            "Value": {
+                "id": "4fab79a2-c098-47ad-b8a5-e32727af8280",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "scripts\\scr_entity_movement_collision_2\\scr_entity_movement_collision_2.yy",
+                "resourceType": "GMScript"
+            }
         }
     ],
     "room_order": [
@@ -906,6 +944,8 @@
         "08cf6893-7a0c-4ea2-bf5f-903c629539db",
         "c57b3ed2-04e0-4f46-98db-3b30a27f1aa1",
         "90af6ee8-9b9e-48cf-993a-fcf1eb04570b",
+        "c48dc8b3-7c72-4cf3-ab33-f075dfd93277",
+        "dd947eaf-3295-4eaf-86e0-1205ee7181ff",
         "28e4b675-562f-4356-ae1e-cccdc9909f9b",
         "91e4f3fc-da84-4d6f-92ef-ab739e4372a2"
     ],

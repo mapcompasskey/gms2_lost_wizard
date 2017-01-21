@@ -9,7 +9,7 @@ mx = 0;
 my = 0;
 
 speed_x = 100;
-speed_y = 400;
+speed_y = 200;
 
 velocity_x = 0;
 velocity_y = 0;
