@@ -930,6 +930,25 @@
                 "resourcePath": "scripts\\scr_entity_movement_collision_2\\scr_entity_movement_collision_2.yy",
                 "resourceType": "GMScript"
             }
+        },
+        {
+            "Key": "d0d39c4f-8008-4682-9d9e-c973f85f8822",
+            "Value": {
+                "id": "9740bcaa-7b39-406f-9aa2-af1a7cfee8e9",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "scripts\\scr_entity_movement_collision_3\\scr_entity_movement_collision_3.yy",
+                "resourceType": "GMScript"
+            }
         }
     ],
     "room_order": [
@@ -946,6 +965,7 @@
         "90af6ee8-9b9e-48cf-993a-fcf1eb04570b",
         "c48dc8b3-7c72-4cf3-ab33-f075dfd93277",
         "dd947eaf-3295-4eaf-86e0-1205ee7181ff",
+        "d0d39c4f-8008-4682-9d9e-c973f85f8822",
         "28e4b675-562f-4356-ae1e-cccdc9909f9b",
         "91e4f3fc-da84-4d6f-92ef-ab739e4372a2"
     ],

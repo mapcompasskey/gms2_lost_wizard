@@ -3,13 +3,13 @@
 // physics
 has_physics = true;
 
-gravity_factor = 1;
+gravity_factor = 0.1;//1;
 
 mx = 0;
 my = 0;
 
 speed_x = 100;
-speed_y = 200;
+speed_y = 50;//200;
 
 velocity_x = 0;
 velocity_y = 0;
