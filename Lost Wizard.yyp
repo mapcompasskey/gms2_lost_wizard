@@ -528,7 +528,7 @@
                 "resourceCreationConfigs": [
                     "default"
                 ],
-                "resourcePath": "objects\\obj_game_start\\obj_game_start.yy",
+                "resourcePath": "objects\\obj_game\\obj_game.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -547,7 +547,7 @@
                 "resourceCreationConfigs": [
                     "default"
                 ],
-                "resourcePath": "scripts\\scr_game_start_create\\scr_game_start_create.yy",
+                "resourcePath": "scripts\\scr_game_create\\scr_game_create.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -566,7 +566,7 @@
                 "resourceCreationConfigs": [
                     "default"
                 ],
-                "resourcePath": "scripts\\scr_game_start_step\\scr_game_start_step.yy",
+                "resourcePath": "scripts\\scr_game_step\\scr_game_step.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -585,7 +585,7 @@
                 "resourceCreationConfigs": [
                     "default"
                 ],
-                "resourcePath": "scripts\\scr_game_start_draw_gui\\scr_game_start_draw_gui.yy",
+                "resourcePath": "scripts\\scr_game_draw_gui\\scr_game_draw_gui.yy",
                 "resourceType": "GMScript"
             }
         },
