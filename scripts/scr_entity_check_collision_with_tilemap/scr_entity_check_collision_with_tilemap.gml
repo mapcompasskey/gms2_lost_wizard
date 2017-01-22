@@ -1,5 +1,9 @@
 /// @scr_entity_check_collision_with_tilemap()
 
+//
+// Test Movement Collision Against Tilemap
+//
+
 entity_hit_tilemap_x = false;
 entity_hit_tilemap_y = false;
 

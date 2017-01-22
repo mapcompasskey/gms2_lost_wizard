@@ -39,7 +39,6 @@ tilemap = layer_tilemap_get_id(collision_layer_id);
 
 // states
 grounded = false;
-
 dying = false;
 hurting = false;
 walking = false;
@@ -47,7 +46,9 @@ jumping = false;
 falling = false;
 
 // drawing
-facing = 1;//global.RIGHT;
+facing_left = global.LEFT;
+facing_right = global.RIGHT;
+facing = facing_right;
 scale_x = 1.0;
 scale_y = 1.0;
 

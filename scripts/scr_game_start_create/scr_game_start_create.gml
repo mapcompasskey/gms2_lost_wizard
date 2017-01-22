@@ -10,8 +10,8 @@ if ( ! persistent)
 global.PLAYER = noone;
 
 //// global parameters
-//global.RIGHT = 1;
-//global.LEFT = -1;
+global.RIGHT = 1;
+global.LEFT = -1;
 //global.UP = -1;
 //global.DOWN = 1;
 global.GRAV = 500;

@@ -57,13 +57,13 @@ if ( ! dying && ! hurting)
      
 	if (keyboard_check(vk_left))
     {
-        facing = -1;//global.LEFT;
+        facing = facing_left;
         walking = true;
         velocity_x = (speed_x * facing);
     }
     else if (keyboard_check(vk_right))
     {
-        facing = 1;//global.RIGHT;
+        facing = facing_right;
         walking = true;
         velocity_x = (speed_x * facing);
     }

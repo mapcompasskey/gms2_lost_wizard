@@ -1,6 +1,10 @@
 /// @scr_entity_movement_collision()
 
-// test movemvent collisions
+//
+// Default Entity Movement Collision Tests
+//
+
+// test collisions
 scr_entity_check_collision_with_tilemap();
 
 // reset grounded
