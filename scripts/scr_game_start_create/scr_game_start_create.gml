@@ -6,10 +6,10 @@ if ( ! persistent)
     persistent = true;
 }
 
-//// global instances
+// global instances
 global.PLAYER = noone;
 
-//// global parameters
+// global parameters
 global.RIGHT = 1;
 global.LEFT = -1;
 //global.UP = -1;
@@ -66,7 +66,7 @@ while (more_rooms)
 }
 */
 
-global.VIEW_SCALE = 4;
+global.VIEW_SCALE = 2;
 global.BG_COLOR = make_color_rgb(24, 23, 76); // dark purple
 global.WINDOW_WIDTH = window_get_width();
 global.WINDOW_HEIGHT = window_get_height();
