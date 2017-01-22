@@ -1,6 +1,6 @@
 /// @descr scr_player_step()
 
-//event_inherited();
+event_inherited();
 
 //
 // Check if jumping and/or falling
