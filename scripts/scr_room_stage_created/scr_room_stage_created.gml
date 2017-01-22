@@ -26,8 +26,11 @@ camera = camera_create_view(0, 0, camera_width, camera_height, 0, -1, -1, -1, ca
 view_set_camera(0, camera);
 
 // set target 
-camera_set_view_target(camera, obj_player);
+//camera_set_view_target(camera, obj_player);
 
+//camera_set_view_pos(view_camera[0],
+//                    clamp( camera_get_view_x(view_camera[0]), 0, room_width - camera_get_view_width(view_camera[0]) ),
+//                    clamp( camera_get_view_y(view_camera[0]), 0, room_height - camera_get_view_height(view_camera[0]) ));
 
 /*
 // basic camera set up

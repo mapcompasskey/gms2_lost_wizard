@@ -1196,6 +1196,44 @@
                 "resourcePath": "scripts\\scr_entity_check_edge_collision_with_tilemap\\scr_entity_check_edge_collision_with_tilemap.yy",
                 "resourceType": "GMScript"
             }
+        },
+        {
+            "Key": "1fc1b207-db1f-4d40-bd8b-b7a37e2689af",
+            "Value": {
+                "id": "5f5c722e-5120-4db9-b653-b00524503a16",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "views\\1fc1b207-db1f-4d40-bd8b-b7a37e2689af.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "f59eae95-2c6e-4c19-9333-048d06cf7184",
+            "Value": {
+                "id": "0d825c41-2b37-4053-af7f-0600f026fe36",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "scripts\\scr_camera_update\\scr_camera_update.yy",
+                "resourceType": "GMScript"
+            }
         }
     ],
     "room_order": [
@@ -1223,7 +1261,8 @@
         "3fd908e2-6a14-471f-b4c1-8a5684679125",
         "47863b1e-33a8-4b3c-b784-4f785f4fddd3",
         "28e4b675-562f-4356-ae1e-cccdc9909f9b",
-        "91e4f3fc-da84-4d6f-92ef-ab739e4372a2"
+        "91e4f3fc-da84-4d6f-92ef-ab739e4372a2",
+        "f59eae95-2c6e-4c19-9333-048d06cf7184"
     ],
     "tutorial": ""
 }
