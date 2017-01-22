@@ -1,4 +1,4 @@
-/// @descr scr_player_end_step()
+/// @descr scr_npc_end_step()
 
 if ( ! dying)
 {

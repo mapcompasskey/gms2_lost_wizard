@@ -18,8 +18,8 @@ var t1 = 0;
 var t2 = 0;
 
 var tile_solid = 1;
-var tile_solid_down = 2;
-var tile_solid_up = 3;
+var tile_solid_top = 2;
+var tile_solid_bottom = 3;
 var tile_solid_right = 4;
 var tile_solid_left = 5;
 
@@ -62,8 +62,8 @@ if (my != 0)
 			// if falling
 			if (my > 0)
 			{
-				// if colliding with solids or down-solids
-				if (t1 == tile_solid || t1 == tile_solid_down || t2 == tile_solid || t2 == tile_solid_down)
+				// if colliding with solids or top solids
+				if (t1 == tile_solid || t1 == tile_solid_top || t2 == tile_solid || t2 == tile_solid_top)
 				{
 					// check the result won't push the entity up
 					result_y = ((target_y & ~not_tile_size) - 1);
@@ -77,11 +77,12 @@ if (my != 0)
 					
 				}
 			}
+			
 			// else, if rising
 			else if (my < 0)
 			{
-				// if colliding with solids or up-solids
-				if (t1 == tile_solid || t1 == tile_solid_up || t2 == tile_solid || t2 == tile_solid_up)
+				// if colliding with solids or bottom solids
+				if (t1 == tile_solid || t1 == tile_solid_bottom || t2 == tile_solid || t2 == tile_solid_bottom)
 				{
 					// check the result won't push the entity down
 					result_y = ((target_y + tile_size) & ~not_tile_size);
@@ -135,6 +136,7 @@ if (mx != 0)
 		
 		if (t1 != 0 || t2 != 0)
 		{
+		
 			// if moving right
 			if (mx > 0)
 			{	
@@ -151,8 +153,9 @@ if (mx != 0)
 					}
 				}
 			}
+			
 			// else, if moving left
-			else
+			else if (mx < 0)
 			{
 				// if colliding with solids or left-solids
 				if (t1 == tile_solid || t1 == tile_solid_left || t2 == tile_solid || t2 == tile_solid_left)

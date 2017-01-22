@@ -28,6 +28,7 @@ jump_bounce_min = 0;   // 1   - if less than 1
 // collision
 entity_hit_tilemap_x = false;
 entity_hit_tilemap_y = false;
+entity_at_edge_of_tilemap = false;
 
 movement_collision_script = scr_entity_movement_collision;
 
@@ -66,3 +67,5 @@ key_left = false;
 key_right = false;
 key_up = false;
 key_down = false;
+key_jump_pressed = false;
+key_jump_released = false;
