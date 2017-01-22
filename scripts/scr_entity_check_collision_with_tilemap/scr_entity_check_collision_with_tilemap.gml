@@ -1,4 +1,4 @@
-/// @scr_entity_check_collision_with_tilemap()
+/// @descr scr_entity_check_collision_with_tilemap()
 
 //
 // Test Movement Collision Against Tilemap

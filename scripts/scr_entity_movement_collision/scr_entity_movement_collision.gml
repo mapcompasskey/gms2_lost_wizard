@@ -1,4 +1,4 @@
-/// @scr_entity_movement_collision()
+/// @descr scr_entity_movement_collision()
 
 //
 // Default Entity Movement Collision Tests

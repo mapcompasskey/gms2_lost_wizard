@@ -1,14 +1,13 @@
-/// @scr_entity_check_edge_of_tilemap()
+/// @descr scr_entity_check_edge_collision_with_tilemap()
 
 //
-// Test if Reaching the Edge of a Tile
+// Test Movement Collision Against Tile Edges
 //
 
 entity_at_edge_of_tilemap = false;
 
 var steps = 0;
 var wd = 0;
-//var hg = 0;
 var target_x = 0;
 var target_y = 0;
 var result_x = 0;

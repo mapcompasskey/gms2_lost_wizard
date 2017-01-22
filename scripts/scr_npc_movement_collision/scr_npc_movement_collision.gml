@@ -1,4 +1,4 @@
-/// @scr_npc_movement_collision()
+/// @descr scr_npc_movement_collision()
 
 //
 // NPC Movement Collision Tests
@@ -6,7 +6,7 @@
 
 // test collisions
 scr_entity_check_collision_with_tilemap();
-scr_entity_check_edge_of_tilemap();
+scr_entity_check_edge_collision_with_tilemap();
 
 // reset grounded
 grounded = false;
