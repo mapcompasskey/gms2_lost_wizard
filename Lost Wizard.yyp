@@ -1041,7 +1041,7 @@
                 "resourceCreationConfigs": [
                     "default"
                 ],
-                "resourcePath": "scripts\\scr_entity_check_collision_with_tilemap\\scr_entity_check_collision_with_tilemap.yy",
+                "resourcePath": "scripts\\scr_entity_check_collision_with_tilemap_2\\scr_entity_check_collision_with_tilemap_2.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -1234,6 +1234,44 @@
                 "resourcePath": "scripts\\scr_camera_update\\scr_camera_update.yy",
                 "resourceType": "GMScript"
             }
+        },
+        {
+            "Key": "c5eff8fe-a98f-4eca-a8e4-5d11c6196b27",
+            "Value": {
+                "id": "238e498c-c883-4f3a-85dd-ebee751aeabe",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "scripts\\scr_entity_check_collision_with_tilemap\\scr_entity_check_collision_with_tilemap.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "c83c3bfd-5eec-4734-bb42-1e9731fc2819",
+            "Value": {
+                "id": "4196d66b-ea97-445b-87d9-a2fece5b8106",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "scripts\\scr_entity_check_collision_with_tilemap_1\\scr_entity_check_collision_with_tilemap_1.yy",
+                "resourceType": "GMScript"
+            }
         }
     ],
     "room_order": [
@@ -1248,6 +1286,8 @@
         "6f1e8605-9ef1-40c8-936e-5131efc4f5fd",
         "c9f8d808-1b9d-4348-89fb-9655f75e37a4",
         "90af6ee8-9b9e-48cf-993a-fcf1eb04570b",
+        "c5eff8fe-a98f-4eca-a8e4-5d11c6196b27",
+        "c83c3bfd-5eec-4734-bb42-1e9731fc2819",
         "af77f099-95a3-4828-9660-0d60362e5406",
         "44e3ddd5-58df-48b1-bcd7-4d2b0025ef4b",
         "d8daec7a-44a3-409c-b3d8-202ca4ca12bf",
