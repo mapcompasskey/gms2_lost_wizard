@@ -64,13 +64,13 @@ if ( ! dying && ! hurting)
      
 	if (key_left)
     {
-        facing = facing_left;
+        facing = LEFT;
         walking = true;
         velocity_x = (speed_x * facing);
     }
     else if (key_right)
     {
-        facing = facing_right;
+        facing = RIGHT;
         walking = true;
         velocity_x = (speed_x * facing);
     }

@@ -11,7 +11,8 @@
     "instanceCreationOrderIDs": [
         "5005f37f-4aba-4e09-9fc6-2bbd7485d34d",
         "88010624-2c4e-45c1-b562-769f60b0cfc2",
-        "32a04962-f848-438a-bc7a-d0a7b333bd5f"
+        "32a04962-f848-438a-bc7a-d0a7b333bd5f",
+        "a30ba508-88c1-4a4a-a9e2-591b1b93c974"
     ],
     "layers": [
         {
@@ -125,6 +126,30 @@
                     "creationCodeType": "",
                     "inheritCode": false,
                     "name_with_no_file_rename": "inst_5654649A",
+                    "objId": "25cf95fa-02e7-4cca-a5e4-8ca6536736e9",
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                },
+                {
+                    "id": "a30ba508-88c1-4a4a-a9e2-591b1b93c974",
+                    "modelName": "GMRInstance",
+                    "mvc": "1.0",
+                    "ignore": false,
+                    "inheritItemSettings": false,
+                    "m_originalParentID": "00000000-0000-0000-0000-000000000000",
+                    "m_serialiseFrozen": false,
+                    "name": "inst_1716351F",
+                    "x": 320,
+                    "y": 320,
+                    "IsDnD": false,
+                    "colour": {
+                        "Value": 4294967295
+                    },
+                    "creationCodeFile": "",
+                    "creationCodeType": "",
+                    "inheritCode": false,
+                    "name_with_no_file_rename": "inst_1716351F",
                     "objId": "25cf95fa-02e7-4cca-a5e4-8ca6536736e9",
                     "rotation": 0,
                     "scaleX": 1,
@@ -937,10 +962,10 @@
                     2147483648,
                     2147483648,
                     2147483648,
-                    2147483648,
-                    2147483648,
-                    2147483648,
-                    2147483648,
+                    1,
+                    1,
+                    1,
+                    1,
                     2147483648,
                     2147483648,
                     0,

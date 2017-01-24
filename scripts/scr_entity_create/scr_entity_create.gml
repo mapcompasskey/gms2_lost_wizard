@@ -33,8 +33,6 @@ entity_at_edge_of_tilemap = false;
 movement_collision_script = scr_entity_movement_collision;
 
 // collision tile map
-tile_size = global.TILE_SIZE;
-not_tile_size = tile_size - 1;
 var collision_layer_id = layer_get_id("CollisionMap");
 tilemap = layer_tilemap_get_id(collision_layer_id);
 
@@ -47,9 +45,7 @@ jumping = false;
 falling = false;
 
 // drawing
-facing_left = global.LEFT;
-facing_right = global.RIGHT;
-facing = facing_right;
+facing = RIGHT;
 scale_x = 1.0;
 scale_y = 1.0;
 

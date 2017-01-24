@@ -23,191 +23,6 @@ var tile_solid_bottom = 3;
 var tile_solid_right = 4;
 var tile_solid_left = 5;
 
-/**/
-if (mx != 0 || my != 0)
-{
-	steps = 1;
-	
-	if (abs(mx) > abs(my))
-	{
-		wd = (bbox_right - bbox_left);
-		if (abs(mx) > wd)
-		{
-			steps = ceil(abs(mx) / wd);
-		}
-	}
-	else
-	{
-		hg = (bbox_bottom - bbox_top);
-		if (abs(my) > hg)
-		{
-			steps = ceil(abs(my) / hg);
-		}
-	}
-	
-	var check_y = true;
-	var check_x = true;
-	
-	if (my == 0)
-	{
-		check_y = false;
-	}
-	
-	if (mx == 0)
-	{
-		check_x = false;
-	}
-	
-	var temp_my = 0;
-	var temp_mx = 0;
-	
-	for (var i = 1; i <= steps; i++)
-	{
-	
-		if (check_y)
-		{
-			// if falling
-			if (my > 0)
-			{
-				target_y = round(y + sprite_bbox_bottom + ((my / steps) * i));
-			}
-			// else, if rising
-			else
-			{
-				target_y = round(y + sprite_bbox_top + ((my / steps) * i));
-			}
-			
-			// check left edge
-			target_x = round(x + sprite_bbox_left + temp_mx);
-			t1 = tilemap_get_at_pixel(tilemap, target_x, target_y) & tile_index_mask;
-			
-			// check right edge
-			target_x = round(x + sprite_bbox_right + temp_mx);
-			t2 = tilemap_get_at_pixel(tilemap, target_x, target_y) & tile_index_mask;
-			
-			if (t1 != 0 || t2 != 0)
-			{
-		
-				// if falling
-				if (my > 0)
-				{
-					// if colliding with solids or top solids
-					if (t1 == tile_solid || t1 == tile_solid_top || t2 == tile_solid || t2 == tile_solid_top)
-					{
-						// check the result won't push the entity up
-						result_y = ((target_y & ~not_tile_size) - 1);
-						if (result_y >= bbox_bottom)
-						{
-							my = result_y - sprite_bbox_bottom - y;
-							velocity_y = 0;
-							entity_hit_tilemap_y = true;
-							//break;
-							check_y = false;
-							temp_my = my;
-						}
-					
-					}
-				}
-			
-				// else, if rising
-				else if (my < 0)
-				{
-					// if colliding with solids or bottom solids
-					if (t1 == tile_solid || t1 == tile_solid_bottom || t2 == tile_solid || t2 == tile_solid_bottom)
-					{
-						// check the result won't push the entity down
-						result_y = ((target_y + tile_size) & ~not_tile_size);
-						if (result_y <= bbox_top)
-						{
-							my = result_y - sprite_bbox_top - y;
-							velocity_y = 0;
-							entity_hit_tilemap_y = true;
-							//break;
-							check_y = false;
-							temp_my = my;
-						}
-					
-					}
-				}
-			
-			}
-		}
-		
-		if (check_x)
-		{
-			// if moving right
-			if (mx > 0)
-			{
-				target_x = round(x + ((mx / steps) * i) + sprite_bbox_right);
-			}
-			// else, if moving left
-			else
-			{
-				target_x = round(x + ((mx / steps) * i) + sprite_bbox_left);
-			}
-			
-			// check top edge
-			target_y = round(y + sprite_bbox_top + temp_my);
-			t1 = tilemap_get_at_pixel(tilemap, target_x, target_y) & tile_index_mask;
-			
-			// check bottom edge
-			target_y = round(y + sprite_bbox_bottom + temp_my);
-			t2 = tilemap_get_at_pixel(tilemap, target_x, target_y) & tile_index_mask;
-			
-			if (t1 != 0 || t2 != 0)
-			{
-		
-				// if moving right
-				if (mx > 0)
-				{	
-					// if colliding with solids or right-solids
-					if (t1 == tile_solid || t1 == tile_solid_right || t2 == tile_solid || t2 == tile_solid_right)
-					{
-						result_x = ((target_x & ~not_tile_size) - 1);
-						if (result_x >= bbox_right)
-						{
-							mx = result_x - sprite_bbox_right - x;
-							velcoity_x = 0;
-							entity_hit_tilemap_x = true;
-							//break;
-							check_x = false;
-							temp_mx = mx;
-						}
-					}
-				}
-			
-				// else, if moving left
-				else if (mx < 0)
-				{
-					// if colliding with solids or left-solids
-					if (t1 == tile_solid || t1 == tile_solid_left || t2 == tile_solid || t2 == tile_solid_left)
-					{
-						result_x = ((target_x + tile_size) & ~not_tile_size);
-						if (result_x <= bbox_left)
-						{
-							mx = result_x - sprite_bbox_left - x;
-							velocity_x = 0;
-							entity_hit_tilemap_x = true;
-							//break;
-							check_x = false;
-							temp_mx = mx;
-						}
-					}
-				}
-			
-			}
-		}
-		
-		if ( ! check_y && ! check_x)
-		{
-			break;
-		}
-		
-	}
-}
-/**/
-
-/** /
 // if moving vertically
 if (my != 0)
 {
@@ -251,7 +66,7 @@ if (my != 0)
 				if (t1 == tile_solid || t1 == tile_solid_top || t2 == tile_solid || t2 == tile_solid_top)
 				{
 					// check the result won't push the entity up
-					result_y = ((target_y & ~not_tile_size) - 1);
+					result_y = ((target_y & ~NOT_TILE_SIZE) - 1);
 					if (result_y >= bbox_bottom)
 					{
 						my = result_y - sprite_bbox_bottom - y;
@@ -270,7 +85,7 @@ if (my != 0)
 				if (t1 == tile_solid || t1 == tile_solid_bottom || t2 == tile_solid || t2 == tile_solid_bottom)
 				{
 					// check the result won't push the entity down
-					result_y = ((target_y + tile_size) & ~not_tile_size);
+					result_y = ((target_y + TILE_SIZE) & ~NOT_TILE_SIZE);
 					if (result_y <= bbox_top)
 					{
 						my = result_y - sprite_bbox_top - y;
@@ -328,7 +143,7 @@ if (mx != 0)
 				// if colliding with solids or right-solids
 				if (t1 == tile_solid || t1 == tile_solid_right || t2 == tile_solid || t2 == tile_solid_right)
 				{
-					result_x = ((target_x & ~not_tile_size) - 1);
+					result_x = ((target_x & ~NOT_TILE_SIZE) - 1);
 					if (result_x >= bbox_right)
 					{
 						mx = result_x - sprite_bbox_right - x;
@@ -345,7 +160,7 @@ if (mx != 0)
 				// if colliding with solids or left-solids
 				if (t1 == tile_solid || t1 == tile_solid_left || t2 == tile_solid || t2 == tile_solid_left)
 				{
-					result_x = ((target_x + tile_size) & ~not_tile_size);
+					result_x = ((target_x + TILE_SIZE) & ~NOT_TILE_SIZE);
 					if (result_x <= bbox_left)
 					{
 						mx = result_x - sprite_bbox_left - x;
@@ -359,4 +174,3 @@ if (mx != 0)
 		}
 	}
 }
-/**/

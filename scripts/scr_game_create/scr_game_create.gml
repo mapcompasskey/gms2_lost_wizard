@@ -6,18 +6,22 @@ if ( ! persistent)
     persistent = true;
 }
 
+// constant values
+#macro RIGHT 1
+#macro LEFT -1
+//#macro UP -1
+//#macro DOWN 1
+#macro TILE_SIZE 16
+#macro NOT_TILE_SIZE 15
+
 // global instances
 global.PLAYER = noone;
 
 // global parameters
-global.RIGHT = 1;
-global.LEFT = -1;
-//global.UP = -1;
-//global.DOWN = 1;
 global.GRAV = 500;
 global.TICK = 0;
-global.TILE_SIZE = 16;
 //global.SCORE = 0;
+
 
 //// room layer names
 //global.ROOM_LAYER_CONTROLLERS = "Controllers";

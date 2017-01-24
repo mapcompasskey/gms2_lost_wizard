@@ -48,14 +48,14 @@ if (grounded && mx != 0)
 		target_y = round(y + sprite_bbox_bottom + 1);
 		t1 = tilemap_get_at_pixel(tilemap, target_x, target_y) & tile_index_mask;
 		
-		// if no collision with solids or bottom solids
+		// if wouldn't collide with any tile, except for bottom solids
 		if (t1 == 0 || t1 == tile_solid_bottom)
 		{
 	
 			// if moving right
 			if (mx > 0)
 			{
-				result_x = ((target_x & ~not_tile_size) - 1);
+				result_x = ((target_x & ~NOT_TILE_SIZE) - 1);
 				if (result_x >= bbox_right)
 				{
 					mx = result_x - sprite_bbox_right - x;
@@ -65,7 +65,7 @@ if (grounded && mx != 0)
 			// else, if moving left
 			else if (mx < 0)
 			{
-				result_x = ((target_x + tile_size) & ~not_tile_size);
+				result_x = ((target_x + TILE_SIZE) & ~NOT_TILE_SIZE);
 				if (result_x <= bbox_left)
 				{
 					mx = result_x - sprite_bbox_left - x;
