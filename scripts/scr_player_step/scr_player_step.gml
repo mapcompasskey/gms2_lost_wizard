@@ -7,8 +7,10 @@ event_inherited();
 //
 key_left = keyboard_check(vk_left);
 key_right = keyboard_check(vk_right);
-key_jump_pressed = keyboard_check_pressed(ord("Z"));
-key_jump_released = keyboard_check_released(ord("Z"));
+key_jump_pressed = keyboard_check_pressed(ord("X"));
+key_jump_released = keyboard_check_released(ord("X"));
+key_attack_pressed = keyboard_check(ord("Z"));//keyboard_check_pressed(ord("Z"));
+key_attack_released = keyboard_check_released(ord("Z"));
 
 
 //
@@ -51,6 +53,45 @@ if ( ! dying && ! hurting)
         jumping = false;
         falling = false;
     }
+}
+
+
+//
+// Check if attacking
+//
+if ( ! dying && ! hurting)
+{
+	if (attacking)
+	{
+		attack_cooldown_timer += global.TICK;
+		if (attack_cooldown_timer >= attack_cooldown_time)
+		{
+			attacking = false;
+		}
+	}
+	else
+	{
+		if (key_attack_pressed)
+		{
+			attacking = true;
+			attack_cooldown_timer = 0;
+			
+			// create a player attack instance
+			var inst = instance_create_layer(x, y, global.ROOM_LAYER_PLAYER, obj_player_attack);
+			if (facing == LEFT)
+			{
+				inst.angle = DEGREES_LEFT;
+				inst.x += sprite_bbox_left + (10 * LEFT);
+			}
+			else
+			{
+				inst.angle = DEGREES_RIGHT;
+				inst.x += sprite_bbox_right + (10 * RIGHT);
+			}
+			inst.y -= sprite_middle_y;
+		}
+	}
+	
 }
 
 

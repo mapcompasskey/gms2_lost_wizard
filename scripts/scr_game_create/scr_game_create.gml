@@ -9,6 +9,8 @@ if ( ! persistent)
 // constant values
 #macro RIGHT 1
 #macro LEFT -1
+#macro DEGREES_RIGHT 0
+#macro DEGREES_LEFT 180
 //#macro UP -1
 //#macro DOWN 1
 #macro TILE_SIZE 16
@@ -24,10 +26,8 @@ global.TICK = 0;
 
 
 //// room layer names
-//global.ROOM_LAYER_CONTROLLERS = "Controllers";
-//global.ROOM_LAYER_BUGS = "Bugs";
-//global.ROOM_LAYER_PLAYER = "Player";
-//global.ROOM_LAYER_LILY_PADS = "LilyPads";
+global.ROOM_LAYER_CONTROLLERS = "Controllers";
+global.ROOM_LAYER_PLAYER = "Player";
 
 //// input keys to listen for
 //// *set as globals so they can be remapped
