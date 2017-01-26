@@ -1,4 +1,4 @@
-/// @descr scr_projectile_attack_end_step()
+/// @descr scr_projectile_end_step()
 
 if ( ! dying)
 {
@@ -11,8 +11,8 @@ if ( ! dying)
 	my = (velocity_y * global.TICK);
 	
 	// resolve movement collision
-	//script_execute(movement_collision_script);
-	scr_projectile_movement_collision();
+	script_execute(movement_collision_script);
+	//scr_projectile_movement_collision();
 	
 	// update position
 	x += mx;

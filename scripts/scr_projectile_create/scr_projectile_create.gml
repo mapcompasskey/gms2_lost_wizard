@@ -1,4 +1,4 @@
-/// @descr scr_projectile_attack_create()
+/// @descr scr_projectile_create()
 
 // movement
 mx = 0;
@@ -18,7 +18,8 @@ projectile_inside_tilemap = false;
 projectile_hit_tilemap_x = false;
 projectile_hit_tilemap_y = false;
 
-movement_collision_script = scr_projectile_movement_collision();
+//movement_collision_script = scr_entity_movement_collision;
+movement_collision_script = scr_projectile_movement_collision;
 
 // collision tile map
 var collision_layer_id = layer_get_id("CollisionMap");
@@ -35,5 +36,5 @@ sprite_bbox_bottom = 0; //sprite_get_bbox_bottom(sprite_index) - sprite_get_yoff
 sprite_bbox_top = 0; //sprite_get_bbox_top(sprite_index) - sprite_get_yoffset(sprite_index);
 
 // timers
-kill_time = 1;
-kill_timer = 0;
+travel_time = 1;
+travel_timer = 0;

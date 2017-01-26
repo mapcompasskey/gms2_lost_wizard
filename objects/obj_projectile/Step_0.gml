@@ -1,1 +1,1 @@
-scr_projectile_attack_step();
+scr_projectile_step();

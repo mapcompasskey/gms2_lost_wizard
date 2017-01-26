@@ -1478,7 +1478,7 @@
                 "resourceCreationConfigs": [
                     "default"
                 ],
-                "resourcePath": "scripts\\scr_projectile_attack_create\\scr_projectile_attack_create.yy",
+                "resourcePath": "scripts\\scr_projectile_create\\scr_projectile_create.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -1497,7 +1497,7 @@
                 "resourceCreationConfigs": [
                     "default"
                 ],
-                "resourcePath": "scripts\\scr_projectile_attack_step\\scr_projectile_attack_step.yy",
+                "resourcePath": "scripts\\scr_projectile_step\\scr_projectile_step.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -1516,7 +1516,7 @@
                 "resourceCreationConfigs": [
                     "default"
                 ],
-                "resourcePath": "scripts\\scr_projectile_attack_end_step\\scr_projectile_attack_end_step.yy",
+                "resourcePath": "scripts\\scr_projectile_end_step\\scr_projectile_end_step.yy",
                 "resourceType": "GMScript"
             }
         },

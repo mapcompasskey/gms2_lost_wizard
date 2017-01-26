@@ -1,4 +1,4 @@
-/// @descr scr_projectile_attack_step()
+/// @descr scr_projectile_step()
 
 // update the velocity vector from the angle and base velocity
 if ( ! dying && update_velocity)
@@ -9,12 +9,12 @@ if ( ! dying && update_velocity)
 }
 
 // kill the instance after a certain amount of time has passed
-//if ( ! dying)
-//{
-	kill_timer += global.TICK;
-	if (kill_timer >= kill_time)
+if ( ! dying)
+{
+	travel_timer += global.TICK;
+	if (travel_timer >= travel_time)
 	{
 		dying = true;
 		instance_destroy();
 	}
-//}
+}

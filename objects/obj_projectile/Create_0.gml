@@ -1,1 +1,1 @@
-scr_projectile_attack_create();
+scr_projectile_create();
