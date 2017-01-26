@@ -6,8 +6,7 @@
     "children": [
         "3513ca18-8cda-4430-99ae-168da0086a85",
         "dbe6946f-b2a3-4bd8-81ad-066312bc8006",
-        "4632fbf8-0684-4db1-aa2a-bb52e9f2806f",
-        "1ab8838c-4b87-4c7d-9460-5fd9ca003540"
+        "4632fbf8-0684-4db1-aa2a-bb52e9f2806f"
     ],
     "filterType": "GMScript",
     "folderName": "Player Attack",

@@ -1364,7 +1364,7 @@
                 "resourceCreationConfigs": [
                     "default"
                 ],
-                "resourcePath": "scripts\\scr_player_attack_movement_collision\\scr_player_attack_movement_collision.yy",
+                "resourcePath": "scripts\\scr_projectile_movement_collision\\scr_projectile_movement_collision.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -1405,6 +1405,158 @@
                 "resourcePath": "views\\92d7e96e-c0e2-4b13-bbd8-92c806198274-room.yy",
                 "resourceType": "GMFolder"
             }
+        },
+        {
+            "Key": "3de86a1f-62fb-4682-bf99-8ff87fafebec",
+            "Value": {
+                "id": "ffce0e72-cca1-4722-ac19-a7c2736e2cb7",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "scripts\\scr_projectile_check_collision_with_tilemap\\scr_projectile_check_collision_with_tilemap.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "e66551f6-21aa-46d4-8bab-540bcbb39be0",
+            "Value": {
+                "id": "9c6274a0-cefe-4643-b041-d30c0b4eb9f0",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "views\\e66551f6-21aa-46d4-8bab-540bcbb39be0.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "6adbf9b8-6613-436a-a616-ef19dcc3c56f",
+            "Value": {
+                "id": "b9f3d207-3a5b-451a-a28c-f433360d7ff9",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "views\\6adbf9b8-6613-436a-a616-ef19dcc3c56f.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "0f98c1cb-ae63-4179-ab72-c36ca58bbb75",
+            "Value": {
+                "id": "874aef1c-5a1d-4e75-b7a1-426744ce1ac3",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "scripts\\scr_projectile_attack_create\\scr_projectile_attack_create.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "f5ddb650-765a-4a24-9530-c9fe60fa5536",
+            "Value": {
+                "id": "d78b082e-7d00-43f2-a935-4093357acf8a",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "scripts\\scr_projectile_attack_step\\scr_projectile_attack_step.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "d0770edf-bdfb-4662-a8f2-26e017fc5e33",
+            "Value": {
+                "id": "675c0cf5-fc14-4026-b4d3-dee067ad9b7c",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "scripts\\scr_projectile_attack_end_step\\scr_projectile_attack_end_step.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "7e837e4d-2987-48d6-a653-b10afaca197d",
+            "Value": {
+                "id": "ccaf120c-e3b8-4130-bc6c-d8c08ca74b3d",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "objects\\obj_projectile\\obj_projectile.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "666e34e1-f777-455d-a975-7d69bcb936c2",
+            "Value": {
+                "id": "189b268c-8ab3-4ff5-b9f8-19cda2b529dc",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "views\\666e34e1-f777-455d-a975-7d69bcb936c2.yy",
+                "resourceType": "GMFolder"
+            }
         }
     ],
     "room_order": [
@@ -1432,10 +1584,14 @@
         "6b8ea419-a3db-4e51-9413-1ee24dac629c",
         "3fd908e2-6a14-471f-b4c1-8a5684679125",
         "47863b1e-33a8-4b3c-b784-4f785f4fddd3",
+        "0f98c1cb-ae63-4179-ab72-c36ca58bbb75",
+        "f5ddb650-765a-4a24-9530-c9fe60fa5536",
+        "d0770edf-bdfb-4662-a8f2-26e017fc5e33",
+        "1ab8838c-4b87-4c7d-9460-5fd9ca003540",
+        "3de86a1f-62fb-4682-bf99-8ff87fafebec",
         "3513ca18-8cda-4430-99ae-168da0086a85",
         "dbe6946f-b2a3-4bd8-81ad-066312bc8006",
         "4632fbf8-0684-4db1-aa2a-bb52e9f2806f",
-        "1ab8838c-4b87-4c7d-9460-5fd9ca003540",
         "28e4b675-562f-4356-ae1e-cccdc9909f9b",
         "91e4f3fc-da84-4d6f-92ef-ab739e4372a2",
         "f59eae95-2c6e-4c19-9333-048d06cf7184"
