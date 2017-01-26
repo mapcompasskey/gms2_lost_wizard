@@ -1576,6 +1576,44 @@
                 "resourcePath": "views\\720a232f-99d1-460d-976d-25c7d5f05349-room.yy",
                 "resourceType": "GMFolder"
             }
+        },
+        {
+            "Key": "405965f8-8ee9-498a-b39c-d5749c72d0dc",
+            "Value": {
+                "id": "69ce822d-4fe2-4fad-a1df-ad3047e406cc",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "views\\405965f8-8ee9-498a-b39c-d5749c72d0dc.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "fe944e62-dbd4-47b7-ab1d-063f3ae7b2a2",
+            "Value": {
+                "id": "fccb8293-9ef9-4e7a-98be-0c2adf21e057",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "views\\fe944e62-dbd4-47b7-ab1d-063f3ae7b2a2.yy",
+                "resourceType": "GMFolder"
+            }
         }
     ],
     "room_order": [

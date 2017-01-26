@@ -13,8 +13,8 @@ if ( ! persistent)
 #macro DEGREES_RIGHT 0
 #macro DEGREES_LEFT 180
 
-#macro TILE_SIZE 16
-#macro NOT_TILE_SIZE 15
+#macro TILE_SIZE 8
+#macro NOT_TILE_SIZE 7
 #macro TILE_SOLID 1
 #macro TILE_SOLID_TOP 2
 #macro TILE_SOLID_BOTTOM 3

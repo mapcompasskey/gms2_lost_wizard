@@ -7,7 +7,7 @@
         "c7884faf-f8aa-47ba-81df-98d7c1655f1f"
     ],
     "filterType": "GMSprite",
-    "folderName": "TileSets",
+    "folderName": "Tile Sets",
     "isDefaultView": false,
     "localisedFolderName": ""
 }
