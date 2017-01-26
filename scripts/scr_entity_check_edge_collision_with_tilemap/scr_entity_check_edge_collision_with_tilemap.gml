@@ -13,12 +13,6 @@ var target_y = 0;
 var result_x = 0;
 var t1 = 0;
 
-var tile_solid = 1;
-var tile_solid_top = 2;
-var tile_solid_bottom = 3;
-var tile_solid_right = 4;
-var tile_solid_left = 5;
-
 // if grounded, and moving horizontally
 if (grounded && mx != 0)
 {
@@ -49,9 +43,8 @@ if (grounded && mx != 0)
 		t1 = tilemap_get_at_pixel(tilemap, target_x, target_y) & tile_index_mask;
 		
 		// if wouldn't collide with any tile, except for bottom solids
-		if (t1 == 0 || t1 == tile_solid_bottom)
+		if (t1 == 0 || t1 == TILE_SOLID_BOTTOM)
 		{
-	
 			// if moving right
 			if (mx > 0)
 			{
@@ -61,7 +54,7 @@ if (grounded && mx != 0)
 					mx = result_x - sprite_bbox_right - x;
 				}
 			}
-		
+			
 			// else, if moving left
 			else if (mx < 0)
 			{
@@ -73,7 +66,8 @@ if (grounded && mx != 0)
 			}
 		
 			entity_at_edge_of_tilemap = true;
-		
 		}
+		
 	}
+	
 }

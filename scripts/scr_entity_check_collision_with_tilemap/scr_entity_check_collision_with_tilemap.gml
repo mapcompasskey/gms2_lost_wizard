@@ -17,12 +17,6 @@ var result_y = 0;
 var t1 = 0;
 var t2 = 0;
 
-var tile_solid = 1;
-var tile_solid_top = 2;
-var tile_solid_bottom = 3;
-var tile_solid_right = 4;
-var tile_solid_left = 5;
-
 // if moving vertically
 if (my != 0)
 {
@@ -62,8 +56,8 @@ if (my != 0)
 			// if falling
 			if (my > 0)
 			{
-				// if colliding with solids or top solids
-				if (t1 == tile_solid || t1 == tile_solid_top || t2 == tile_solid || t2 == tile_solid_top)
+				// if colliding with solids or top-solids
+				if (t1 == TILE_SOLID || t1 == TILE_SOLID_TOP || t2 == TILE_SOLID || t2 == TILE_SOLID_TOP)
 				{
 					// check the result won't push the instance up
 					result_y = ((target_y & ~NOT_TILE_SIZE) - 1);
@@ -81,8 +75,8 @@ if (my != 0)
 			// else, if rising
 			else if (my < 0)
 			{
-				// if colliding with solids or bottom solids
-				if (t1 == tile_solid || t1 == tile_solid_bottom || t2 == tile_solid || t2 == tile_solid_bottom)
+				// if colliding with solids or bottom-solids
+				if (t1 == TILE_SOLID || t1 == TILE_SOLID_BOTTOM || t2 == TILE_SOLID || t2 == TILE_SOLID_BOTTOM)
 				{
 					// check the result won't push the instance down
 					result_y = ((target_y + TILE_SIZE) & ~NOT_TILE_SIZE);
@@ -142,7 +136,7 @@ if (mx != 0)
 			if (mx > 0)
 			{	
 				// if colliding with solids or right-solids
-				if (t1 == tile_solid || t1 == tile_solid_right || t2 == tile_solid || t2 == tile_solid_right)
+				if (t1 == TILE_SOLID || t1 == TILE_SOLID_RIGHT || t2 == TILE_SOLID || t2 == TILE_SOLID_RIGHT)
 				{
 					// check the result won't push the instance to the left
 					result_x = ((target_x & ~NOT_TILE_SIZE) - 1);
@@ -160,7 +154,7 @@ if (mx != 0)
 			else if (mx < 0)
 			{
 				// if colliding with solids or left-solids
-				if (t1 == tile_solid || t1 == tile_solid_left || t2 == tile_solid || t2 == tile_solid_left)
+				if (t1 == TILE_SOLID || t1 == TILE_SOLID_LEFT || t2 == TILE_SOLID || t2 == TILE_SOLID_LEFT)
 				{
 					// check the result won't push the instance to the right
 					result_x = ((target_x + TILE_SIZE) & ~NOT_TILE_SIZE);

@@ -1557,6 +1557,25 @@
                 "resourcePath": "views\\666e34e1-f777-455d-a975-7d69bcb936c2.yy",
                 "resourceType": "GMFolder"
             }
+        },
+        {
+            "Key": "d8ba21ec-e39b-4407-989e-41af6a040c42",
+            "Value": {
+                "id": "8e8b9908-13ce-4581-a1ce-762881758ad0",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "views\\720a232f-99d1-460d-976d-25c7d5f05349-room.yy",
+                "resourceType": "GMFolder"
+            }
         }
     ],
     "room_order": [

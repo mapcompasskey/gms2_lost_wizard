@@ -6,15 +6,20 @@ if ( ! persistent)
     persistent = true;
 }
 
-// constant values
+// constants
 #macro RIGHT 1
 #macro LEFT -1
+
 #macro DEGREES_RIGHT 0
 #macro DEGREES_LEFT 180
-//#macro UP -1
-//#macro DOWN 1
+
 #macro TILE_SIZE 16
 #macro NOT_TILE_SIZE 15
+#macro TILE_SOLID 1
+#macro TILE_SOLID_TOP 2
+#macro TILE_SOLID_BOTTOM 3
+#macro TILE_SOLID_RIGHT 4
+#macro TILE_SOLID_LEFT 5
 
 // global instances
 global.PLAYER = noone;
