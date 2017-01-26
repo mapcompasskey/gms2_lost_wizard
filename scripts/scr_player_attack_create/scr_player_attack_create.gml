@@ -3,7 +3,7 @@
 event_inherited();
 
 // movement
-velocity = 200;
+base_velocity = 200;
 
 // collision
 movement_collision_script = scr_projectile_movement_collision();

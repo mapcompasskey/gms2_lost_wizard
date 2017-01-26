@@ -4,5 +4,5 @@ event_inherited();
 
 if (dying)
 {
-	instance_destroy();
+	//instance_destroy();
 }

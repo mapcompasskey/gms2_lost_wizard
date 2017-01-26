@@ -14,6 +14,7 @@ last_velocity_y = 0;
 angle = 0;
 
 // collision
+projectile_inside_tilemap = false;
 projectile_hit_tilemap_x = false;
 projectile_hit_tilemap_y = false;
 

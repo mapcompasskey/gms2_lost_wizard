@@ -65,7 +65,7 @@ if (my != 0)
 				// if colliding with solids or top solids
 				if (t1 == tile_solid || t1 == tile_solid_top || t2 == tile_solid || t2 == tile_solid_top)
 				{
-					// check the result won't push the entity up
+					// check the result won't push the instance up
 					result_y = ((target_y & ~NOT_TILE_SIZE) - 1);
 					if (result_y >= bbox_bottom)
 					{
@@ -84,7 +84,7 @@ if (my != 0)
 				// if colliding with solids or bottom solids
 				if (t1 == tile_solid || t1 == tile_solid_bottom || t2 == tile_solid || t2 == tile_solid_bottom)
 				{
-					// check the result won't push the entity down
+					// check the result won't push the instance down
 					result_y = ((target_y + TILE_SIZE) & ~NOT_TILE_SIZE);
 					if (result_y <= bbox_top)
 					{
@@ -98,7 +98,9 @@ if (my != 0)
 			}
 			
 		}
+		
 	}
+	
 }
 
 // if moving horizontally
@@ -136,13 +138,13 @@ if (mx != 0)
 		
 		if (t1 != 0 || t2 != 0)
 		{
-		
 			// if moving right
 			if (mx > 0)
 			{	
 				// if colliding with solids or right-solids
 				if (t1 == tile_solid || t1 == tile_solid_right || t2 == tile_solid || t2 == tile_solid_right)
 				{
+					// check the result won't push the instance to the left
 					result_x = ((target_x & ~NOT_TILE_SIZE) - 1);
 					if (result_x >= bbox_right)
 					{
@@ -160,6 +162,7 @@ if (mx != 0)
 				// if colliding with solids or left-solids
 				if (t1 == tile_solid || t1 == tile_solid_left || t2 == tile_solid || t2 == tile_solid_left)
 				{
+					// check the result won't push the instance to the right
 					result_x = ((target_x + TILE_SIZE) & ~NOT_TILE_SIZE);
 					if (result_x <= bbox_left)
 					{
@@ -172,5 +175,7 @@ if (mx != 0)
 			}
 			
 		}
+		
 	}
+	
 }
