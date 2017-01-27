@@ -18,7 +18,6 @@ projectile_inside_tilemap = false;
 projectile_hit_tilemap_x = false;
 projectile_hit_tilemap_y = false;
 
-//movement_collision_script = scr_entity_movement_collision;
 movement_collision_script = scr_projectile_movement_collision;
 
 // collision tile map

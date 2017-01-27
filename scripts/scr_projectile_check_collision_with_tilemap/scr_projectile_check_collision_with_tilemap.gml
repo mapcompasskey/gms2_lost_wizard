@@ -21,10 +21,10 @@ var t2 = 0;
 // if moving vertically
 if (my != 0)
 {
-	// if moving more than the height of the sprite
+	// if moving more than the height of the sprite or the size of a tile
 	// check the path, in increments, for any collisions
 	steps = 1;
-	hg = (bbox_bottom - bbox_top);
+	hg = min((bbox_bottom - bbox_top), TILE_SIZE);
 	if (abs(my) > hg)
 	{
 		steps = ceil(abs(my) / hg);
@@ -117,10 +117,10 @@ if (my != 0)
 // if moving horizontally
 if (mx != 0)
 {
-	// if moving more than the width of the sprite
+	// if moving more than the width of the sprite or the size of a tile
 	// check the path, in increments, for any collisions
 	steps = 1;
-	wd = (bbox_right - bbox_left);
+	wd = min((bbox_right - bbox_left), TILE_SIZE);
 	if (abs(mx) > wd)
 	{
 		steps = ceil(abs(mx) / wd);
