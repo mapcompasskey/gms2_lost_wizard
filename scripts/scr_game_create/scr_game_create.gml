@@ -75,7 +75,7 @@ while (more_rooms)
 }
 */
 
-global.VIEW_SCALE = 4;
+global.VIEW_SCALE = 5;
 global.BG_COLOR = make_color_rgb(24, 23, 76); // dark purple
 global.WINDOW_WIDTH = window_get_width();
 global.WINDOW_HEIGHT = window_get_height();

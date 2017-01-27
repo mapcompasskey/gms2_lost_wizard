@@ -25,7 +25,8 @@ if (has_physics)
         }
         velocity_y = (-last_velocity_y * jump_bounce);
     }
-    
+    */
+	
     // apply horizontal restrictions
     if (max_velocity_x != 0)
     {
@@ -37,8 +38,7 @@ if (has_physics)
     {
         velocity_y = clamp(velocity_y, -max_velocity_y, max_velocity_y);
     }
-    */
-	
+    
 	// store velocities
     last_velocity_x = velocity_x;
     last_velocity_y = velocity_y;

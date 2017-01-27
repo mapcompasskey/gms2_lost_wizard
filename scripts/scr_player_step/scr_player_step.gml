@@ -76,24 +76,23 @@ if ( ! dying && ! hurting)
 			attacking = true;
 			attack_cooldown_timer = 0;
 			
-			attack_bbox_left = sprite_get_bbox_left(spr_player_attack) - sprite_get_xoffset(spr_player_attack);
-			attack_bbox_right = sprite_get_bbox_right(spr_player_attack) - sprite_get_xoffset(spr_player_attack);
-			
 			// create a player attack instance
 			var inst = instance_create_layer(x, y, global.ROOM_LAYER_PLAYER, obj_player_attack);
-			if (facing == LEFT)
+			with (inst)
 			{
-				inst.angle = DEGREES_LEFT;
-				//inst.x += sprite_bbox_left + (6 * LEFT);
-				inst.x += sprite_bbox_left + attack_bbox_left;
+				if (other.facing == LEFT)
+				{
+					angle = DEGREES_LEFT;
+					x += other.sprite_bbox_left + sprite_bbox_left;
+				}
+				else
+				{
+					angle = DEGREES_RIGHT;
+					x += other.sprite_bbox_right + sprite_bbox_right;
+				}
+				y += (other.bbox_top - other.bbox_bottom) / 2;
 			}
-			else
-			{
-				inst.angle = DEGREES_RIGHT;
-				//inst.x += sprite_bbox_right + (6 * RIGHT);
-				inst.x += sprite_bbox_right + attack_bbox_right + 2;
-			}
-			inst.y -= sprite_middle_y;
+			
 		}
 	}
 	
