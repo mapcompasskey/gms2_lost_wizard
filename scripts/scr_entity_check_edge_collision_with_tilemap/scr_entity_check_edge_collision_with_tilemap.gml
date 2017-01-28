@@ -19,7 +19,7 @@ if (grounded && mx != 0)
 	// if moving more than the width of the sprite
 	// check the path, in increments, for any collisions
 	steps = 1;
-	wd = (bbox_right - bbox_left);
+	wd = min((bbox_right - bbox_left), TILE_SIZE);
 	if (abs(mx) > wd)
 	{
 		steps = ceil(abs(mx) / wd);

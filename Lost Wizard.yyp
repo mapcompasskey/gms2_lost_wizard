@@ -1614,6 +1614,25 @@
                 "resourcePath": "views\\fe944e62-dbd4-47b7-ab1d-063f3ae7b2a2.yy",
                 "resourceType": "GMFolder"
             }
+        },
+        {
+            "Key": "22e2098b-5c05-4cc7-b401-ccddd7a05796",
+            "Value": {
+                "id": "39dbcb7d-918c-4522-bdb8-d3f622eb5aec",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "scripts\\scr_entity_check_collision_with_tilemap_1\\scr_entity_check_collision_with_tilemap_1.yy",
+                "resourceType": "GMScript"
+            }
         }
     ],
     "room_order": [
@@ -1632,6 +1651,7 @@
         "c5eff8fe-a98f-4eca-a8e4-5d11c6196b27",
         "44e3ddd5-58df-48b1-bcd7-4d2b0025ef4b",
         "d8daec7a-44a3-409c-b3d8-202ca4ca12bf",
+        "22e2098b-5c05-4cc7-b401-ccddd7a05796",
         "a60921e0-992b-4f7c-801c-1b4aa4c846ab",
         "08cf6893-7a0c-4ea2-bf5f-903c629539db",
         "c57b3ed2-04e0-4f46-98db-3b30a27f1aa1",
