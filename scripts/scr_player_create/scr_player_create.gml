@@ -3,7 +3,7 @@
 event_inherited();
 
 // physics
-speed_x = 100;
+speed_x = 50;//100;
 speed_y = 200;
 max_velocity_x = (speed_x * 2);
 max_velocity_y = (speed_y * 2);

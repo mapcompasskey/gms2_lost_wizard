@@ -19,7 +19,8 @@ key_attack_released = keyboard_check_released(ord("Z"));
 if ( ! dying && ! hurting)
 {
     // if grounded and just pressed the JUMP button
-    if (grounded && ! jumping && key_jump_pressed)
+    //if (grounded && ! jumping && key_jump_pressed)
+	if ( ! jumping && key_jump_pressed)
     {
         jumping = true;
         grounded = false;
