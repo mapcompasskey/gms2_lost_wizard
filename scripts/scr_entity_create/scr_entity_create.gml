@@ -53,6 +53,7 @@ scale_y = 1.0;
 //sprite_index = noone;
 //mask_index = noone;
 
+// *if scale_x or scale_y are different than 1 or -1, the "sprite_bbox_" values need to be updated
 sprite_bbox_left = 0; // sprite_get_bbox_left(sprite_index) - sprite_get_xoffset(sprite_index);
 sprite_bbox_right = 0; // sprite_get_bbox_right(sprite_index) - sprite_get_xoffset(sprite_index);
 sprite_bbox_bottom = 0; // sprite_get_bbox_bottom(sprite_index) - sprite_get_yoffset(sprite_index);

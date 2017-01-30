@@ -15,12 +15,12 @@ var step_size_2 = 0;
 var wd = (bbox_right - bbox_left);
 var hg = (bbox_bottom - bbox_top);
 
+var offset_x = 0;
+var offset_y = 0;
 var target_x = 0;
 var target_y = 0;
 var result_x = 0;
 var result_y = 0;
-var offset_x = 0;
-var offset_y = 0;
 
 var collision = false;
 var tile_1 = 0;
@@ -33,24 +33,23 @@ var tile_at_point = 0;
 //
 if (my != 0)
 {
-	steps = 1;
-	
 	// if moving more than the height of the sprite or the size of a tile,
-	// check the path, using the smallest increments, for any collisions
-	step_size = min(hg, TILE_SIZE);
-	if (abs(my) > step_size)
+	// check the path, using the smallest value, for any collisions
+	steps = 1;
+	if (abs(my) > min(hg, TILE_SIZE))
 	{
-		steps = ceil(abs(my) / step_size);
+		steps = ceil(abs(my) / min(hg, TILE_SIZE));
 	}
+	step_size = (my / steps);
 	
 	// if the sprite is wider than a tile,
 	// check in increments along its width
-	steps_2 = 0;
+	steps_2 = 1;
 	if (wd > TILE_SIZE)
 	{
 		steps_2 = ceil(wd / TILE_SIZE);
-		step_size_2 = (wd / steps_2);
 	}
+	step_size_2 = (wd / steps_2);
 	
 	for (var i = 1; i <= steps; i++)
 	{
@@ -70,31 +69,20 @@ if (my != 0)
 			tile_2 = TILE_SOLID_TOP;
 		}
 		
-		target_y = round(y + offset_y + ((my / steps) * i));
+		// get top or bottom position
+		target_y = round(y + offset_y + (step_size * i));
 		
-		/**/
-		// check left edge
+		// check left edge and mid points
 		if ( ! collision)
 		{
-			target_x = round(x + sprite_bbox_left);
-			tile_at_point = tilemap_get_at_pixel(tilemap, target_x, target_y) & tile_index_mask;
-			if (tile_at_point == tile_1 || tile_at_point == tile_2)
+			for (var j = 0; j < steps_2; j++)
 			{
-				collision = true;
-			}
-		}
-		
-		// check mid points
-		if ( ! collision && steps_2 > 1)
-		{
-			for (var j = (steps_2 - 1); j > 0; j--)
-			{
-				target_x = round(x + sprite_bbox_right - (step_size_2 * j));
+				target_x = round(x + sprite_bbox_left + (step_size_2 * j));
 				tile_at_point = tilemap_get_at_pixel(tilemap, target_x, target_y) & tile_index_mask;
 				if (tile_at_point == tile_1 || tile_at_point == tile_2)
 				{
 					collision = true;
-					j = 0;
+					j = steps_2;
 				}
 			}
 		}
@@ -109,42 +97,6 @@ if (my != 0)
 				collision = true;
 			}
 		}
-		/**/
-		
-		/*
-		if ( ! collision)
-		{
-			// check left edge
-			target_x = round(x + sprite_bbox_left);
-			collision = scr_check_point_on_tilemap(tilemap, target_x, target_y, tile_1, tile_2);
-		}
-		
-		if ( ! collision)
-		{
-			// if the sprite is wider than a tile,
-			// check in increments along its edge
-			if (wd > TILE_SIZE)
-			{
-				var steps2 = ceil(wd / TILE_SIZE);
-				var step_size2 = (wd / steps2);
-				
-				for (var j = (steps2 - 1); j > 0; j--)
-				{
-					// check mid point
-					target_x = round(x + sprite_bbox_right - (step_size2 * j));
-					collision = scr_check_point_on_tilemap(tilemap, target_x, target_y, tile_1, tile_2);
-					if (collision) j = 0;
-				}
-			}
-		}
-		
-		if ( ! collision)
-		{
-			// check right edge
-			target_x = round(x + sprite_bbox_right);
-			collision = scr_check_point_on_tilemap(tilemap, target_x, target_y, tile_1, tile_2);
-		}
-		*/
 		
 		if (collision)
 		{
@@ -186,28 +138,27 @@ if (my != 0)
 
 
 //
-// Test Horizontal Collision
+// Horizontal Collision Test
 //
 if (mx != 0)
 {
-	steps = 1;
-	
 	// if moving more than the width of the sprite or the size of a tile,
-	// then check the path, in increments, for any collisions
-	var step_size = min(wd, TILE_SIZE);
-	if (abs(mx) > step_size)
+	// check the path, using the smallest value, for any collisions
+	steps = 1;
+	if (abs(mx) > min(wd, TILE_SIZE))
 	{
-		steps = ceil(abs(mx) / step_size);
+		steps = ceil(abs(mx) / min(wd, TILE_SIZE));
 	}
+	step_size = (mx / steps);
 	
 	// if the sprite is taller than a tile,
 	// check in increments along its height
-	steps_2 = 0;
+	steps_2 = 1;
 	if (hg > TILE_SIZE)
 	{
 		steps_2 = ceil(hg / TILE_SIZE);
-		step_size_2 = (hg / steps_2);
 	}
+	step_size_2 = (hg / steps_2);
 	
 	for (var i = 1; i <= steps; i++)
 	{
@@ -227,9 +178,24 @@ if (mx != 0)
 			tile_2 = TILE_SOLID_LEFT;
 		}
 		
-		target_x = round(x + offset_x + ((mx / steps) * i));
+		// get left or right position
+		target_x = round(x + offset_x + (step_size * i));
 		
-		/**/
+		// check bottom edge and mid points
+		if ( ! collision)
+		{
+			for (var j = 0; j < steps_2; j++)
+			{
+				target_y = round(y + sprite_bbox_bottom + my - (step_size_2 * j));
+				tile_at_point = tilemap_get_at_pixel(tilemap, target_x, target_y) & tile_index_mask;
+				if (tile_at_point == tile_1 || tile_at_point == tile_2)
+				{
+					collision = true;
+					j = steps_2;
+				}
+			}
+		}
+		
 		// check top edge
 		if ( ! collision)
 		{
@@ -240,67 +206,6 @@ if (mx != 0)
 				collision = true;
 			}
 		}
-		
-		// check mid points
-		if ( ! collision && steps_2 > 1)
-		{
-			for (var j = (steps_2 - 1); j > 0; j--)
-			{
-				target_y = round(y + sprite_bbox_bottom + my - (step_size_2 * j));
-				tile_at_point = tilemap_get_at_pixel(tilemap, target_x, target_y) & tile_index_mask;
-				if (tile_at_point == tile_1 || tile_at_point == tile_2)
-				{
-					collision = true;
-					j = 0;
-				}
-			}
-		}
-		
-		// check bottom edge
-		if ( ! collision)
-		{
-			target_y = round(y + sprite_bbox_bottom + my);
-			tile_at_point = tilemap_get_at_pixel(tilemap, target_x, target_y) & tile_index_mask;
-			if (tile_at_point == tile_1 || tile_at_point == tile_2)
-			{
-				collision = true;
-			}
-		}
-		/**/
-		
-		/*
-		if ( ! collision)
-		{
-			// check top edge
-			target_y = round(y + sprite_bbox_top + my);
-			collision = scr_check_point_on_tilemap(tilemap, target_x, target_y, tile_1, tile_2);
-		}
-		
-		if ( ! collision)
-		{
-			// if the sprite is taller than a tile,
-			// check in increments along its edge
-			if (hg > TILE_SIZE)
-			{
-				var steps2 = ceil(hg / TILE_SIZE);
-				var step_size2 = (hg / steps2);
-				
-				for (var j = (steps2 - 1); j > 0; j--)
-				{
-					target_y = round(y + sprite_bbox_bottom + my - (step_size2 * j));
-					collision = scr_check_point_on_tilemap(tilemap, target_x, target_y, tile_1, tile_2);
-					if (collision) j = 0;
-				}
-			}
-		}
-		
-		if ( ! collision)
-		{
-			// chck bottom edge
-			target_y = round(y + sprite_bbox_bottom + my);
-			collision = scr_check_point_on_tilemap(tilemap, target_x, target_y, tile_1, tile_2);
-		}
-		*/
 		
 		if (collision)
 		{
