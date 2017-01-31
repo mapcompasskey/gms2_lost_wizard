@@ -14,7 +14,7 @@ key_attack_released = keyboard_check_released(ord("Z"));
 
 
 //
-// Check if jumping and/or falling
+// Check if Jumping or Falling
 //
 if ( ! dying && ! hurting)
 {
@@ -58,7 +58,7 @@ if ( ! dying && ! hurting)
 
 
 //
-// Check if attacking
+// Check if Attacking
 //
 if ( ! dying && ! hurting)
 {
@@ -101,7 +101,7 @@ if ( ! dying && ! hurting)
 
 
 //
-// Check if walking
+// Check if Walking
 //
 if ( ! dying && ! hurting)
 {
