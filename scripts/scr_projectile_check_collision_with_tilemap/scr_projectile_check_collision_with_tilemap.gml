@@ -9,215 +9,250 @@ projectile_hit_tilemap_x = false;
 projectile_hit_tilemap_y = false;
 
 var steps = 0;
-var wd = 0;
-var hg = 0;
+var step_size = 0;
+var steps_2 = 0;
+var step_size_2 = 0;
+				
+var wd = (bbox_right - bbox_left);
+var hg = (bbox_bottom - bbox_top);
+
+var offset_x = 0;
+var offset_y = 0;
 var target_x = 0;
 var target_y = 0;
 var result_x = 0;
 var result_y = 0;
-var t1 = 0;
-var t2 = 0;
 
-// if moving vertically
+var collision = false;
+var tile_1 = 0;
+var tile_2 = 0;
+var tile_at_point = 0;
+
+
+//
+// Vertical Collision Test
+//
 if (my != 0)
 {
-	// if moving more than the height of the sprite or the size of a tile
-	// check the path, in increments, for any collisions
+	// if moving more than the height of the sprite or the size of a tile,
+	// check the path, using the smallest value, for any collisions
 	steps = 1;
-	hg = min((bbox_bottom - bbox_top), TILE_SIZE);
-	if (abs(my) > hg)
+	if (abs(my) > min(hg, TILE_SIZE))
 	{
-		steps = ceil(abs(my) / hg);
+		steps = ceil(abs(my) / min(hg, TILE_SIZE));
 	}
+	step_size = (my / steps);
+	
+	// if the sprite is wider than a tile,
+	// check in increments along its width
+	steps_2 = 1;
+	if (wd > TILE_SIZE)
+	{
+		steps_2 = ceil(wd / TILE_SIZE);
+	}
+	step_size_2 = (wd / steps_2);
 	
 	for (var i = 0; i <= steps; i++)
 	{
-		// if falling
-		if (my > 0)
+		collision = false;
+		tile_1 = TILE_SOLID;
+		
+		// if moving up
+		if (my < 0)
 		{
-			target_y = round(y + sprite_bbox_bottom + ((my / steps) * i));
+			offset_y = sprite_bbox_top;
+			tile_2 = TILE_SOLID_BOTTOM;
 		}
-		// else, if rising
+		// else, if moving down
 		else
 		{
-			target_y = round(y + sprite_bbox_top + ((my / steps) * i));
+			offset_y = sprite_bbox_bottom;
+			tile_2 = TILE_SOLID_TOP;
 		}
 		
-		// check left edge
-		target_x = round(x + sprite_bbox_left);
-		t1 = tilemap_get_at_pixel(tilemap, target_x, target_y) & tile_index_mask;
+		// get top or bottom position
+		target_y = round(y + offset_y + (step_size * i));
+		
+		// check left edge and mid points
+		if ( ! collision)
+		{
+			for (var j = 0; j < steps_2; j++)
+			{
+				target_x = round(x + sprite_bbox_left + (step_size_2 * j));
+				tile_at_point = tilemap_get_at_pixel(tilemap, target_x, target_y) & tile_index_mask;
+				if (tile_at_point == tile_1 || tile_at_point == tile_2)
+				{
+					collision = true;
+					j = steps_2;
+				}
+			}
+		}
 		
 		// check right edge
-		target_x = round(x + sprite_bbox_right);
-		t2 = tilemap_get_at_pixel(tilemap, target_x, target_y) & tile_index_mask;
-		
-		if (t1 != 0 || t2 != 0)
+		if ( ! collision)
 		{
-			// if moving down
-			if (my > 0)
+			target_x = round(x + sprite_bbox_right);
+			tile_at_point = tilemap_get_at_pixel(tilemap, target_x, target_y) & tile_index_mask;
+			if (tile_at_point == tile_1 || tile_at_point == tile_2)
 			{
-				// if colliding with solids or top-solids
-				if (t1 == TILE_SOLID || t1 == TILE_SOLID_TOP || t2 == TILE_SOLID|| t2 == TILE_SOLID_TOP)
-				{
-					// if first step, spawned inside a tile
-					if (i == 0)
-					{
-						my = 0;
-						velcoity_y = 0;
-						projectile_inside_tilemap = true;
-						break;
-					}
-					
-					// check the result won't push the instance up
-					result_y = ((target_y & ~NOT_TILE_SIZE) - 1);
-					if (result_y >= bbox_bottom)
-					{
-						my = result_y - sprite_bbox_bottom - y;
-						velocity_y = 0;
-						projectile_hit_tilemap_y = true;
-						break;
-					}
-					
-				}
+				collision = true;
+			}
+		}
+		
+		if (collision)
+		{
+			collision = false;
+			
+			// if moving up
+			if (my < 0)
+			{
+				// check the result won't push the instance down
+				result_y = ((target_y + TILE_SIZE) & ~NOT_TILE_SIZE);
+				collision = true;
+			}
+			// else, if moving down
+			else
+			{
+				// check the result won't push the instance up
+				result_y = ((target_y & ~NOT_TILE_SIZE) - 1);
+				collision = true;
 			}
 			
-			// else, if moving up
-			else if (my < 0)
+			if (collision)
 			{
-				// if colliding with solids or bottom-solids
-				if (t1 == TILE_SOLID || t1 == TILE_SOLID_BOTTOM || t2 == TILE_SOLID || t2 == TILE_SOLID_BOTTOM)
+				velocity_y = 0;
+				
+				// if first step, spawned inside a tile
+				if (i == 0)
 				{
-					if (i == 0)
-					{
-						my = 0;
-						velcoity_y = 0;
-						projectile_inside_tilemap = true;
-						break;
-					}
-					
-					// check the result won't push the instance down
-					result_y = ((target_y + TILE_SIZE) & ~NOT_TILE_SIZE);
-					if (result_y <= bbox_top)
-					{
-						my = result_y - sprite_bbox_top - y;
-						velocity_y = 0;
-						projectile_hit_tilemap_y = true;
-						break;
-					}
-					
+					//my = 0;
+					my = result_y - offset_y - y;
+					projectile_inside_tilemap = true;
+					break;
 				}
+				
+				my = result_y - offset_y - y;
+				projectile_hit_tilemap_y = true;
+				break;
+				
 			}
-			
 		}
 		
 	}
 	
 }
 
-// if moving horizontally
+
+//
+// Horizontal Collision Test
+//
 if (mx != 0)
 {
-	// if moving more than the width of the sprite or the size of a tile
-	// check the path, in increments, for any collisions
+	// if moving more than the width of the sprite or the size of a tile,
+	// check the path, using the smallest value, for any collisions
 	steps = 1;
-	wd = min((bbox_right - bbox_left), TILE_SIZE);
-	if (abs(mx) > wd)
+	if (abs(mx) > min(wd, TILE_SIZE))
 	{
-		steps = ceil(abs(mx) / wd);
+		steps = ceil(abs(mx) / min(wd, TILE_SIZE));
 	}
+	step_size = (mx / steps);
+	
+	// if the sprite is taller than a tile,
+	// check in increments along its height
+	steps_2 = 1;
+	if (hg > TILE_SIZE)
+	{
+		steps_2 = ceil(hg / TILE_SIZE);
+	}
+	step_size_2 = (hg / steps_2);
 	
 	for (var i = 0; i <= steps; i++)
 	{
+		collision = false;
+		tile_1 = TILE_SOLID;
+		
 		// if moving right
 		if (mx > 0)
 		{
-			target_x = round(x + ((mx / steps) * i) + sprite_bbox_right);
+			offset_x = sprite_bbox_right;
+			tile_2 = TILE_SOLID_RIGHT;
 		}
 		// else, if moving left
 		else
 		{
-			target_x = round(x + ((mx / steps) * i) + sprite_bbox_left);
+			offset_x = sprite_bbox_left;
+			tile_2 = TILE_SOLID_LEFT;
+		}
+		
+		// get left or right position
+		target_x = round(x + offset_x + (step_size * i));
+		
+		// check bottom edge and mid points
+		if ( ! collision)
+		{
+			for (var j = 0; j < steps_2; j++)
+			{
+				target_y = round(y + sprite_bbox_bottom + my - (step_size_2 * j));
+				tile_at_point = tilemap_get_at_pixel(tilemap, target_x, target_y) & tile_index_mask;
+				if (tile_at_point == tile_1 || tile_at_point == tile_2)
+				{
+					collision = true;
+					j = steps_2;
+				}
+			}
 		}
 		
 		// check top edge
-		target_y = round(y + sprite_bbox_top + my);
-		t1 = tilemap_get_at_pixel(tilemap, target_x, target_y) & tile_index_mask;
-		
-		// check bottom edge
-		target_y = round(y + sprite_bbox_bottom + my);
-		t2 = tilemap_get_at_pixel(tilemap, target_x, target_y) & tile_index_mask;
-		
-		if (t1 != 0 || t2 != 0)
+		if ( ! collision)
 		{
+			target_y = round(y + sprite_bbox_top + my);
+			tile_at_point = tilemap_get_at_pixel(tilemap, target_x, target_y) & tile_index_mask;
+			if (tile_at_point == tile_1 || tile_at_point == tile_2)
+			{
+				collision = true;
+			}
+		}
+		
+		if (collision)
+		{
+			collision = false;
+			
 			// if moving right
 			if (mx > 0)
-			{	
-				// if colliding with solids or right-solids
-				if (t1 == TILE_SOLID || t1 == TILE_SOLID_RIGHT || t2 == TILE_SOLID || t2 == TILE_SOLID_RIGHT)
-				{
-					/*
-					// if first step, spawned inside a tile
-					if (i == 0)
-					{
-						mx = 0
-						velocity_x = 0;
-						projectile_inside_tilemap = true;
-						break;
-					}
-					
-					// check the result won't push the instance to the left
-					result_x = ((target_x & ~NOT_TILE_SIZE) - 1);
-					if (result_x >= bbox_right)
-					{
-						mx = result_x - sprite_bbox_right - x;
-						velocity_x = 0;
-						projectile_hit_tilemap_x = true;
-						break;
-					}
-					*/
-					mx = ((target_x & ~NOT_TILE_SIZE) - 1) - sprite_bbox_right - x;
-					velocity_x = 0;
-					projectile_hit_tilemap_x = true;
-					break;
-				}
-			}
-			
-			// else, if moving left
-			else if (mx < 0)
 			{
-				// if colliding with solids or left-solids
-				if (t1 == TILE_SOLID || t1 == TILE_SOLID_LEFT || t2 == TILE_SOLID|| t2 == TILE_SOLID_LEFT)
-				{
-					/*
-					// if first step, spawned inside a tile
-					if (i == 0)
-					{
-						mx = 0;
-						velocity_x = 0;
-						projectile_inside_tilemap = true;
-						break;
-					}
-					
-					// check the result won't push the instance to the right
-					result_x = ((target_x + TILE_SIZE) & ~NOT_TILE_SIZE);
-					if (result_x <= bbox_left)
-					{
-						mx = result_x - sprite_bbox_left - x;
-						velocity_x = 0;
-						projectile_hit_tilemap_x = true;
-						break;
-					}
-					*/
-					mx = ((target_x + TILE_SIZE) & ~NOT_TILE_SIZE) - sprite_bbox_left - x;
-					velocity_x = 0;
-					projectile_hit_tilemap_x = true;
-					break;
-				}
+				// check the result won't push the instance to the left
+				result_x = ((target_x & ~NOT_TILE_SIZE) - 1);
+				collision = true;
+			}
+			// else, if moving left
+			else
+			{
+				// check the result won't push the instance to the right
+				result_x = ((target_x + TILE_SIZE) & ~NOT_TILE_SIZE);
+				collision = true;
 			}
 			
+			if (collision)
+			{
+				velocity_x = 0;
+				
+				// if first step, spawned inside a tile
+				if (i == 0)
+				{
+					//mx = 0;
+					mx = result_x - offset_x - x;
+					projectile_inside_tilemap = true;
+					break;
+				}
+				
+				mx = result_x - offset_x - x;
+				projectile_hit_tilemap_x = true;
+				break;
+			}
 		}
 		
 	}
 	
 }
+
 

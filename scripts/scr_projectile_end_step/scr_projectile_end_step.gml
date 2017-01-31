@@ -18,3 +18,19 @@ if ( ! dying)
 	x += mx;
 	y += my;
 }
+
+// keep instance inside the room
+// *sprite_width can be negative when facing LEFT
+if (bbox_right < 0)
+{
+    x = (room_width - abs(sprite_width));
+}
+else if (bbox_left > room_width)
+{
+    x = abs(sprite_width);
+}
+
+if (bbox_top > room_height)
+{
+    y = abs(sprite_height);
+}

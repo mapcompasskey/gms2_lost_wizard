@@ -8,7 +8,8 @@
         "f5ddb650-765a-4a24-9530-c9fe60fa5536",
         "d0770edf-bdfb-4662-a8f2-26e017fc5e33",
         "1ab8838c-4b87-4c7d-9460-5fd9ca003540",
-        "3de86a1f-62fb-4682-bf99-8ff87fafebec"
+        "3de86a1f-62fb-4682-bf99-8ff87fafebec",
+        "79f4d00c-4c47-4964-b909-f7ab50c9e7d2"
     ],
     "filterType": "GMScript",
     "folderName": "Projectile",
