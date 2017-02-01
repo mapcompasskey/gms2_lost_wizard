@@ -13,7 +13,13 @@ last_velocity_y = 0;
 
 angle = 0;
 
-// collision
+// object collision
+damage = 1;
+current_health = 1;
+can_collide = true;
+collided_with = noone;
+
+// movement collision
 projectile_inside_tilemap = false;
 projectile_hit_tilemap_x = false;
 projectile_hit_tilemap_y = false;

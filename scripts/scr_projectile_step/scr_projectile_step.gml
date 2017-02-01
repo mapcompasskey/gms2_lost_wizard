@@ -15,6 +15,5 @@ if ( ! dying)
 	if (travel_timer >= travel_time)
 	{
 		dying = true;
-		instance_destroy();
 	}
 }

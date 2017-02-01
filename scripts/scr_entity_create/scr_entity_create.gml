@@ -25,7 +25,13 @@ move_friction_min = 0; // 1   - if less than 1
 jump_bounce = 0;       // 0.4 - reduce by 60% every bounce
 jump_bounce_min = 0;   // 1   - if less than 1
 
-// collision
+// object collision
+damage = 1;
+current_health = 1;
+can_collide = true;
+collided_with = noone;
+
+// movement collision
 entity_hit_tilemap_x = false;
 entity_hit_tilemap_y = false;
 entity_at_edge_of_tilemap = false;
@@ -40,6 +46,7 @@ tilemap = layer_tilemap_get_id(collision_layer_id);
 grounded = false;
 dying = false;
 hurting = false;
+recovering = false;
 walking = false;
 jumping = false;
 falling = false;
@@ -66,3 +73,7 @@ key_up = false;
 key_down = false;
 key_jump_pressed = false;
 key_jump_released = false;
+
+// timers
+recover_time = 1;
+recover_timer = 0;

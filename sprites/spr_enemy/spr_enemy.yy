@@ -1,7 +1,7 @@
 {
     "id": "649c5c0e-f867-4891-af6c-6efbf4197cf8",
     "modelName": "GMSprite",
-    "mvc": "1.0",
+    "mvc": "1.12",
     "name": "spr_enemy",
     "For3D": false,
     "HTile": false,
