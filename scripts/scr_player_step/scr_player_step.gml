@@ -14,6 +14,83 @@ key_attack_released = keyboard_check_released(ord("Z"));
 
 
 //
+// Check if Hurting
+//
+if ( ! dying)
+{
+	// if hurting and hit the ground
+	if (hurting && grounded)
+    {
+        hurting = false;
+    }
+	
+	// if recovering
+	if (recovering)
+	{
+		image_alpha = 0.5;
+		
+		recover_timer += global.TICK;
+		if (recover_timer >= recover_time)
+		{
+			image_alpha = 1;
+			
+			// reset object collision
+			can_collide = true;
+			
+			// reset hurting properties
+			hurting = false;
+			recovering = false;
+			recover_timer = 0;
+		}
+	}
+	
+	if ( ! hurting && ! recovering)
+	{
+		// if colliding with an enemy
+		if (place_meeting(x, y, obj_enemy))
+		{
+			with (obj_enemy)
+			{
+				if (place_meeting(x, y, other))
+				{
+					// if the enemy can handle collision
+					// *the only thing I need from the enemy object is its damage value
+					// *also, if its been damage the player can walk through it. should probably still be able to harm the player
+					if (can_collide && collided_with == noone)
+					{
+						other.hurting = true;
+						other.recovering = true;
+						other.recover_timer = 0;
+						
+						// apply horizontal knockback
+						other.velocity_x = other.knockback_x;
+						if (x > other.x)
+						{
+							other.velocity_x = -other.knockback_x;
+						}
+						
+						// apply vertical knockback
+						other.velocity_y = -other.knockback_y;
+						other.grounded = false;
+						
+						// reduce health
+						//other.current_health = (other.current_health - damage);
+						//if (other.current_health <= 0)
+						//{
+						//	other.dying = true;
+						//}
+						
+						break;
+					}
+					
+				}
+			}
+		}
+		
+	}
+}
+
+//
 // Check if Jumping or Falling
 //
 if ( ! dying && ! hurting)

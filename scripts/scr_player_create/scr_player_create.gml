@@ -5,6 +5,10 @@ event_inherited();
 // physics
 speed_x = 100;
 speed_y = 200;
+
+knockback_x = 60;
+knockback_y = 50;
+
 max_velocity_x = (speed_x * 2);
 max_velocity_y = (speed_y * 2);
 
