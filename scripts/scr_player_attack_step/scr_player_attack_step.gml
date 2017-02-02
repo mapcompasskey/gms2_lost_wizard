@@ -23,7 +23,7 @@ if ( ! dying)
 						collided_with = other;
 						collided_with_data = ds_map_create();
 						ds_map_add(collided_with_data , "damage", other.damage);
-						ds_map_add(collided_with_data , "velocity_x", other.velocity_x);
+						ds_map_add(collided_with_data , "knockback_x", other.velocity_x);
 						
 						// update projectile
 						other.can_collide = false;

@@ -34,6 +34,21 @@ if ( ! dying && ! hurting)
 }
 */
 
+//
+// Check if Dead
+//
+if (dying)
+{
+	image_alpha = 0.2;
+	
+	dead_timer += global.TICK;
+	if (dead_timer > dead_time)
+	{
+		dead_timer = 0;	
+		dying = false;
+	}
+}
+
 
 //
 // Check if Hurting
@@ -49,9 +64,13 @@ if ( ! dying)
 	// if recovering
 	if (recovering)
 	{
+		image_alpha = 0.5;
+		
 		recover_timer += global.TICK;
 		if (recover_timer >= recover_time)
 		{
+			image_alpha = 1;
+			
 			// reset object collision
 			can_collide = true;
 			
@@ -77,13 +96,13 @@ if ( ! dying)
 					hurting = true;
 				    recovering = true;
 					recover_timer = 0;
-				
-					// get the "velocity_x" valule
-					var c_velocity_x = ds_map_find_value(collided_with_data, "velocity_x");
-					if ( ! is_undefined(c_velocity_x))
+					
+					// get the "knockback_x" valule
+					var c_knockback_x = ds_map_find_value(collided_with_data, "knockback_x");
+					if ( ! is_undefined(c_knockback_x))
 					{
 						// apply horizontal knockback
-						velocity_x = knockback_x * sign(c_velocity_x);
+						velocity_x = knockback_x * sign(c_knockback_x);
 					}
 					
 				    // apply vertical knockback
@@ -91,17 +110,22 @@ if ( ! dying)
 				    grounded = false;
 					
 					// reduce health
-					//current_health = (current_health - c_damage);
-					//if (current_health <= 0)
-					//{
-					//	dying = true;
-					//}
+					current_health = (current_health - c_damage);
+					if (current_health <= 0)
+					{
+						dying = true;
+						
+						// reset values
+						velocity_x = 0;
+						velocity_y = 0;
+						current_health = starting_health;
+					}
 				}
-		
+				
 				// reset collision data
 				collided_with_data = ds_map_create();
 			}
-		
+			
 			// reset collision referrence
 			collided_with = noone;
 		}
