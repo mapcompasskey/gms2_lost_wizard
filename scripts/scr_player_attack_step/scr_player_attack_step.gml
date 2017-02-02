@@ -5,8 +5,6 @@ event_inherited();
 //
 // Check Collision with Enemy Objects
 //
-
-// *need to check in steps since the projectile can travel fast
 if ( ! dying)
 {
 	if (can_collide && collided_with == noone)
@@ -23,20 +21,20 @@ if ( ! dying)
 						// update enemy
 						can_collide = false;
 						collided_with = other;
+						collided_with_data = ds_map_create();
+						ds_map_add(collided_with_data , "damage", other.damage);
+						ds_map_add(collided_with_data , "velocity_x", other.velocity_x);
 						
 						// update projectile
 						other.can_collide = false;
 						other.collided_with = id;
-					
+						other.dying = true;
+						
 						break;
 					}
 				}
 			}
 		}
-	}
-	else
-	{
-		dying = true;
 	}
 }
 

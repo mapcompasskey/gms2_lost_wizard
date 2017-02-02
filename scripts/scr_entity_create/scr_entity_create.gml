@@ -11,6 +11,9 @@ my = 0;
 speed_x = 100;
 speed_y = 200;
 
+knockback_x = 100;
+knockback_y = 200;
+
 velocity_x = 0;
 velocity_y = 0;
 
@@ -28,8 +31,10 @@ jump_bounce_min = 0;   // 1   - if less than 1
 // object collision
 damage = 1;
 current_health = 1;
+
 can_collide = true;
 collided_with = noone;
+collided_with_data = ds_map_create();
 
 // movement collision
 entity_hit_tilemap_x = false;

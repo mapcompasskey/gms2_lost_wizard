@@ -38,59 +38,15 @@ if ( ! dying && ! hurting)
 //
 // Check if Hurting
 //
-if ( ! dying && ! hurting && ! recovering)
-{
-	if (collided_with != noone)
-	{
-		// *how does it know it was a projectile
-		// *maybe "collide_with" should be "hurt_by" or "take_damage_from"
-		
-		// if the instance can cause damage
-		if (collided_with.damage)
-		{
-			hurting = true;
-	        recovering = true;
-			recover_timer = 0;
-		
-	        // apply horizontal knockback
-	        var knockback_x = speed_x;
-	        if (x < collided_with.x)
-	        {
-	            knockback_x = -knockback_x;
-	        }
-	        velocity_x = knockback_x;
-			
-	        // apply vertical knockback
-	        velocity_y = -speed_x;
-	        grounded = false;
-			
-	        // move away from the attack
-	        key_left = false;
-	        key_right = true;
-	        if (velocity_x < 0)
-	        {
-	            key_left = true;
-	            key_right = false;
-	        }
-			
-			// reduce health
-			//current_health = (current_health - collided_with.damage);
-			if (current_health <= 0)
-			{
-				dying = true;
-			}
-		}
-		
-	}
-}
-
 if ( ! dying)
 {
+	// if hurting and hit the ground
 	if (hurting && grounded)
     {
         hurting = false;
     }
 	
+	// if recovering
 	if (recovering)
 	{
 		recover_timer += global.TICK;
@@ -98,13 +54,59 @@ if ( ! dying)
 		{
 			// reset object collision
 			can_collide = true;
-			collided_with = noone;
 			
+			// reset hurting properties
 			hurting = false;
 			recovering = false;
 			recover_timer = 0;
 		}
 	}
+	
+	if ( ! hurting && ! recovering)
+	{
+		// if collided with an object
+		if (collided_with != noone)
+		{
+			// if there is collision data
+			if ( ! ds_map_empty(collided_with_data))
+			{
+				// get the "damage" value
+				var c_damage = ds_map_find_value(collided_with_data, "damage");
+				if ( ! is_undefined(c_damage))
+				{
+					hurting = true;
+				    recovering = true;
+					recover_timer = 0;
+				
+					// get the "velocity_x" valule
+					var c_velocity_x = ds_map_find_value(collided_with_data, "velocity_x");
+					if ( ! is_undefined(c_velocity_x))
+					{
+						// apply horizontal knockback
+						velocity_x = knockback_x * sign(c_velocity_x);
+					}
+					
+				    // apply vertical knockback
+				    velocity_y = -knockback_y;
+				    grounded = false;
+					
+					// reduce health
+					//current_health = (current_health - c_damage);
+					//if (current_health <= 0)
+					//{
+					//	dying = true;
+					//}
+				}
+		
+				// reset collision data
+				collided_with_data = ds_map_create();
+			}
+		
+			// reset collision referrence
+			collided_with = noone;
+		}
+	}
+	
 }
 
 

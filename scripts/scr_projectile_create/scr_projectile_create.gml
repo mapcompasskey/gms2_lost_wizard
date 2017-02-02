@@ -16,6 +16,7 @@ angle = 0;
 // object collision
 damage = 1;
 current_health = 1;
+
 can_collide = true;
 collided_with = noone;
 
