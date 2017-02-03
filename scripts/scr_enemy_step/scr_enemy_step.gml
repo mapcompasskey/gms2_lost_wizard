@@ -2,6 +2,7 @@
 
 event_inherited();
 
+
 /*
 //
 // Update Action
@@ -33,6 +34,7 @@ if ( ! dying && ! hurting)
     }
 }
 */
+
 
 //
 // Check if Dead
@@ -71,10 +73,8 @@ if ( ! dying)
 		{
 			image_alpha = 1;
 			
-			// reset object collision
-			can_collide = true;
-			
-			// reset hurting properties
+			// update damage properties
+			can_be_damaged = true;
 			hurting = false;
 			recovering = false;
 			recover_timer = 0;
@@ -83,54 +83,90 @@ if ( ! dying)
 	
 	if ( ! hurting && ! recovering)
 	{
-		// if collided with an object
-		if (collided_with != noone)
+		// if being damaged
+		if (damage_from != noone)
 		{
-			// if there is collision data
-			if ( ! ds_map_empty(collided_with_data))
+			// if there is damage data
+			if ( ! ds_map_empty(damage_data))
 			{
-				// get the "damage" value
-				var c_damage = ds_map_find_value(collided_with_data, "damage");
-				if ( ! is_undefined(c_damage))
+				if (can_be_damaged)
 				{
-					hurting = true;
-				    recovering = true;
-					recover_timer = 0;
-					
-					// get the "knockback_x" valule
-					var c_knockback_x = ds_map_find_value(collided_with_data, "knockback_x");
-					if ( ! is_undefined(c_knockback_x))
+					// get the "damage" value
+					var c_damage = ds_map_find_value(damage_data, "damage");
+					if ( ! is_undefined(c_damage))
 					{
-						// apply horizontal knockback
-						velocity_x = knockback_x * sign(c_knockback_x);
-					}
-					
-				    // apply vertical knockback
-				    velocity_y = -knockback_y;
-				    grounded = false;
-					
-					// reduce health
-					current_health = (current_health - c_damage);
-					if (current_health <= 0)
-					{
-						dying = true;
+						// update damage properties
+						can_be_damaged = false;
+						hurting = true;
+					    recovering = true;
+						recover_timer = 0;
 						
-						// reset values
-						velocity_x = 0;
-						velocity_y = 0;
-						current_health = starting_health;
+						// get the "knockback_x" valule
+						var c_knockback_x = ds_map_find_value(damage_data, "knockback_x");
+						if ( ! is_undefined(c_knockback_x))
+						{
+							// apply horizontal knockback
+							velocity_x = knockback_x * sign(c_knockback_x);
+						}
+						
+					    // apply vertical knockback
+					    velocity_y = -knockback_y;
+					    grounded = false;
+						
+						// reduce health
+						current_health = (current_health - c_damage);
+						if (current_health <= 0)
+						{
+							dying = true;
+							
+							// reset values
+							velocity_x = 0;
+							velocity_y = 0;
+							current_health = starting_health;
+						}
 					}
 				}
 				
-				// reset collision data
-				collided_with_data = ds_map_create();
+				// reset damage data
+				damage_data = ds_map_create();
 			}
 			
 			// reset collision referrence
-			collided_with = noone;
+			damage_from = noone;
 		}
+		
 	}
 	
+}
+
+
+//
+// Check if Attacking
+//
+if ( ! dying)
+{
+	// check if colliding with player objects
+	if (place_meeting(x, y, obj_player))
+	{
+		with (obj_player)
+		{
+			if (place_meeting(x, y, other))
+			{
+				// if the player can be damaged
+				if (can_be_damaged && damage_from == noone)
+				{
+					// update player
+					damage_from = other;
+					damage_data = ds_map_create();
+					ds_map_add(damage_data , "damage", other.damage);
+					ds_map_add(damage_data , "knockback_x", other.velocity_x);
+					ds_map_add(damage_data , "x", other.x);
+					
+					break;
+				}
+			}
+		}
+	}
 }
 
 

@@ -34,10 +34,8 @@ if ( ! dying)
 		{
 			image_alpha = 1;
 			
-			// reset object collision
-			can_collide = true;
-			
-			// reset hurting properties
+			// update damage properties
+			can_be_damaged = true;
 			hurting = false;
 			recovering = false;
 			recover_timer = 0;
@@ -46,49 +44,57 @@ if ( ! dying)
 	
 	if ( ! hurting && ! recovering)
 	{
-		// if colliding with an enemy
-		if (place_meeting(x, y, obj_enemy))
+		// if being damaged
+		if (damage_from != noone)
 		{
-			with (obj_enemy)
+			// if there is damage data
+			if ( ! ds_map_empty(damage_data))
 			{
-				if (place_meeting(x, y, other))
+				if (can_be_damaged)
 				{
-					// if the enemy can handle collision
-					// *the only thing I need from the enemy object is its damage value
-					// *also, if its been damage the player can walk through it. should probably still be able to harm the player
-					if (can_collide && collided_with == noone)
+					// get the "damage" value
+					var c_damage = ds_map_find_value(damage_data, "damage");
+					if ( ! is_undefined(c_damage))
 					{
-						other.hurting = true;
-						other.recovering = true;
-						other.recover_timer = 0;
-						
-						// apply horizontal knockback
-						other.velocity_x = other.knockback_x;
-						if (x > other.x)
-						{
-							other.velocity_x = -other.knockback_x;
-						}
-						
-						// apply vertical knockback
-						other.velocity_y = -other.knockback_y;
-						other.grounded = false;
-						
-						// reduce health
-						//other.current_health = (other.current_health - damage);
-						//if (other.current_health <= 0)
-						//{
-						//	other.dying = true;
-						//}
-						
-						break;
-					}
+						can_be_damaged = false;
+						hurting = true;
+					    recovering = true;
+						recover_timer = 0;
 					
+						// get the "x" valule
+						velocity_x = knockback_x;
+						var c_x = ds_map_find_value(damage_data, "x");
+						if ( ! is_undefined(c_x))
+						{
+							if (x < c_x)
+							{
+								velocity_x = -knockback_x;
+							}
+						}
+					
+					    // apply vertical knockback
+					    velocity_y = -knockback_y;
+					    grounded = false;
+					
+						// reduce health
+						//current_health = (current_health - c_damage);
+						//if (current_health <= 0)
+						//{
+						//	dying = true;
+						//}
+					}
 				}
+				
+				// reset damage data
+				damage_data = ds_map_create();
 			}
+			
+			// reset collision referrence
+			damage_from = noone;
 		}
-		
 	}
 }
+
 
 //
 // Check if Jumping or Falling

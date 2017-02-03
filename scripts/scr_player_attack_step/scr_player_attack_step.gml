@@ -2,36 +2,32 @@
 
 event_inherited();
 
+
 //
-// Check Collision with Enemy Objects
+// Check if Attacking
 //
 if ( ! dying)
 {
-	if (can_collide && collided_with == noone)
+	// check collision with enemy objects
+	if (place_meeting(x, y, obj_enemy))
 	{
-		if (place_meeting(x, y, obj_enemy))
+		with (obj_enemy)
 		{
-			with (obj_enemy)
+			if (place_meeting(x, y, other))
 			{
-				if (place_meeting(x, y, other))
+				// if the enemy can be damaged
+				if (can_be_damaged && damage_from == noone)
 				{
-					// if the enemy can handle collision
-					if (can_collide && collided_with == noone)
-					{
-						// update enemy
-						can_collide = false;
-						collided_with = other;
-						collided_with_data = ds_map_create();
-						ds_map_add(collided_with_data , "damage", other.damage);
-						ds_map_add(collided_with_data , "knockback_x", other.velocity_x);
+					// update enemy
+					damage_from = other;
+					damage_data = ds_map_create();
+					ds_map_add(damage_data , "damage", other.damage);
+					ds_map_add(damage_data , "knockback_x", other.velocity_x);
 						
-						// update projectile
-						other.can_collide = false;
-						other.collided_with = id;
-						other.dying = true;
-						
-						break;
-					}
+					// update projectile
+					other.dying = true;
+					
+					break;
 				}
 			}
 		}

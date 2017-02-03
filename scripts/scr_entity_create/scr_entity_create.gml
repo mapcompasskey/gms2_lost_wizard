@@ -33,9 +33,9 @@ damage = 1;
 current_health = 1;
 starting_health = 1;
 
-can_collide = true;
-collided_with = noone;
-collided_with_data = ds_map_create();
+can_be_damaged = true;
+damage_from = noone;
+damage_data = ds_map_create();
 
 // movement collision
 entity_hit_tilemap_x = false;

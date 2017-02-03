@@ -9,8 +9,8 @@ speed_y = 200;
 knockback_x = 60;
 knockback_y = 50;
 
-max_velocity_x = (speed_x * 2);
-max_velocity_y = (speed_y * 2);
+max_velocity_x = 200;
+max_velocity_y = 400;
 
 // states
 attacking = false;

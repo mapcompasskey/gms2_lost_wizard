@@ -17,9 +17,6 @@ angle = 0;
 damage = 1;
 current_health = 1;
 
-can_collide = true;
-collided_with = noone;
-
 // movement collision
 projectile_inside_tilemap = false;
 projectile_hit_tilemap_x = false;
