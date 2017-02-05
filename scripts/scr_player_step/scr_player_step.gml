@@ -34,65 +34,14 @@ if ( ! dying)
 		{
 			image_alpha = 1;
 			
-			// update damage properties
-			can_be_damaged = true;
+			// update states
 			hurting = false;
 			recovering = false;
 			recover_timer = 0;
+			can_be_damaged = true;
 		}
 	}
-	
-	if ( ! hurting && ! recovering)
-	{
-		// if being damaged
-		if (damage_from != noone)
-		{
-			// if there is damage data
-			if ( ! ds_map_empty(damage_data))
-			{
-				if (can_be_damaged)
-				{
-					// get the "damage" value
-					var c_damage = ds_map_find_value(damage_data, "damage");
-					if ( ! is_undefined(c_damage))
-					{
-						can_be_damaged = false;
-						hurting = true;
-					    recovering = true;
-						recover_timer = 0;
-					
-						// get the "x" valule
-						velocity_x = knockback_x;
-						var c_x = ds_map_find_value(damage_data, "x");
-						if ( ! is_undefined(c_x))
-						{
-							if (x < c_x)
-							{
-								velocity_x = -knockback_x;
-							}
-						}
-					
-					    // apply vertical knockback
-					    velocity_y = -knockback_y;
-					    grounded = false;
-					
-						// reduce health
-						//current_health = (current_health - c_damage);
-						//if (current_health <= 0)
-						//{
-						//	dying = true;
-						//}
-					}
-				}
-				
-				// reset damage data
-				damage_data = ds_map_create();
-			}
-			
-			// reset collision referrence
-			damage_from = noone;
-		}
-	}
+    
 }
 
 

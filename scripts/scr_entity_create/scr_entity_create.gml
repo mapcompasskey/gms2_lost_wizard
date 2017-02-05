@@ -35,7 +35,7 @@ starting_health = 1;
 
 can_be_damaged = true;
 damage_from = noone;
-damage_data = ds_map_create();
+//damage_data = ds_map_create();
 
 // movement collision
 entity_hit_tilemap_x = false;
@@ -78,5 +78,5 @@ key_jump_pressed = false;
 key_jump_released = false;
 
 // timers
-recover_time = 1;
+recover_time = 0.5;
 recover_timer = 0;

@@ -13,8 +13,8 @@ max_velocity_x = 60;
 max_velocity_y = 100;
 
 // object collision
-current_health = 2;
-starting_health = 2;
+current_health = 4;
+starting_health = 4;
 
 // collision
 movement_collision_script = scr_npc_movement_collision;
@@ -32,5 +32,5 @@ key_right = true;
 //action_time = (random_range(2, 4) * 60) // 2 - 4 seconds
 //action_timer = action_time;
 
-dead_time = 4;
+dead_time = 1;
 dead_timer = 0;
