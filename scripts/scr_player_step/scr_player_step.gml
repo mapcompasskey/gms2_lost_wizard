@@ -110,8 +110,8 @@ if ( ! dying && ! hurting)
             attacking = true;
             attack_cooldown_timer = 0;
             
-            // create a player attack instance
-            var inst = instance_create_layer(x, y, global.ROOM_LAYER_PLAYER, obj_player_attack);
+            // create a player projectile instance
+            var inst = instance_create_layer(x, y, global.ROOM_LAYER_PLAYER, obj_player_projectile);
             with (inst)
             {
                 if (other.facing == LEFT)

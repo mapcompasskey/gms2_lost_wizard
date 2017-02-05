@@ -1,1 +1,0 @@
-scr_player_attack_create();

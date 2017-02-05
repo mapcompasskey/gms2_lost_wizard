@@ -1,8 +1,8 @@
 {
-    "id": "4fc0157c-5317-46f9-8837-f09b07aa26f0",
+    "id": "4632fbf8-0684-4db1-aa2a-bb52e9f2806f",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "scr_player_attack_draw",
+    "name": "scr_player_projectile_end_step",
     "IsCompatibility": false,
     "IsDnD": false
 }

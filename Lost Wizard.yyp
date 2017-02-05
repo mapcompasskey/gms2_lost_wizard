@@ -186,7 +186,7 @@
             "Key": "3513ca18-8cda-4430-99ae-168da0086a85",
             "Value": {
                 "id": "9b40bd4c-285f-4a88-baae-a38de698a2ba",
-                "resourcePath": "scripts\\scr_player_attack_create\\scr_player_attack_create.yy",
+                "resourcePath": "scripts\\scr_player_projectile_create\\scr_player_projectile_create.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -250,7 +250,7 @@
             "Key": "4632fbf8-0684-4db1-aa2a-bb52e9f2806f",
             "Value": {
                 "id": "ddea4d3f-a7b2-4bc9-a151-ea6780a41701",
-                "resourcePath": "scripts\\scr_player_attack_end_step\\scr_player_attack_end_step.yy",
+                "resourcePath": "scripts\\scr_player_projectile_end_step\\scr_player_projectile_end_step.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -306,7 +306,7 @@
             "Key": "4fc0157c-5317-46f9-8837-f09b07aa26f0",
             "Value": {
                 "id": "e4a43d02-1b34-4048-a847-2a99d77e8ba7",
-                "resourcePath": "scripts\\scr_player_attack_draw\\scr_player_attack_draw.yy",
+                "resourcePath": "scripts\\scr_player_projectile_draw\\scr_player_projectile_draw.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -690,7 +690,7 @@
             "Key": "dbe6946f-b2a3-4bd8-81ad-066312bc8006",
             "Value": {
                 "id": "9c359f3c-ad39-459a-bbfb-8ccdb9f602c7",
-                "resourcePath": "scripts\\scr_player_attack_step\\scr_player_attack_step.yy",
+                "resourcePath": "scripts\\scr_player_projectile_step\\scr_player_projectile_step.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -722,7 +722,7 @@
             "Key": "e2d27700-5d5d-4bcc-8d87-0ed00ecacfb0",
             "Value": {
                 "id": "f4f0b628-3154-476e-8739-b8f7ec8abecc",
-                "resourcePath": "objects\\obj_player_attack\\obj_player_attack.yy",
+                "resourcePath": "objects\\obj_player_projectile\\obj_player_projectile.yy",
                 "resourceType": "GMObject"
             }
         },

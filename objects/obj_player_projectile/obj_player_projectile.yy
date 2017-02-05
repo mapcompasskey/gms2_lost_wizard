@@ -2,7 +2,7 @@
     "id": "e2d27700-5d5d-4bcc-8d87-0ed00ecacfb0",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "obj_player_attack",
+    "name": "obj_player_projectile",
     "eventList": [
         {
             "id": "49810522-41f1-4ecc-a406-8b4919941dda",

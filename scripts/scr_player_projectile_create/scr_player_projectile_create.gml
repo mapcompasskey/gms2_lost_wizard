@@ -1,4 +1,4 @@
-/// @descr scr_player_attack_create()
+/// @descr scr_player_projectile_create()
 
 event_inherited();
 

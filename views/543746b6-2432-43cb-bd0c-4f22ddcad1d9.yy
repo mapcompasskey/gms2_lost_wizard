@@ -10,7 +10,7 @@
         "4fc0157c-5317-46f9-8837-f09b07aa26f0"
     ],
     "filterType": "GMScript",
-    "folderName": "Player Attack",
+    "folderName": "Player Projectile",
     "isDefaultView": false,
     "localisedFolderName": ""
 }
