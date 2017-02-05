@@ -39,7 +39,7 @@ if ( ! dying && ! hurting && ! recovering)
                 
                 // reduce health
                 current_health = (current_health - attacker_damage);
-                if (current_health <= 0)
+                if (current_health < 0)
                 {
                     //dying = true;
                     current_health = max_health;
