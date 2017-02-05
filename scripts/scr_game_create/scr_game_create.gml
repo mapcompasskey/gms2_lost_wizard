@@ -23,6 +23,8 @@ if ( ! persistent)
 
 // global instances
 global.PLAYER = noone;
+global.PLAYER_HEALTH = 0;
+global.PLAYER_MAX_HEALTH = 0;
 
 // global parameters
 global.GRAV = 500;

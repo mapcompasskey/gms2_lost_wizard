@@ -16,8 +16,8 @@ starting_x = x;
 starting_y = y;
 
 // object collision
+max_health = 4;
 current_health = 4;
-starting_health = 4;
 
 // collision
 movement_collision_script = scr_npc_movement_collision;

@@ -45,7 +45,7 @@ if ( ! dying && ! hurting && ! recovering)
                     // reset variables
                     velocity_x = 0;
                     velocity_y = 0;
-                    current_health = starting_health;
+                    current_health = max_health;
                 }
             }
         }

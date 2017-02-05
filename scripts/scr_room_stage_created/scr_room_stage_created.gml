@@ -1,5 +1,10 @@
 /// @descr scr_room_stage_created()
 
+
+//
+// Create the Camera
+//
+
 // enable the use of views
 view_enabled = true;
 
@@ -36,3 +41,10 @@ camera_set_view_target(view_camera[0], obj_player);
 camera_set_view_speed(view_camera[0], -1, -1);
 camera_set_view_border(view_camera[0], camera_border_x, camera_border_y);
 */
+
+
+//
+// Create the HUD
+//
+instance_create_layer(0, 0, "Controllers", obj_hud);
+

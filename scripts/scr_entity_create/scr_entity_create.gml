@@ -28,8 +28,8 @@ jump_bounce_min = 0;   // 1   - if less than 1
 
 // object collision
 damage = 1;
+max_health = 1;
 current_health = 1;
-starting_health = 1;
 
 can_be_damaged = true;
 damage_from = noone;

@@ -12,6 +12,10 @@ knockback_y = 50;
 max_velocity_x = 200;
 max_velocity_y = 400;
 
+// object collision
+max_health = 10;
+current_health = 10;
+
 // states
 attacking = false;
 
@@ -28,3 +32,8 @@ sprite_bbox_top = sprite_get_bbox_top(sprite_index) - sprite_get_yoffset(sprite_
 // inputs
 key_attack_pressed = false;
 key_attack_released = false;
+
+// update globals
+global.PLAYER = id;
+global.PLAYER_HEALTH = current_health;
+global.PLAYER_MAX_HEALTH = max_health;

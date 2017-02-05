@@ -1,8 +1,8 @@
 {
-    "id": "4a45e153-6556-450a-b7d4-47ddb301981c",
+    "id": "9aeb028f-d1c1-4d89-a66a-0a2718ccb848",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "scr_game_draw_gui",
+    "name": "scr_hud_step",
     "IsCompatibility": false,
     "IsDnD": false
 }

@@ -13,10 +13,11 @@ if ( ! dying && ! hurting && ! recovering)
         {
             if (instance_exists(damage_from))
             {
+                // get values from attacker
                 with (damage_from)
                 {
-                    var other_damage = damage;
-                    var other_x = x;
+                    var attacker_damage = damage;
+                    var attacker_x = x;
                 }
                 
                 // update states
@@ -27,7 +28,7 @@ if ( ! dying && ! hurting && ! recovering)
                 
                 // apply vertical knockback
                 velocity_x = knockback_x;
-                if (x < other_x)
+                if (x < attacker_x)
                 {
                     velocity_x = -knockback_x;
                 }
@@ -37,11 +38,13 @@ if ( ! dying && ! hurting && ! recovering)
                 grounded = false;
                 
                 // reduce health
-                //current_health = (current_health - other_damage);
-                //if (current_health <= 0)
-                //{
-                //    dying = true;
-                //}
+                current_health = (current_health - attacker_damage);
+                if (current_health <= 0)
+                {
+                    //dying = true;
+                    current_health = max_health;
+                }
+                global.PLAYER_HEALTH = current_health;
             }
         }
         
