@@ -29,10 +29,10 @@ if ( ! dying)
                 {
                     // update enemy
                     damage_from = other;
-					
+                    
                     // update projectile
                     other.dying = true;
-					
+                    
                     break;
                 }
             }

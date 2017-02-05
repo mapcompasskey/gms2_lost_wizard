@@ -34,8 +34,8 @@ global.TICK = 0;
 global.ROOM_LAYER_CONTROLLERS = "Controllers";
 global.ROOM_LAYER_PLAYER = "Player";
 
-//// input keys to listen for
-//// *set as globals so they can be remapped
+// input keys to listen for
+// *set as globals so they can be remapped
 //global.KEY_LEFT = ord("A"); //vk_left;
 //global.KEY_RIGHT = ord("D"); //vk_right;
 //global.KEY_UP = ord("W"); //vk_up;
@@ -62,8 +62,8 @@ var more_rooms = true;
 var rm = room_next(room);
 while (more_rooms)
 {
-	room_set_view_enabled(rm, true);
-	room_set_viewport(rm, 0, true, 0, 0, view_width, view_height);
+    room_set_view_enabled(rm, true);
+    room_set_viewport(rm, 0, true, 0, 0, view_width, view_height);
     if (rm == room_last)
     {
         more_rooms = false;

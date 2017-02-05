@@ -2,7 +2,7 @@
 
 event_inherited();
 
-// physics
+// movement
 speed_x = 30;
 speed_y = 50;
 

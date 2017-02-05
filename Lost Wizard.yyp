@@ -303,6 +303,14 @@
             }
         },
         {
+            "Key": "4fc0157c-5317-46f9-8837-f09b07aa26f0",
+            "Value": {
+                "id": "e4a43d02-1b34-4048-a847-2a99d77e8ba7",
+                "resourcePath": "scripts\\scr_player_attack_draw\\scr_player_attack_draw.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "543746b6-2432-43cb-bd0c-4f22ddcad1d9",
             "Value": {
                 "id": "b8046f0f-7dfd-49c5-b54e-a8088bcdc921",
@@ -623,6 +631,14 @@
             }
         },
         {
+            "Key": "cd8147d2-d495-4069-9943-335bdd9d26ef",
+            "Value": {
+                "id": "398df7c4-4f9c-4160-a026-4e239a381d84",
+                "resourcePath": "scripts\\scr_projectile_draw\\scr_projectile_draw.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "ced8318a-ee83-4090-b4e2-a59822b38492",
             "Value": {
                 "id": "951ea120-8368-4d3f-b24f-252577ae76ea",
@@ -821,9 +837,11 @@
         "d0770edf-bdfb-4662-a8f2-26e017fc5e33",
         "1ab8838c-4b87-4c7d-9460-5fd9ca003540",
         "3de86a1f-62fb-4682-bf99-8ff87fafebec",
+        "cd8147d2-d495-4069-9943-335bdd9d26ef",
         "3513ca18-8cda-4430-99ae-168da0086a85",
         "dbe6946f-b2a3-4bd8-81ad-066312bc8006",
         "4632fbf8-0684-4db1-aa2a-bb52e9f2806f",
+        "4fc0157c-5317-46f9-8837-f09b07aa26f0",
         "28e4b675-562f-4356-ae1e-cccdc9909f9b",
         "91e4f3fc-da84-4d6f-92ef-ab739e4372a2",
         "f59eae95-2c6e-4c19-9333-048d06cf7184"

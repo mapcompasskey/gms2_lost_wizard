@@ -1,5 +1,6 @@
 /// @descr scr_entity_movement_collision()
 
+
 //
 // Default Entity Movement Collision Tests
 //
@@ -13,7 +14,7 @@ grounded = false;
 // if the entity was falling
 if (last_velocity_y > 0)
 {
-	// if the entity struck the tilemap
+    // if the entity struck the tilemap
     if (entity_hit_tilemap_y)
     {
         grounded = true;

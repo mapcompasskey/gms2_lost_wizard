@@ -2,6 +2,7 @@
 
 event_inherited();
 
+
 //
 // Update Inputs
 //
@@ -18,29 +19,29 @@ key_attack_released = keyboard_check_released(ord("Z"));
 //
 if ( ! dying)
 {
-	// if hurting and hit the ground
-	if (hurting && grounded)
+    // if hurting and hit the ground
+    if (hurting && grounded)
     {
         hurting = false;
     }
-	
-	// if recovering
-	if (recovering)
-	{
-		image_alpha = 0.5;
-		
-		recover_timer += global.TICK;
-		if (recover_timer >= recover_time)
-		{
-			image_alpha = 1;
-			
-			// update states
-			hurting = false;
-			recovering = false;
-			recover_timer = 0;
-			can_be_damaged = true;
-		}
-	}
+    
+    // if recovering
+    if (recovering)
+    {
+        image_alpha = 0.5;
+        
+        recover_timer += global.TICK;
+        if (recover_timer >= recover_time)
+        {
+            image_alpha = 1;
+            
+            // update states
+            hurting = false;
+            recovering = false;
+            recover_timer = 0;
+            can_be_damaged = true;
+        }
+    }
     
 }
 
@@ -52,7 +53,7 @@ if ( ! dying && ! hurting)
 {
     // if grounded and just pressed the JUMP button
     //if (grounded && ! jumping && key_jump_pressed)
-	if ( ! jumping && key_jump_pressed)
+    if ( ! jumping && key_jump_pressed)
     {
         jumping = true;
         grounded = false;
@@ -94,41 +95,41 @@ if ( ! dying && ! hurting)
 //
 if ( ! dying && ! hurting)
 {
-	if (attacking)
-	{
-		attack_cooldown_timer += global.TICK;
-		if (attack_cooldown_timer >= attack_cooldown_time)
-		{
-			attacking = false;
-		}
-	}
-	else
-	{
-		if (key_attack_pressed)
-		{
-			attacking = true;
-			attack_cooldown_timer = 0;
-			
-			// create a player attack instance
-			var inst = instance_create_layer(x, y, global.ROOM_LAYER_PLAYER, obj_player_attack);
-			with (inst)
-			{
-				if (other.facing == LEFT)
-				{
-					angle = DEGREES_LEFT;
-					x += other.sprite_bbox_left + sprite_bbox_left;
-				}
-				else
-				{
-					angle = DEGREES_RIGHT;
-					x += other.sprite_bbox_right + sprite_bbox_right;
-				}
-				y += (other.bbox_top - other.bbox_bottom) / 2;
-			}
-			
-		}
-	}
-	
+    if (attacking)
+    {
+        attack_cooldown_timer += global.TICK;
+        if (attack_cooldown_timer >= attack_cooldown_time)
+        {
+            attacking = false;
+        }
+    }
+    else
+    {
+        if (key_attack_pressed)
+        {
+            attacking = true;
+            attack_cooldown_timer = 0;
+            
+            // create a player attack instance
+            var inst = instance_create_layer(x, y, global.ROOM_LAYER_PLAYER, obj_player_attack);
+            with (inst)
+            {
+                if (other.facing == LEFT)
+                {
+                    angle = DEGREES_LEFT;
+                    x += other.sprite_bbox_left + sprite_bbox_left;
+                }
+                else
+                {
+                    angle = DEGREES_RIGHT;
+                    x += other.sprite_bbox_right + sprite_bbox_right;
+                }
+                y += (other.bbox_top - other.bbox_bottom) / 2;
+            }
+            
+        }
+    }
+    
 }
 
 
@@ -140,7 +141,7 @@ if ( ! dying && ! hurting)
     walking = false;
     velocity_x = 0;
      
-	if (key_left)
+    if (key_left)
     {
         facing = LEFT;
         walking = true;

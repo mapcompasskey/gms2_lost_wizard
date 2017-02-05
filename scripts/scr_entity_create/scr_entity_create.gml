@@ -1,8 +1,6 @@
 /// @descr scr_entity_create()
 
-// physics
-has_physics = true;
-
+// movement
 gravity_factor = 1;
 
 mx = 0;
@@ -35,7 +33,6 @@ starting_health = 1;
 
 can_be_damaged = true;
 damage_from = noone;
-//damage_data = ds_map_create();
 
 // movement collision
 entity_hit_tilemap_x = false;

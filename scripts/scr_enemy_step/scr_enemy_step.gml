@@ -9,11 +9,11 @@ event_inherited();
 if (dying)
 {
     image_alpha = 0.2;
-	
+    
     dead_timer += global.TICK;
     if (dead_timer > dead_time)
     {
-        dead_timer = 0;	
+        dead_timer = 0;    
         dying = false;
     }
 }
@@ -62,17 +62,17 @@ if ( ! dying)
     {
         hurting = false;
     }
-	
+    
     // if recovering
     if (recovering)
     {
         image_alpha = 0.5;
-		
+        
         recover_timer += global.TICK;
         if (recover_timer >= recover_time)
         {
             image_alpha = 1;
-			
+            
             // update states
             hurting = false;
             recovering = false;
@@ -97,13 +97,13 @@ if ( ! dying)
             if (place_meeting(x, y, other))
             {
                 // if the player can be damaged
-            	if (can_be_damaged && damage_from == noone)
-            	{
-            		// update player
-            		damage_from = other;
-					
-            		break;
-            	}
+                if (can_be_damaged && damage_from == noone)
+                {
+                    // update player
+                    damage_from = other;
+                    
+                    break;
+                }
             }
         }
     }

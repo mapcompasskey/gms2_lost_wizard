@@ -1,8 +1,10 @@
 /// @descr scr_player_attack_end_step()
 
-event_inherited();
 
-if (dying)
+//
+// Update Position
+//
+if ( ! dying)
 {
-	//instance_destroy();
+    event_inherited();
 }

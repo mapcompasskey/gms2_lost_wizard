@@ -2,7 +2,7 @@
 
 event_inherited();
 
-// physics
+// movement
 speed_x = 50;
 speed_y = 50;
 max_velocity_x = (speed_x * 2);

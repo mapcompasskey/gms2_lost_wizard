@@ -1,5 +1,6 @@
 /// @descr scr_enemey_movement_collision()
 
+
 //
 // Enemy Movement Collision Tests
 //
@@ -14,7 +15,7 @@ grounded = false;
 // if the entity was falling
 if (last_velocity_y > 0)
 {
-	// if the entity struck the tilemap
+    // if the entity struck the tilemap
     if (entity_hit_tilemap_y)
     {
         grounded = true;
@@ -24,11 +25,11 @@ if (last_velocity_y > 0)
 // if the entity was moving
 if (last_velocity_x != 0)
 {
-	// if the entity struck the tilemap or reached an edge
+    // if the entity struck the tilemap or reached an edge
     if (entity_hit_tilemap_x || entity_at_edge_of_tilemap)
     {
-		// turn around
+        // turn around
         key_left = !key_left;
-		key_right = !key_right;
+        key_right = !key_right;
     }
 }

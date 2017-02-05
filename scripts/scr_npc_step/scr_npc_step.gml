@@ -2,6 +2,7 @@
 
 event_inherited();
 
+
 /*
 //
 // Update Action
@@ -43,7 +44,7 @@ if ( ! dying && ! hurting)
     walking = false;
     velocity_x = 0;
      
-	if (key_left)
+    if (key_left)
     {
         facing = LEFT;
         walking = true;
