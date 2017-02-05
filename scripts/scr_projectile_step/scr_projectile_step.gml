@@ -2,7 +2,7 @@
 
 event_inherited();
 
-// update the velocity vector from the angle and base velocity
+// get the x/y velocities from the angle and base velocity
 if ( ! dying && update_velocity)
 {
     velocity_x = (dcos(angle) * base_velocity);

@@ -15,6 +15,10 @@ if (dying)
     {
         dead_timer = 0;    
         dying = false;
+        
+        // repostion to starting point
+        x = starting_x;
+        y = starting_y;
     }
 }
 

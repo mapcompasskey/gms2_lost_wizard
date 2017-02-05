@@ -12,6 +12,9 @@ knockback_y = 50;
 max_velocity_x = 60;
 max_velocity_y = 100;
 
+starting_x = x;
+starting_y = y;
+
 // object collision
 current_health = 4;
 starting_health = 4;

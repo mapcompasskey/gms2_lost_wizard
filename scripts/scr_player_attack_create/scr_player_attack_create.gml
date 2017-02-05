@@ -5,9 +5,6 @@ event_inherited();
 // movement
 base_velocity = 200;
 
-// collision
-//movement_collision_script = scr_projectile_movement_collision;
-
 // drawing
 sprite_bbox_left = sprite_get_bbox_left(sprite_index) - sprite_get_xoffset(sprite_index);
 sprite_bbox_right = sprite_get_bbox_right(sprite_index) - sprite_get_xoffset(sprite_index);
