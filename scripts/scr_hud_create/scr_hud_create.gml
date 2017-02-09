@@ -16,18 +16,13 @@ health_marker_sprite = spr_player_health_marker;
 health_marker_subimages = ds_list_create();
 
 // player health marker image data
-// array(padding, gutter, xoffset, yoffset, width, height)
-health_marker_data[5] = sprite_get_height(health_marker_sprite);
-health_marker_data[4] = sprite_get_width(health_marker_sprite);
-health_marker_data[3] = sprite_get_yoffset(health_marker_sprite);
-health_marker_data[2] = sprite_get_xoffset(health_marker_sprite);
-health_marker_data[1] = 2;
+// array(padding, width, height)
 health_marker_data[0] = 2;
+health_marker_data[1] = sprite_get_width(health_marker_sprite);
+health_marker_data[2] = sprite_get_height(health_marker_sprite);
 
 // player health marker drawing values
-// array(padding, gutter, xoffset, yoffset, width, height)
-health_marker_draw[5] = 0;
-health_marker_draw[4] = 0;
+// array(padding, gutter, width, height)
 health_marker_draw[3] = 0;
 health_marker_draw[2] = 0;
 health_marker_draw[1] = 0;
