@@ -12,17 +12,8 @@ player_health_text = "";
 // player health marker
 health_marker_sprite = spr_player_health_marker;
 
-// the marker's number of sub-images
-health_marker_subimages = sprite_get_number(health_marker_sprite);
-
-// number of markers to draw
-number_of_health_markers = 5;
-
-// an array of sub-images to draw for each marker
-for (var i = 0; i < number_of_health_markers; i++)
-{
-    marker_subimage[i] = 0;    
-}
+// track the marker subimages to draw
+health_marker_subimages = ds_list_create();
 
 // player health marker image data
 // array(padding, gutter, xoffset, yoffset, width, height)

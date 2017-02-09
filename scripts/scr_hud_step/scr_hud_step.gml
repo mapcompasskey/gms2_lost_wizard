@@ -15,24 +15,27 @@ health_marker_draw[3] = (health_marker_data[3] * scale_sprites);
 health_marker_draw[4] = (health_marker_data[4] * scale_sprites);
 health_marker_draw[5] = (health_marker_data[5] * scale_sprites);
 
-
 // if the player's health has changed
 if (player_health != player_previous_health)
 {
-    var step_size = (player_max_health / number_of_health_markers);
-    
-    // update the sub-image array for each marker
-    for (var i = 0; i < number_of_health_markers; i++)
+    // update the marker subimages list
+    health_marker_subimages = ds_list_create();
+
+    var subimage = 0;
+    var lgnth = ceil(player_max_health / 2);
+    for (var i = 1; i <= lgnth; i++)
     {
-        var idx = 0;
-        for (var j = 0; j < health_marker_subimages; j++)
+        subimage = 0;
+        if (player_health >= (i * 2))
         {
-            if (player_health >= (step_size * i) + j)
-            {
-                idx = j;
-            }
+            subimage = 2;
         }
-        marker_subimage[i] = idx;
+        else if (player_health >= (i * 2 - 1))
+        {
+            subimage = 1;
+        }
+    
+        ds_list_add(health_marker_subimages, subimage);
     }
     
     // update previous health;
