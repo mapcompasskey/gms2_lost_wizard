@@ -35,5 +35,6 @@ key_attack_released = false;
 
 // update globals
 global.PLAYER = id;
-global.PLAYER_HEALTH = current_health;
-global.PLAYER_MAX_HEALTH = max_health;
+
+// update the HUD
+scr_update_hud_players_health();

@@ -207,6 +207,14 @@
             }
         },
         {
+            "Key": "38747276-736a-477f-9655-9f1f34a9dd64",
+            "Value": {
+                "id": "0d1ca3fb-ceb9-468b-a124-98eb20472b3b",
+                "resourcePath": "scripts\\scr_update_hud_players_health\\scr_update_hud_players_health.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "3de86a1f-62fb-4682-bf99-8ff87fafebec",
             "Value": {
                 "id": "ffce0e72-cca1-4722-ac19-a7c2736e2cb7",
@@ -902,7 +910,8 @@
         "4fc0157c-5317-46f9-8837-f09b07aa26f0",
         "28e4b675-562f-4356-ae1e-cccdc9909f9b",
         "91e4f3fc-da84-4d6f-92ef-ab739e4372a2",
-        "f59eae95-2c6e-4c19-9333-048d06cf7184"
+        "f59eae95-2c6e-4c19-9333-048d06cf7184",
+        "38747276-736a-477f-9655-9f1f34a9dd64"
     ],
     "tutorial": ""
 }

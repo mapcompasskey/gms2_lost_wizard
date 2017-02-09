@@ -44,7 +44,9 @@ if ( ! dying && ! hurting && ! recovering)
                     //dying = true;
                     current_health = max_health;
                 }
-                global.PLAYER_HEALTH = current_health;
+                
+                // update the HUD
+                scr_update_hud_players_health();
             }
         }
         
