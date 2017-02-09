@@ -25,8 +25,7 @@ if (ratio != aspect_ratio)
         with (global.HUD)
         {
             scale_factor = ratio;
-            scale_text = max(1, floor(ratio * 0.4));
-            scale_sprites = max(1, floor(ratio * 0.75));
+            scale_factor_updated = true;
         }
     }
     

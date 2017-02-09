@@ -1,15 +1,16 @@
 /// @descr scr_hud_create()
 
 
-// how much to scale text and images
-// *updated by obj_game in the Step event
+// the amount to scale text and images
 scale_factor = 1;
 scale_text = 1;
 scale_sprites = 1;
+scale_factor_updated = false;
 
+// the player's health
 player_health = 0;
 player_max_health = 0;
-player_previous_health = 0;
+player_health_updated = false;
 player_health_text = "";
 
 // player health marker
@@ -25,11 +26,10 @@ health_marker_data[1] = sprite_get_width(health_marker_sprite);
 health_marker_data[2] = sprite_get_height(health_marker_sprite);
 
 // player health marker drawing values
-// array(padding, gutter, width, height)
-health_marker_draw[3] = 0;
-health_marker_draw[2] = 0;
-health_marker_draw[1] = 0;
+// array(padding, width, height)
 health_marker_draw[0] = 0;
+health_marker_draw[1] = 0;
+health_marker_draw[2] = 0;
 
 // update globals
 global.HUD = id;

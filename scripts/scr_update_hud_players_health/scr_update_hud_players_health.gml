@@ -1,5 +1,6 @@
 /// @descr scr_update_hud_players_health()
 
+
 //
 // Update the Player's Health in the HUD
 //
@@ -21,6 +22,7 @@ if (instance_exists(global.HUD))
         {
             player_health = temp_current_health;
             player_max_health = temp_max_health;
+            player_health_updated = true;
         }
         
     }

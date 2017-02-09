@@ -1,6 +1,10 @@
 /// @descr scr_hud_draw_gui()
 
 
+//
+// Display the Player's Health
+//
+
 // display the player's health text
 draw_set_color(c_white);
 draw_set_halign(fa_left);
