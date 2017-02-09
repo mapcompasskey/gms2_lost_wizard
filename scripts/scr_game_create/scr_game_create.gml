@@ -22,6 +22,7 @@ if ( ! persistent)
 #macro TILE_SOLID_LEFT 5
 
 // global instances
+global.HUD = noone;
 global.PLAYER = noone;
 global.PLAYER_HEALTH = 0;
 global.PLAYER_MAX_HEALTH = 0;
@@ -31,8 +32,7 @@ global.GRAV = 500;
 global.TICK = 0;
 //global.SCORE = 0;
 
-
-//// room layer names
+// room layer names
 global.ROOM_LAYER_CONTROLLERS = "Controllers";
 global.ROOM_LAYER_PLAYER = "Player";
 
@@ -44,6 +44,10 @@ global.ROOM_LAYER_PLAYER = "Player";
 //global.KEY_DOWN = ord("S"); //vk_down;
 //global.KEY_ESCAPE = vk_escape;
 //global.KEY_ENTER = vk_enter;
+
+
+// local variables
+aspect_ratio = 1;
 
 
 //

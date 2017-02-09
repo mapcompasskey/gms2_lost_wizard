@@ -1,5 +1,7 @@
 /// @descr scr_hud_create()
 
+// how much to scale text and images
+// *updated by obj_game in the Step event
 scale_factor = 1;
 scale_text = 1;
 scale_sprites = 1;
@@ -28,3 +30,5 @@ health_marker_draw[2] = 0;
 health_marker_draw[1] = 0;
 health_marker_draw[0] = 0;
 
+// update globals
+global.HUD = id;

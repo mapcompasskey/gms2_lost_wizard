@@ -1,10 +1,5 @@
 /// @descr scr_hud_step()
 
-// update the factor the game is scaled by
-var a = application_get_position();
-scale_factor = ((a[2] - a[0]) / view_get_wport(0));//view_wview[0]);
-scale_text = max(1, floor(scale_factor * 0.4));
-scale_sprites = max(1, floor(scale_factor * 0.75));
 
 // get the player's health
 player_health = global.PLAYER_HEALTH;
