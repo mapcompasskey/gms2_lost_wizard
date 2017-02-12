@@ -3,12 +3,13 @@
 
 if (is_active != previous_is_active)
 {
-    // update the image
+    // if active, add a collision mask
     if (is_active)
     {
         image_index = 1;
-        mask_index = spr_block_mask;
+        mask_index = draw_sprite_index;
     }
+    // else, remove the collision mask
     else
     {
         image_index = 0;
