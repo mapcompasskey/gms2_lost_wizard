@@ -4,12 +4,12 @@
     "mvc": "1.1",
     "name": "68a0c100-64c7-419f-8726-2f5fede949b6",
     "children": [
-        "71834000-97f6-44b0-a4a6-e8cb93fce86a",
-        "c9748e80-f6b3-4f3f-ba7b-110335ed5476",
-        "3131fd81-cf08-4f51-9aab-984f3042b35e"
+        "c7e08210-1609-411a-8153-1856ab499f68",
+        "9a251390-274d-4359-b267-349ac1b7a607",
+        "2792ab10-9921-443b-b32c-15c3cd1955ef"
     ],
     "filterType": "GMScript",
-    "folderName": "Block Trigger",
+    "folderName": "Block Triggers",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

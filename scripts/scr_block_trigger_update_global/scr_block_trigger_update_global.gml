@@ -9,7 +9,7 @@ with (obj_block)
 {
     is_active = global.BLOCKS_ACTIVE;
 }
-            
+
 // update entities to check for block collision
 with (obj_entity)
 {

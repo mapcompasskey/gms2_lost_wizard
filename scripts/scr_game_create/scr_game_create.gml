@@ -38,6 +38,8 @@ global.PLAYER = noone;
 global.GRAV = 500;
 global.TICK = 0;
 global.BLOCKS_ACTIVE = false;
+global.BLOCK_1_ACTIVE = false;
+global.BLOCK_2_ACTIVE = false;
 
 // game size and scaling
 global.VIEW_SCALE = 3;

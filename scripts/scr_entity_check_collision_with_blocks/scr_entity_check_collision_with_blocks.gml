@@ -8,7 +8,7 @@
 entity_hit_block_x = false;
 entity_hit_block_y = false;
 
-if (check_collision_with_blocks)
+if (check_collision_with_block_1 || check_collision_with_block_2)
 {
     // if not already inside a block
     if ( ! place_meeting(x, y, obj_block))
@@ -55,3 +55,4 @@ if (check_collision_with_blocks)
         
     }
 }
+
