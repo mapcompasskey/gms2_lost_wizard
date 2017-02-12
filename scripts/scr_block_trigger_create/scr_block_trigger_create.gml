@@ -9,6 +9,8 @@ damage_from = noone;
 recovering = false;
 is_active = global.BLOCKS_ACTIVE;
 
+update_global_script = scr_block_trigger_update_global;
+
 // drawing
 image_speed = 0;
 //sprite_index = noone;

@@ -44,22 +44,11 @@ if ( ! recovering)
             recover_timer = 0;
             can_be_damaged = false;
             
-            // update instance and global settings
+            // update instance variable
             is_active = !is_active;
-            global.BLOCKS_ACTIVE = is_active;
             
-            // update blocks to change their appearance
-            with (obj_block)
-            {
-                is_active = global.BLOCKS_ACTIVE;
-            }
-            
-            // update entities to check block collision
-            with (obj_entity)
-            {
-                check_collision_with_blocks = global.BLOCKS_ACTIVE;
-            }
-            
+            // update global and object settings
+            script_execute(update_global_script);
         }
         
     }
