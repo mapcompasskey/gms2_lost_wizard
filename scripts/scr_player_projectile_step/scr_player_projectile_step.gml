@@ -38,5 +38,28 @@ if ( ! dying)
             }
         }
     }
+    
+    // check if colliding with block trigger objects
+    if (place_meeting(x, y, obj_block_trigger))
+    {
+        with (obj_block_trigger)
+        {
+            if (place_meeting(x, y, other))
+            {
+                // if the block trigger can be damaged
+                if (can_be_damaged && damage_from == noone)
+                {
+                    // update block trigger
+                    damage_from = other;
+                    
+                    // update projectile
+                    other.dying = true;
+                    
+                    break;
+                }
+            }
+        }
+    }
+    
 }
 

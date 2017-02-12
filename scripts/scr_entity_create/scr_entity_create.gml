@@ -48,7 +48,7 @@ var collision_layer_id = layer_get_id("CollisionMap");
 tilemap = layer_tilemap_get_id(collision_layer_id);
 
 // collision with blocks
-check_blocks_collision = global.BLOCKS_ACTIVE;
+check_collision_with_blocks = global.BLOCKS_ACTIVE;
 
 // states
 grounded = false;
