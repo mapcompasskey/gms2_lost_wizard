@@ -37,9 +37,10 @@ global.PLAYER = noone;
 // parameters
 global.GRAV = 500;
 global.TICK = 0;
+global.BLOCKS_ACTIVE = false;
 
 // game size and scaling
-global.VIEW_SCALE = 3;
+global.VIEW_SCALE = 6;
 global.WINDOW_WIDTH = window_get_width();
 global.WINDOW_HEIGHT = window_get_height();
 global.VIEW_WIDTH = (global.WINDOW_WIDTH / global.VIEW_SCALE);

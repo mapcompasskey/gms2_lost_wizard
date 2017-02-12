@@ -4,7 +4,7 @@
 //
 // Update Scale Factor
 //
-// The obj_game tracks if the game's aspect ratio changes and updates the scale_factor.
+// The obj_game tracks if the game's aspect ratio changes and updates the obj_hud's scale_factor.
 //
 if (scale_factor_updated)
 {
@@ -30,10 +30,10 @@ if (player_health_updated)
     // update the player's health text
     var perc = round(player_health / player_max_health * 100);
     player_health_text = string(perc) + "%, " + string(player_health) + " / " + string(player_max_health);
-
+    
     // update the marker subimages list
     health_marker_subimages = ds_list_create();
-
+    
     var subimage = 0;
     var lgnth = ceil(player_max_health / 2);
     for (var i = 1; i <= lgnth; i++)
@@ -47,7 +47,7 @@ if (player_health_updated)
         {
             subimage = 1;
         }
-    
+        
         ds_list_add(health_marker_subimages, subimage);
     }
     

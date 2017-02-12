@@ -37,6 +37,8 @@ damage_from = noone;
 // movement collision
 entity_hit_tilemap_x = false;
 entity_hit_tilemap_y = false;
+entity_hit_block_x = false;
+entity_hit_block_y = false;
 entity_at_edge_of_tilemap = false;
 
 movement_collision_script = scr_entity_movement_collision;
@@ -44,6 +46,9 @@ movement_collision_script = scr_entity_movement_collision;
 // collision tile map
 var collision_layer_id = layer_get_id("CollisionMap");
 tilemap = layer_tilemap_get_id(collision_layer_id);
+
+// collision with blocks
+check_blocks_collision = global.BLOCKS_ACTIVE;
 
 // states
 grounded = false;

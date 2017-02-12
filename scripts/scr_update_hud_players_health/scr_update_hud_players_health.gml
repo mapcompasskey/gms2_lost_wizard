@@ -12,12 +12,14 @@ if (instance_exists(global.HUD))
         var temp_current_health = 0;
         var temp_max_health = 0;
         
+        // get values from the player instance
         with (global.PLAYER)
         {
             temp_current_health = current_health;
             temp_max_health = max_health;
         }
         
+        // pass values into the HUD instance
         with (global.HUD)
         {
             player_health = temp_current_health;

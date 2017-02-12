@@ -16,6 +16,9 @@ max_velocity_y = 400;
 max_health = 10;
 current_health = 10;
 
+// collision
+movement_collision_script = scr_player_movement_collision;
+
 // states
 attacking = false;
 
