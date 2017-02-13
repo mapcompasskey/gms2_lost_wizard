@@ -1,7 +1,7 @@
 {
     "id": "a1d5cdee-2371-4f9b-91cc-385f3d12f71e",
     "modelName": "GMSprite",
-    "mvc": "1.0",
+    "mvc": "1.12",
     "name": "spr_block_trigger_2",
     "For3D": false,
     "HTile": false,

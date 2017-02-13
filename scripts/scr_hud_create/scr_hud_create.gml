@@ -27,12 +27,15 @@ health_marker_data[2] = sprite_get_height(health_marker_sprite);
 
 // player health marker drawing values
 // array(padding, width, height)
-health_marker_draw[0] = 0;
-health_marker_draw[1] = 0;
-health_marker_draw[2] = 0;
+health_marker_draw[0] = (health_marker_data[0] * scale_sprites);
+health_marker_draw[1] = (health_marker_data[1] * scale_sprites);
+health_marker_draw[2] = (health_marker_data[2] * scale_sprites);
 
 // update globals
 global.HUD = id;
+
+// get the game's aspect ratio
+scr_update_hud_scale_factor();
 
 // get the players health
 scr_update_hud_players_health();

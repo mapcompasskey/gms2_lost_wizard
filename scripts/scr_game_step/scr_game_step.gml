@@ -19,17 +19,15 @@ var a = application_get_position();
 var ratio = ((a[2] - a[0]) / view_get_wport(0));
 if (ratio != aspect_ratio)
 {
-    // update GUI scaling in the HUD
-    if (instance_exists(global.HUD))
-    {
-        with (global.HUD)
-        {
-            scale_factor = ratio;
-            scale_factor_updated = true;
-        }
-    }
-    
     // update aspect ratio
     aspect_ratio = ratio;
+    global.GAME_ASPECT_RATIO = ratio;
+    
+    // update scale factor in the HUD
+    scr_update_hud_scale_factor();
 }
 
+if (keyboard_check_pressed(ord("R")))
+{
+    room_restart();
+}

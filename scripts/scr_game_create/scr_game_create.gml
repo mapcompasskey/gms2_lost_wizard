@@ -40,6 +40,7 @@ global.TICK = 0;
 global.BLOCKS_ACTIVE = false;
 global.BLOCK_1_ACTIVE = false;
 global.BLOCK_2_ACTIVE = false;
+global.GAME_ASPECT_RATIO = 1;
 
 // game size and scaling
 global.VIEW_SCALE = 3;
@@ -67,4 +68,5 @@ global.ROOM_LAYER_PLAYER = "Player";
 // Set Instance Variables
 //
 aspect_ratio = 1;
+
 

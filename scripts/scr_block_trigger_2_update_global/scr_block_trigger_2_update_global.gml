@@ -1,4 +1,4 @@
-/// @descr scr_block_trigger_update_global()
+/// @descr scr_block_trigger_2_update_global()
 
 
 // update global

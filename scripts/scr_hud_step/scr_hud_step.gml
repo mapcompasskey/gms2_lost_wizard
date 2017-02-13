@@ -4,7 +4,7 @@
 //
 // Update Scale Factor
 //
-// The obj_game tracks if the game's aspect ratio changes and updates the obj_hud's scale_factor.
+// called by scr_update_hud_scale_factor()
 //
 if (scale_factor_updated)
 {
@@ -24,6 +24,8 @@ if (scale_factor_updated)
 
 //
 // If the Player's Health has Changed
+//
+// called by scr_update_hud_players_health()
 //
 if (player_health_updated)
 {
