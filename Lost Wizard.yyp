@@ -282,7 +282,7 @@
             "Key": "38747276-736a-477f-9655-9f1f34a9dd64",
             "Value": {
                 "id": "0d1ca3fb-ceb9-468b-a124-98eb20472b3b",
-                "resourcePath": "scripts\\scr_update_players_health\\scr_update_players_health.yy",
+                "resourcePath": "scripts\\scr_update_globals_player_health\\scr_update_globals_player_health.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -767,6 +767,14 @@
             }
         },
         {
+            "Key": "a7052586-f18c-425d-93a2-33e2cd98b0dc",
+            "Value": {
+                "id": "f0a8b08f-038a-4a61-a67d-e652fff42003",
+                "resourcePath": "scripts\\scr_update_hud_player_health\\scr_update_hud_player_health.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "a802d3ae-bd0b-42ac-acf3-17a7c423015d",
             "Value": {
                 "id": "22198d4c-2c28-4a84-9e67-6b645a8a82f4",
@@ -1130,7 +1138,7 @@
             "Key": "f59eae95-2c6e-4c19-9333-048d06cf7184",
             "Value": {
                 "id": "0d825c41-2b37-4053-af7f-0600f026fe36",
-                "resourcePath": "scripts\\scr_camera_update\\scr_camera_update.yy",
+                "resourcePath": "scripts\\scr_update_camera\\scr_update_camera.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -1213,8 +1221,9 @@
         "28e4b675-562f-4356-ae1e-cccdc9909f9b",
         "91e4f3fc-da84-4d6f-92ef-ab739e4372a2",
         "f59eae95-2c6e-4c19-9333-048d06cf7184",
+        "38747276-736a-477f-9655-9f1f34a9dd64",
         "48ab4849-c3fc-4537-aff4-92bdaaceab35",
-        "38747276-736a-477f-9655-9f1f34a9dd64"
+        "a7052586-f18c-425d-93a2-33e2cd98b0dc"
     ],
     "tutorial": ""
 }

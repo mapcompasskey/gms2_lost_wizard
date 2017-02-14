@@ -1,6 +1,10 @@
 /// @descr scr_player_create()
 
+
 event_inherited();
+
+// update globals
+global.PLAYER = id;
 
 // movement
 speed_x = 100;
@@ -35,9 +39,3 @@ sprite_bbox_top = sprite_get_bbox_top(sprite_index) - sprite_get_yoffset(sprite_
 // inputs
 key_attack_pressed = false;
 key_attack_released = false;
-
-// update globals
-global.PLAYER = id;
-
-// update the HUD
-scr_update_players_health();

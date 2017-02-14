@@ -46,7 +46,7 @@ if ( ! dying && ! hurting && ! recovering)
                 }
                 
                 // update the player health
-                scr_update_players_health();
+                scr_update_globals_player_health();
             }
         }
         
@@ -69,7 +69,5 @@ if ( ! dying)
 //
 // Update Camera
 //
-
-// move towards the player
-scr_camera_update(x, y, false);
+scr_update_camera(x, y, false);
 //scr_camera_update(x, (y + sprite_bbox_top), false);

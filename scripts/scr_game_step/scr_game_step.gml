@@ -27,6 +27,10 @@ if (ratio != aspect_ratio)
     scr_update_hud_scale_factor();
 }
 
+
+//
+// Restart the Room (For Testing)
+//
 if (keyboard_check_pressed(ord("R")))
 {
     room_restart();

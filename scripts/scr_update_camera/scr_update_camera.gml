@@ -1,4 +1,4 @@
-/// @descr scr_camera_update(target_x, target_y, snap_to)
+/// @descr scr_update_camera(target_x, target_y, snap_to)
 /// @param {number} target_x The x position to move the camera to.
 /// @param {number} target_y The y position to move the camera to.
 /// @param {bool} snap_to Whether to instantly move to the target or to transition towards it.

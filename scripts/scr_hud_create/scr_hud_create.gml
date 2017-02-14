@@ -1,16 +1,19 @@
 /// @descr scr_hud_create()
 
 
+// update globals
+global.HUD = id;
+
 // the amount to scale text and images
-scale_factor = 1;
+scale_factor = global.GAME_ASPECT_RATIO;;
+scale_factor_updated = true;
 scale_text = 1;
 scale_sprites = 1;
-scale_factor_updated = false;
 
 // the player's health
-player_health = 0;
-player_max_health = 0;
-player_health_updated = false;
+player_health = global.PLAYER_HEALTH;
+player_max_health = global.PLAYER_MAX_HEALTH;
+player_health_updated = true;
 player_health_text = "";
 
 // player health marker
@@ -30,12 +33,3 @@ health_marker_data[2] = sprite_get_height(health_marker_sprite);
 health_marker_draw[0] = (health_marker_data[0] * scale_sprites);
 health_marker_draw[1] = (health_marker_data[1] * scale_sprites);
 health_marker_draw[2] = (health_marker_data[2] * scale_sprites);
-
-// update globals
-global.HUD = id;
-
-// get the game's aspect ratio
-scr_update_hud_scale_factor();
-
-// get the players health
-scr_update_players_health();
