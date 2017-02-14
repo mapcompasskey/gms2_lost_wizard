@@ -282,7 +282,7 @@
             "Key": "38747276-736a-477f-9655-9f1f34a9dd64",
             "Value": {
                 "id": "0d1ca3fb-ceb9-468b-a124-98eb20472b3b",
-                "resourcePath": "scripts\\scr_update_hud_players_health\\scr_update_hud_players_health.yy",
+                "resourcePath": "scripts\\scr_update_players_health\\scr_update_players_health.yy",
                 "resourceType": "GMScript"
             }
         },

@@ -13,8 +13,8 @@ max_velocity_x = 200;
 max_velocity_y = 400;
 
 // object collision
-max_health = 10;
-current_health = 10;
+max_health = global.PLAYER_MAX_HEALTH;
+current_health = global.PLAYER_HEALTH;
 
 // collision
 movement_collision_script = scr_player_movement_collision;
@@ -40,4 +40,4 @@ key_attack_released = false;
 global.PLAYER = id;
 
 // update the HUD
-scr_update_hud_players_health();
+scr_update_players_health();

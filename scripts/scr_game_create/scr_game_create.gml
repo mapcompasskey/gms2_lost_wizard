@@ -42,6 +42,9 @@ global.BLOCK_1_ACTIVE = false;
 global.BLOCK_2_ACTIVE = false;
 global.GAME_ASPECT_RATIO = 1;
 
+global.PLAYER_HEALTH = 10;
+global.PLAYER_MAX_HEALTH = 10;
+
 // game size and scaling
 global.VIEW_SCALE = 3;
 global.WINDOW_WIDTH = window_get_width();

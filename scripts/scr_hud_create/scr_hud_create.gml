@@ -38,4 +38,4 @@ global.HUD = id;
 scr_update_hud_scale_factor();
 
 // get the players health
-scr_update_hud_players_health();
+scr_update_players_health();
