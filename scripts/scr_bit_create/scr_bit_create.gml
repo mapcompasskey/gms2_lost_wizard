@@ -1,16 +1,13 @@
 /// @descr scr_bit_create()
 
 
-dying = false;
-pulling = false;
-
-bursting = true;
+// inital burst movement
 burst_speed = random_range(10, 30);
 busrt_angle = random_range(0, 360);
 burst_x = dcos(busrt_angle) * burst_speed;
 burst_y = dsin(busrt_angle) * burst_speed;
 
-
+// sine wave based movement
 motion_x = 0;
 motion_y = 0;
 
@@ -35,3 +32,9 @@ if (irandom(1))
     angle_speed_y = -(angle_speed_y);
 }
 
+// states
+dying = false;
+bursting = true;
+
+following = false;
+following_id = noone;

@@ -1,5 +1,5 @@
 /// @descr scr_update_globals_player_bits(bits)
-/// @param {number} bits The number of bits to add (or subtract with a negative number)
+/// @param {number} bits The number of bits to add (or subtract if a negative number)
 
 
 //

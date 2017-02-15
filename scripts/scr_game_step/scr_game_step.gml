@@ -29,9 +29,27 @@ if (ratio != aspect_ratio)
 
 
 //
-// Restart the Room (For Testing)
+// For Testing
 //
+
+// restart the room to test how instances react with updated globals
 if (keyboard_check_pressed(ord("R")))
 {
     room_restart();
+}
+
+// kill/create the player to test how instances react to it disappearing
+if (keyboard_check_pressed(ord("T")))
+{
+    if (instance_exists(global.PLAYER))
+    {
+        with (global.PLAYER)
+        {
+            instance_destroy();
+        }
+    }
+    else
+    {
+        instance_create_layer(0, 0, global.ROOM_LAYER_PLAYER, obj_player);
+    }
 }

@@ -3,7 +3,11 @@
 
 var tick = global.TICK;
 
-if ( ! dying && ! pulling)
+
+//
+// Update Movement
+//
+if ( ! dying && ! following)
 {
     if (bursting)
     {
@@ -44,34 +48,65 @@ if ( ! dying && ! pulling)
 }
 
 
-
-pulling = false;
+//
+// Check If Following an Instance
+//
 if ( ! dying)
 {
-    if (instance_exists(global.PLAYER))
+    // if not being pulled towards an instance
+    if (following_id == noone)
     {
-        var dist = distance_to_object(global.PLAYER);
-        if (dist < 40)
+        with (obj_player)
         {
-            pulling = true;
-            
-            if (dist < 1)
+            // if close to a player object
+            var dist = distance_to_object(other);
+            if (dist < 40)
             {
-                dying = true;
-                scr_update_globals_player_bits(1);
-                instance_destroy();
+                // update the bit
+                other.following = true;
+                other.following_id = id;
+                break;
             }
         }
-        
-        if (pulling)
-        {
-            var deg = point_direction(x, y, global.PLAYER.x, global.PLAYER.y);
-            var mx = dcos(deg) * 50 * tick;
-            var my = dsin(deg) * 50 * tick * -1;
-            
-            x += mx;
-            y += my;
-        }
     }
+    // else, being pulled towards an instance
+    else
+    {
+        var inst = following_id;
+        
+        // reset the reference
+        following = false;
+        following_id = noone;
+        
+        // if the instance still exsits
+        if (instance_exists(inst))
+        {
+            // if its still within range
+            var dist = distance_to_object(inst);
+            if (dist < 40)
+            {
+                // update the reference
+                following = true;
+                following_id = inst;
+                
+                // move towards the instance
+                var deg = point_direction(x, y, inst.x, inst.y);
+                x += dcos(deg) * 50 * tick;
+                y += dsin(deg) * 50 * tick * -1;
+                
+                // if close enough to be picked up
+                if (dist < 1)
+                {
+                    scr_update_globals_player_bits(1);
+                    dying = true;
+                    instance_destroy();
+                }
+                
+            }
+            
+        }
+    
+    }
+    
 }
 
