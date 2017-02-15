@@ -31,6 +31,14 @@
     },
     "resources": [
         {
+            "Key": "001f525c-f52b-482a-997a-26d5d73f4541",
+            "Value": {
+                "id": "ad3e132c-9cd0-4b13-b3bd-91cadf1d2229",
+                "resourcePath": "views\\001f525c-f52b-482a-997a-26d5d73f4541.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "00ad5939-fe5b-4445-9732-628978a92c66",
             "Value": {
                 "id": "8cc6bf75-83f1-4e28-9bd9-33848d88da50",
@@ -351,6 +359,14 @@
             }
         },
         {
+            "Key": "430e6530-7bf0-4643-98d7-5c0ff3c61860",
+            "Value": {
+                "id": "7ac95609-1f20-4cde-97a7-4f3801c23a1e",
+                "resourcePath": "scripts\\scr_bit_create\\scr_bit_create.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "44e3ddd5-58df-48b1-bcd7-4d2b0025ef4b",
             "Value": {
                 "id": "3cb5a226-111d-4b69-a51d-96ed663b89b5",
@@ -388,6 +404,14 @@
                 "id": "8530c692-dd24-4394-bc83-2571129792bf",
                 "resourcePath": "scripts\\scr_enemy_step\\scr_enemy_step.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "4c7c7733-3555-44ba-a707-51f8b865cfa2",
+            "Value": {
+                "id": "6f571982-a1d8-470a-b5e3-6be89b334f55",
+                "resourcePath": "views\\4c7c7733-3555-44ba-a707-51f8b865cfa2.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -599,6 +623,14 @@
             }
         },
         {
+            "Key": "73f0ba9a-b474-4573-8c2f-5d265f357d84",
+            "Value": {
+                "id": "a81b8784-1ee9-4179-8889-b85046e533e3",
+                "resourcePath": "scripts\\scr_bit_step\\scr_bit_step.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "7cd2462f-54e2-46dd-80a9-3e7d3f1e88f2",
             "Value": {
                 "id": "13460216-ee20-4399-a7bb-201dedb4a48b",
@@ -620,6 +652,14 @@
                 "id": "48c604f5-fd5e-462a-ac81-6ecd66e41322",
                 "resourcePath": "scripts\\scr_block_2_create\\scr_block_2_create.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "86a2e8db-83f0-440e-9dd7-433daeddbf4c",
+            "Value": {
+                "id": "74be9ea8-dd89-4b3b-8262-5cf117ae5a7e",
+                "resourcePath": "sprites\\spr_bit\\spr_bit.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -735,6 +775,14 @@
             }
         },
         {
+            "Key": "9e3285da-3fb0-44c1-b43f-d9ec8e72f2ca",
+            "Value": {
+                "id": "c1999685-da91-4c62-b790-93db6a71ea87",
+                "resourcePath": "views\\9e3285da-3fb0-44c1-b43f-d9ec8e72f2ca.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "a1d5cdee-2371-4f9b-91cc-385f3d12f71e",
             "Value": {
                 "id": "00dc89cb-2c4e-47fe-9c9d-69c7b6052e2f",
@@ -804,6 +852,14 @@
                 "id": "173b93d3-1ca4-492a-b5b9-6d1bb1f4e4a7",
                 "resourcePath": "views\\ac483c2e-a1c0-422b-8a15-a98d8c9fa9a9.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "ae547541-4678-47c2-9508-ad632e3f9183",
+            "Value": {
+                "id": "0119f86c-5ece-4cf2-8a36-9165ee882f62",
+                "resourcePath": "objects\\obj_bit\\obj_bit.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -1218,6 +1274,8 @@
         "54af14bb-e3b8-4ac8-a12e-e0b2eab918ff",
         "19d9c25e-9274-482b-a1cb-4477da09946b",
         "9c1b8503-bdca-42ef-ab7f-6eca19835534",
+        "430e6530-7bf0-4643-98d7-5c0ff3c61860",
+        "73f0ba9a-b474-4573-8c2f-5d265f357d84",
         "28e4b675-562f-4356-ae1e-cccdc9909f9b",
         "91e4f3fc-da84-4d6f-92ef-ab739e4372a2",
         "f59eae95-2c6e-4c19-9333-048d06cf7184",
