@@ -1,6 +1,7 @@
 /// @descr scr_bit_create()
 
 
+dying = false;
 pulling = false;
 
 bursting = true;

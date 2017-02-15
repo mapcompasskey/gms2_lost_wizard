@@ -21,3 +21,11 @@ for (var i = 0; i < ds_list_size(health_marker_subimages); i++)
     draw_sprite_ext(health_marker_sprite, subimage, pos_x, pos_y, scale_sprites, scale_sprites, 0, c_white, 1);
     pos_x = (pos_x + health_marker_draw[1]);
 }
+
+
+
+// display the bits text
+draw_set_color(c_white);
+draw_set_halign(fa_left);
+draw_set_valign(fa_top);
+draw_text(150, 10, player_bits_text);

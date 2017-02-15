@@ -33,3 +33,6 @@ health_marker_data[2] = sprite_get_height(health_marker_sprite);
 health_marker_draw[0] = (health_marker_data[0] * scale_sprites);
 health_marker_draw[1] = (health_marker_data[1] * scale_sprites);
 health_marker_draw[2] = (health_marker_data[2] * scale_sprites);
+
+
+player_bits_text = "";

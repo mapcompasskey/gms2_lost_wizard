@@ -56,3 +56,8 @@ if (player_health_updated)
     player_health_updated = false;
 }
 
+
+
+player_bits_text = "BITS: " + string(global.PLAYER_BITS);
+
+

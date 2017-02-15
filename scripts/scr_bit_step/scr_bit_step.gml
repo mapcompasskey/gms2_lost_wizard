@@ -3,7 +3,7 @@
 
 var tick = global.TICK;
 
-if ( ! pulling)
+if ( ! dying && ! pulling)
 {
     if (bursting)
     {
@@ -44,30 +44,34 @@ if ( ! pulling)
 }
 
 
+
 pulling = false;
-if (instance_exists(global.PLAYER))
+if ( ! dying)
 {
-    var distance_to_player = distance_to_object(global.PLAYER);
-    
-    if (distance_to_player < 40)
+    if (instance_exists(global.PLAYER))
     {
-        pulling = true;
-        
-        if (distance_to_player < 1)
+        var dist = distance_to_object(global.PLAYER);
+        if (dist < 40)
         {
-            instance_destroy();
+            pulling = true;
+        
+            if (dist < 1)
+            {
+                dying = true;
+                global.PLAYER_BITS += 1;
+                instance_destroy();
+            }
         }
-    }
-    
-    if (pulling)
-    {
-        var angle_to_player = point_direction(x, y, global.PLAYER.x, global.PLAYER.y);
         
-        var mx = dcos(angle_to_player) * 50 * tick;
-        var my = dsin(angle_to_player) * 50 * tick * -1;
-        
-        x += mx;
-        y += my;
+        if (pulling)
+        {
+            var deg = point_direction(x, y, global.PLAYER.x, global.PLAYER.y);
+            var mx = dcos(deg) * 50 * tick;
+            var my = dsin(deg) * 50 * tick * -1;
+            
+            x += mx;
+            y += my;
+        }
     }
 }
 
