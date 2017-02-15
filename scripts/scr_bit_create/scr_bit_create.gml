@@ -1,6 +1,8 @@
 /// @descr scr_bit_create()
 
 
+pulling = false;
+
 bursting = true;
 burst_speed = random_range(10, 30);
 busrt_angle = random_range(0, 360);
@@ -31,3 +33,4 @@ if (irandom(1))
 {
     angle_speed_y = -(angle_speed_y);
 }
+
