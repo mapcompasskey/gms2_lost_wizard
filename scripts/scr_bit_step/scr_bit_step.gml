@@ -23,22 +23,24 @@ if ( ! dying && ! following)
             bursting = false;
         }
     }
-
+    
+    // update the x-axis curve
     motion_angle_x += (angle_speed_x * tick);
     if (motion_angle_x > 360)
     {
         motion_angle_x = (motion_angle_x % 360);
     }
+    motion_x = dcos(motion_angle_x) * motion_radius_x;
     
+    // update the y-axis curve
     motion_angle_y += (angle_speed_y * tick);
     if (motion_angle_y > 360)
     {
         motion_angle_y = (motion_angle_y % 360);
     }
-    
-    motion_x = dcos(motion_angle_x) * motion_radius_x;
     motion_y = dsin(motion_angle_y) * motion_radius_y;
-
+    
+    // update position
     x += (previous_motion_x - motion_x);
     y += (previous_motion_y - motion_y);
     
@@ -48,64 +50,99 @@ if ( ! dying && ! following)
 
 
 //
-// Check If Following an Instance
+// Check if Following an Instance
 //
 if ( ! dying)
 {
-    // if not being pulled towards an instance
-    if (following_id == noone)
+    // if the bit can't be captured yet
+    if ( ! can_capture)
     {
-        with (obj_player)
+        image_alpha = 0.5;
+        can_capture_timer += tick;
+        if (can_capture_timer >= can_capture_time)
         {
-            // if close to a player object
-            var dist = distance_to_object(other);
-            if (dist < other.proximity_max)
-            {
-                // update the bit
-                other.following = true;
-                other.following_id = id;
-                break;
-            }
+            image_alpha = 1.0;
+            can_capture = true;
         }
     }
     
-    // else, being pulled towards an instance
+    // else, the bit can be captured
     else
     {
-        var inst = following_id;
-        
-        // reset the reference
-        following = false;
-        following_id = noone;
-        
-        // if the instance still exsits
-        if (instance_exists(inst))
+        // if not being pulled towards an instance
+        if (following_id == noone)
         {
-            // if its still within range
-            var dist = distance_to_object(inst);
-            if (dist < proximity_max)
+            // *if there were multiple players, this would target the closest
+            var previous_dist = proximity_max;
+            with (obj_player)
             {
-                // update the reference
-                following = true;
-                following_id = inst;
-                
-                // move towards the instance
-                var deg = point_direction(x, y, inst.x, inst.y);
-                x += dcos(deg) * following_speed * tick;
-                y += dsin(deg) * following_speed * tick * -1;
-                
-                // if close enough to be picked up
-                if (dist < proximity_min)
+                // if this player instance is close
+                var dist = distance_to_object(other);
+                if (dist < previous_dist)
                 {
-                    scr_update_globals_player_bits(points);
-                    dying = true;
-                    instance_destroy();
+                    // update the bit
+                    other.following_id = id;
+                    previous_dist = dist;
                 }
-                
             }
             
         }
+        
+        // else, being pulled towards an instance
+        else
+        {
+            var inst = following_id;
+            
+            // reset the reference
+            following = false;
+            following_id = noone;
+            
+            // if the instance still exsits
+            if (instance_exists(inst))
+            {
+                // if its still within range
+                var dist = distance_to_object(inst);
+                if (dist < proximity_max)
+                {
+                    // update the reference
+                    following_id = inst;
+                    
+                    // move towards the instance
+                    if (can_follow)
+                    {
+                        following = true;
+                        
+                        var pos_x = (inst.bbox_left + ((inst.bbox_right - inst.bbox_left) / 2));
+                        var pos_y = (inst.bbox_top + ((inst.bbox_bottom - inst.bbox_top) / 2));
+                        var deg = point_direction(x, y, pos_x, pos_y);
+                        x += dcos(deg) * following_speed * tick;
+                        y += dsin(deg) * following_speed * tick * -1;
+                    }
+                    
+                    // if close enough to be picked up
+                    if (dist < proximity_min)
+                    {
+                        scr_update_globals_player_bits(points);
+                        dying = true;
+                        instance_destroy();
+                    }
+                
+                }
+            
+            }
+        
+        }
+    }
     
+    
+    // if the bit can't follow
+    if ( ! can_follow)
+    {
+        can_follow_timer += tick;
+        if (can_follow_timer >= can_follow_time)
+        {
+            can_follow = true;
+        }
     }
     
 }

@@ -57,6 +57,7 @@ global.BG_COLOR = make_color_rgb(24, 23, 76); // dark purple
 // room layer names
 global.ROOM_LAYER_CONTROLLERS = "Controllers";
 global.ROOM_LAYER_PLAYER = "Player";
+global.ROOM_LAYER_INSTANCES = "Instances";
 
 // input keys to listen for
 // *set as globals so they can be remapped

@@ -1,7 +1,7 @@
 /// @descr scr_bit_create()
 
 
-// inital burst movement
+// initial burst movement
 burst_speed = random_range(10, 30);
 busrt_angle = random_range(0, 360);
 
@@ -43,8 +43,17 @@ points = 1;
 dying = false;
 bursting = true;
 following = false;
+can_capture = false;
+can_follow = false;
 
 // drawing
 image_speed = 0;
 image_index = irandom_range(0, 2);
 points += image_index;
+
+// timers
+can_capture_timer = 0;
+can_capture_time = 0.5;
+can_follow_timer = 0;
+can_follow_time = 1;
+
