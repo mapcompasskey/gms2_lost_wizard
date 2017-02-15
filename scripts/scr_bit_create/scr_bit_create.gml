@@ -36,6 +36,8 @@ following_speed = 100;
 proximity_max = 40;
 proximity_min = 1;
 
+proximity_collision_script = scr_bit_proximity_collision;
+
 // settings
 points = 1;
 
@@ -47,9 +49,8 @@ can_capture = false;
 can_follow = false;
 
 // drawing
-image_speed = 0;
-image_index = irandom_range(0, 2);
-points += image_index;
+//image_speed = 0;
+//image_index = 0;
 
 // timers
 can_capture_timer = 0;

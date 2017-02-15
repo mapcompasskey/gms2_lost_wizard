@@ -24,10 +24,10 @@ for (var i = 0; i < ds_list_size(health_marker_subimages); i++)
 
 
 //
-// Display the Number of Player Bits
+// Display the Number of Player Souls
 //
 draw_set_color(c_white);
 draw_set_halign(fa_left);
 draw_set_valign(fa_top);
-draw_text(150, 10, player_bits_text);
+draw_text(150, 10, player_souls_text);
 

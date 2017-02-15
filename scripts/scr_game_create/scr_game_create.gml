@@ -44,7 +44,7 @@ global.GAME_ASPECT_RATIO = 1;
 
 global.PLAYER_HEALTH = 10;
 global.PLAYER_MAX_HEALTH = 10;
-global.PLAYER_BITS = 0;
+global.PLAYER_SOULS = 0;
 
 // game size and scaling
 global.VIEW_SCALE = 3;

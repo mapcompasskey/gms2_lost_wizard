@@ -1,8 +1,8 @@
 {
-    "id": "cd89c08f-d7af-4ef9-880b-d2bae1aeee3e",
+    "id": "cb8156a8-4b96-4c31-a95c-3f29c6faf293",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "scr_update_globals_player_bits",
+    "name": "scr_soul_proximity_collision",
     "IsCompatibility": false,
     "IsDnD": false
 }

@@ -34,7 +34,7 @@ health_marker_draw[0] = (health_marker_data[0] * scale_sprites);
 health_marker_draw[1] = (health_marker_data[1] * scale_sprites);
 health_marker_draw[2] = (health_marker_data[2] * scale_sprites);
 
-// the player's collected bits
-player_bits = global.PLAYER_BITS;
-player_bits_updated = true;
-player_bits_text = "";
+// the player's collected souls
+player_souls = global.PLAYER_SOULS;
+player_souls_updated = true;
+player_souls_text = "";

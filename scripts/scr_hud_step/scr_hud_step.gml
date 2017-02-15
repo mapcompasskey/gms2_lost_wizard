@@ -54,11 +54,11 @@ if (player_health_updated)
 
 
 //
-// If the Number of Player Bits has Changed
+// If the Number of Player Souls has Changed
 //
-if (player_bits_updated)
+if (player_souls_updated)
 {
-    player_bits_text = "BITS: " + string(player_bits);
-    player_bits_updated = false;
+    player_souls_text = "SOULS: " + string(player_souls);
+    player_souls_updated = false;
 }
 
