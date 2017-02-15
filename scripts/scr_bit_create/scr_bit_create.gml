@@ -54,6 +54,10 @@ points += image_index;
 // timers
 can_capture_timer = 0;
 can_capture_time = 0.5;
+
 can_follow_timer = 0;
 can_follow_time = 1;
+
+kill_timer = 0;
+kill_time = 10;
 

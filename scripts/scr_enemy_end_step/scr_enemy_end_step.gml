@@ -49,6 +49,8 @@ if ( ! dying && ! hurting && ! recovering)
                     instance_create_layer(pos_x, pos_y, global.ROOM_LAYER_PLAYER, obj_bit);
                     instance_create_layer(pos_x, pos_y, global.ROOM_LAYER_PLAYER, obj_bit);
                     instance_create_layer(pos_x, pos_y, global.ROOM_LAYER_PLAYER, obj_bit);
+                    instance_create_layer(pos_x, pos_y, global.ROOM_LAYER_PLAYER, obj_bit);
+                    instance_create_layer(pos_x, pos_y, global.ROOM_LAYER_PLAYER, obj_bit);
                     
                     // reset variables
                     velocity_x = 0;

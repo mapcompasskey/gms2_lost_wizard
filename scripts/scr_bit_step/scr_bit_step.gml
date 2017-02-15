@@ -134,7 +134,6 @@ if ( ! dying)
         }
     }
     
-    
     // if the bit can't follow
     if ( ! can_follow)
     {
@@ -145,5 +144,19 @@ if ( ! dying)
         }
     }
     
+}
+
+
+//
+// Kill the Instance after a While
+//
+if ( ! dying)
+{
+    kill_timer += global.TICK;
+    if (kill_timer >= kill_time)
+    {
+        dying = true;
+        instance_destroy();
+    }
 }
 
