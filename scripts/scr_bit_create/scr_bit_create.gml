@@ -4,8 +4,6 @@
 // inital burst movement
 burst_speed = random_range(10, 30);
 busrt_angle = random_range(0, 360);
-burst_x = dcos(busrt_angle) * burst_speed;
-burst_y = dsin(busrt_angle) * burst_speed;
 
 // sine wave based movement
 motion_x = 0;
@@ -32,9 +30,21 @@ if (irandom(1))
     angle_speed_y = -(angle_speed_y);
 }
 
+// object tracking
+following_id = noone;
+following_speed = 100;
+proximity_max = 40;
+proximity_min = 1;
+
+// settings
+points = 1;
+
 // states
 dying = false;
 bursting = true;
-
 following = false;
-following_id = noone;
+
+// drawing
+image_speed = 0;
+image_index = irandom_range(0, 2);
+points += image_index;

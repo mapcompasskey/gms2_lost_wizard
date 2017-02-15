@@ -9,20 +9,19 @@ var tick = global.TICK;
 //
 if ( ! dying && ! following)
 {
+    // if moving outward
     if (bursting)
     {
-        burst_x = dcos(busrt_angle) * burst_speed * tick;
-        burst_y = dsin(busrt_angle) * burst_speed * tick;
+        // update movement
+        x += dcos(busrt_angle) * burst_speed * tick;;
+        y += dsin(busrt_angle) * burst_speed * tick;
         
-        x += burst_x;
-        y += burst_y;
-        
+        // slow down burst speed
         burst_speed = lerp(burst_speed, 0, 0.1);
         if (burst_speed < 1)
         {
             bursting = false;
         }
-    
     }
 
     motion_angle_x += (angle_speed_x * tick);
@@ -60,7 +59,7 @@ if ( ! dying)
         {
             // if close to a player object
             var dist = distance_to_object(other);
-            if (dist < 40)
+            if (dist < other.proximity_max)
             {
                 // update the bit
                 other.following = true;
@@ -69,6 +68,7 @@ if ( ! dying)
             }
         }
     }
+    
     // else, being pulled towards an instance
     else
     {
@@ -83,7 +83,7 @@ if ( ! dying)
         {
             // if its still within range
             var dist = distance_to_object(inst);
-            if (dist < 40)
+            if (dist < proximity_max)
             {
                 // update the reference
                 following = true;
@@ -91,13 +91,13 @@ if ( ! dying)
                 
                 // move towards the instance
                 var deg = point_direction(x, y, inst.x, inst.y);
-                x += dcos(deg) * 50 * tick;
-                y += dsin(deg) * 50 * tick * -1;
+                x += dcos(deg) * following_speed * tick;
+                y += dsin(deg) * following_speed * tick * -1;
                 
                 // if close enough to be picked up
-                if (dist < 1)
+                if (dist < proximity_min)
                 {
-                    scr_update_globals_player_bits(1);
+                    scr_update_globals_player_bits(points);
                     dying = true;
                     instance_destroy();
                 }
