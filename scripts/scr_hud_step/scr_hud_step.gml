@@ -4,8 +4,6 @@
 //
 // Update Scale Factor
 //
-// called by scr_update_hud_scale_factor()
-//
 if (scale_factor_updated)
 {
     // update text and image scaling
@@ -24,8 +22,6 @@ if (scale_factor_updated)
 
 //
 // If the Player's Health has Changed
-//
-// called by scr_update_players_health()
 //
 if (player_health_updated)
 {
@@ -57,7 +53,12 @@ if (player_health_updated)
 }
 
 
-
-player_bits_text = "BITS: " + string(global.PLAYER_BITS);
-
+//
+// If the Number of Player Bits has Changed
+//
+if (player_bits_updated)
+{
+    player_bits_text = "BITS: " + string(player_bits);
+    player_bits_updated = false;
+}
 

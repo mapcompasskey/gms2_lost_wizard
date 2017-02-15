@@ -23,9 +23,11 @@ for (var i = 0; i < ds_list_size(health_marker_subimages); i++)
 }
 
 
-
-// display the bits text
+//
+// Display the Number of Player Buts
+//
 draw_set_color(c_white);
 draw_set_halign(fa_left);
 draw_set_valign(fa_top);
 draw_text(150, 10, player_bits_text);
+

@@ -54,11 +54,11 @@ if ( ! dying)
         if (dist < 40)
         {
             pulling = true;
-        
+            
             if (dist < 1)
             {
                 dying = true;
-                global.PLAYER_BITS += 1;
+                scr_update_globals_player_bits(1);
                 instance_destroy();
             }
         }
