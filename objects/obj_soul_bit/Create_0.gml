@@ -1,0 +1,1 @@
+scr_soul_bit_create();

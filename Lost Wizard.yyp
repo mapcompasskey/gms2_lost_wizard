@@ -674,7 +674,7 @@
             "Key": "7318f9a1-1f31-4b3e-a6b9-4c73b10f2d9b",
             "Value": {
                 "id": "77b05057-a2a6-49aa-994f-9cf733e1f21e",
-                "resourcePath": "scripts\\scr_soul_create\\scr_soul_create.yy",
+                "resourcePath": "scripts\\scr_soul_bit_create\\scr_soul_bit_create.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -730,7 +730,7 @@
             "Key": "86a2e8db-83f0-440e-9dd7-433daeddbf4c",
             "Value": {
                 "id": "74be9ea8-dd89-4b3b-8262-5cf117ae5a7e",
-                "resourcePath": "sprites\\spr_soul\\spr_soul.yy",
+                "resourcePath": "sprites\\spr_soul_bit\\spr_soul_bit.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -1082,7 +1082,7 @@
             "Key": "cb8156a8-4b96-4c31-a95c-3f29c6faf293",
             "Value": {
                 "id": "bf81efaa-c4da-405c-951d-8f88677d9a56",
-                "resourcePath": "scripts\\scr_soul_proximity_collision\\scr_soul_proximity_collision.yy",
+                "resourcePath": "scripts\\scr_soul_bit_proximity_collision\\scr_soul_bit_proximity_collision.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -1090,7 +1090,7 @@
             "Key": "cbfef43c-f4ca-42cb-b291-40821f9bc490",
             "Value": {
                 "id": "7564a440-e15a-4730-8a84-ab7bdb91abd9",
-                "resourcePath": "objects\\obj_soul\\obj_soul.yy",
+                "resourcePath": "objects\\obj_soul_bit\\obj_soul_bit.yy",
                 "resourceType": "GMObject"
             }
         },

@@ -8,7 +8,7 @@
         "cb8156a8-4b96-4c31-a95c-3f29c6faf293"
     ],
     "filterType": "GMScript",
-    "folderName": "Soul",
+    "folderName": "Soul Bit",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

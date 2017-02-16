@@ -1,8 +1,8 @@
-/// @descr scr_soul_proximity_collision()
+/// @descr scr_soul_bit_proximity_collision()
 
 
 //
-// Soul Proximity Collision Tests
+// Soul Bit Proximity Collision Tests
 //
 
 // update the number of player souls

@@ -1,8 +1,8 @@
 {
-    "id": "7318f9a1-1f31-4b3e-a6b9-4c73b10f2d9b",
+    "id": "cb8156a8-4b96-4c31-a95c-3f29c6faf293",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "scr_soul_create",
+    "name": "scr_soul_bit_proximity_collision",
     "IsCompatibility": false,
     "IsDnD": false
 }

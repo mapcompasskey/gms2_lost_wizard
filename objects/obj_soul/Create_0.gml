@@ -1,1 +1,0 @@
-scr_soul_create();

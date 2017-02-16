@@ -5,6 +5,6 @@
 // Default Bit Proximity Collision Tests
 //
 
-//scr_update_globals_player_bits(points);
+// kill the instance
 dying = true;
 instance_destroy();

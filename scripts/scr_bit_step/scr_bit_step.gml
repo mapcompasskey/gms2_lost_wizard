@@ -122,6 +122,7 @@ if ( ! dying)
                     // if close enough to be picked up
                     if (dist < proximity_min)
                     {
+                        // execute a script
                         script_execute(proximity_collision_script);
                     }
                 

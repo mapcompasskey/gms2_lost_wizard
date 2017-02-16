@@ -1,10 +1,10 @@
-/// @descr scr_soul_create()
+/// @descr scr_soul_bit_create()
 
 
 event_inherited();
 
 // object tracking
-proximity_collision_script = scr_soul_proximity_collision;
+proximity_collision_script = scr_soul_bit_proximity_collision;
 
 // settings
 points = 1;
