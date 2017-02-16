@@ -1,0 +1,1 @@
+scr_health_bit_create();

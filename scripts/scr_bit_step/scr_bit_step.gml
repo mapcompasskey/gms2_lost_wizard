@@ -122,9 +122,6 @@ if ( ! dying)
                     // if close enough to be picked up
                     if (dist < proximity_min)
                     {
-                        //scr_update_globals_player_bits(points);
-                        //dying = true;
-                        //instance_destroy();
                         script_execute(proximity_collision_script);
                     }
                 

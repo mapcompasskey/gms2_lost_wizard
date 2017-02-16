@@ -55,6 +55,14 @@
             }
         },
         {
+            "Key": "015079ec-84a3-4fcc-8ecd-d6e0e7eabc59",
+            "Value": {
+                "id": "dd808576-03f4-4412-9168-7389b68e61bb",
+                "resourcePath": "scripts\\scr_health_bit_create\\scr_health_bit_create.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "02246b4c-a3e2-4620-93fc-33d0bf240b4f",
             "Value": {
                 "id": "89252bc9-a822-44f5-b930-3879b4ca1d79",
@@ -140,6 +148,14 @@
                 "id": "874aef1c-5a1d-4e75-b7a1-426744ce1ac3",
                 "resourcePath": "scripts\\scr_projectile_create\\scr_projectile_create.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "18adbf6b-f8e4-4e61-baaa-efb2933c202e",
+            "Value": {
+                "id": "939b5a5e-104e-45e8-9ff1-2bf48a514df2",
+                "resourcePath": "views\\18adbf6b-f8e4-4e61-baaa-efb2933c202e.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -703,6 +719,14 @@
             }
         },
         {
+            "Key": "84f92768-8b31-423b-ae83-db9e0e629d6f",
+            "Value": {
+                "id": "5f033ab6-02aa-4656-8ec3-e817864ef2aa",
+                "resourcePath": "objects\\obj_health_bit\\obj_health_bit.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "86a2e8db-83f0-440e-9dd7-433daeddbf4c",
             "Value": {
                 "id": "74be9ea8-dd89-4b3b-8262-5cf117ae5a7e",
@@ -715,6 +739,14 @@
             "Value": {
                 "id": "d7c01014-9ddd-4b06-bfe2-378abccee315",
                 "resourcePath": "scripts\\scr_enemy_create\\scr_enemy_create.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "8a206780-7698-42e2-b456-806e13cad41d",
+            "Value": {
+                "id": "7d2372e3-9807-4460-b2fb-49e43c92d371",
+                "resourcePath": "scripts\\scr_health_bit_proximity_collision\\scr_health_bit_proximity_collision.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -1247,6 +1279,14 @@
             }
         },
         {
+            "Key": "f0e8002f-f6fc-42db-90bb-f593b9769eb8",
+            "Value": {
+                "id": "87c92a96-3f8a-469a-8b6f-62772bb238c6",
+                "resourcePath": "sprites\\spr_health_bit\\spr_health_bit.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "f1033382-3180-4569-adf2-d0f33347672b",
             "Value": {
                 "id": "d9e94db8-03d8-446a-b532-9de30e8cdc99",
@@ -1359,6 +1399,8 @@
         "0632b993-731d-4b74-99b1-2e25f13cb4f2",
         "7318f9a1-1f31-4b3e-a6b9-4c73b10f2d9b",
         "cb8156a8-4b96-4c31-a95c-3f29c6faf293",
+        "015079ec-84a3-4fcc-8ecd-d6e0e7eabc59",
+        "8a206780-7698-42e2-b456-806e13cad41d",
         "28e4b675-562f-4356-ae1e-cccdc9909f9b",
         "91e4f3fc-da84-4d6f-92ef-ab739e4372a2",
         "f59eae95-2c6e-4c19-9333-048d06cf7184",
