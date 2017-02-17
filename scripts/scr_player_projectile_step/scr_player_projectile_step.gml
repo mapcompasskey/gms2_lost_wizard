@@ -24,17 +24,15 @@ if ( ! dying)
         {
             if (place_meeting(x, y, other))
             {
-                // if the enemy can be damaged
-                if (can_be_damaged && damage_from == noone)
+                // if the entity is damaged
+                if (scr_damage_entity(id, other, -damage))
                 {
-                    // update enemy
-                    damage_from = other;
-                    
                     // update projectile
                     other.dying = true;
                     
                     break;
                 }
+                
             }
         }
     }
@@ -46,17 +44,15 @@ if ( ! dying)
         {
             if (place_meeting(x, y, other))
             {
-                // if the block trigger can be damaged
-                if (can_be_damaged && damage_from == noone)
+                // if the block trigger is damaged
+                if (scr_damage_block_trigger(id, other))
                 {
-                    // update block trigger
-                    damage_from = other;
-                    
                     // update projectile
                     other.dying = true;
                     
                     break;
                 }
+                
             }
         }
     }

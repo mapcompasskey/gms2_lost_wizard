@@ -31,8 +31,13 @@ damage = 1;
 max_health = 1;
 current_health = 1;
 
-can_be_damaged = true;
-damage_from = noone;
+can_be_attacked = true;
+attacker_id = noone;
+attacker_x = 0;
+attacker_y = 0;
+
+health_updated = false;
+health_updated_points = 0;
 
 // movement collision
 entity_hit_tilemap_x = false;

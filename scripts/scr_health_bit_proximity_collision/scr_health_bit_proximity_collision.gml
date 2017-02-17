@@ -1,26 +1,10 @@
-/// @descr scr_health_bit_proximity_collision()
+/// @desc scr_health_bit_proximity_collision()
 
 
 //
 // Health Bit Proximity Collision Tests
 //
-
-// update the player's health
-if (instance_exists(global.PLAYER))
-{
-    with (global.PLAYER)
-    {
-        // increase the player's health
-        current_health += other.points;
-        if (current_health > max_health)
-        {
-            current_health = max_health;
-        }
-        
-        // update the player health
-        scr_update_globals_player_health();
-    }
-}
+scr_update_entity_health(following_id, points);
 
 // kill the instance
 dying = true;

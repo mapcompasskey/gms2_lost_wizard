@@ -2,8 +2,8 @@
 
 
 // object collision
-can_be_damaged = true;
-damage_from = noone;
+can_be_attacked = true;
+attacker_id = noone;
 
 // states
 recovering = false;

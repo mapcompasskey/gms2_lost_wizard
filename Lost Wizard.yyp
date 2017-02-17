@@ -719,6 +719,22 @@
             }
         },
         {
+            "Key": "828e1fb7-0ca4-4173-957e-948083ce2b0f",
+            "Value": {
+                "id": "12e8ba5a-3109-4702-869d-9f7ead880b81",
+                "resourcePath": "scripts\\scr_damage_entity\\scr_damage_entity.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "834c4adf-74d4-4f31-a97a-3c4c87bd55a9",
+            "Value": {
+                "id": "3f1b3cc3-0120-457b-8c64-472678cf789f",
+                "resourcePath": "scripts\\scr_update_entity_health\\scr_update_entity_health.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "84f92768-8b31-423b-ae83-db9e0e629d6f",
             "Value": {
                 "id": "5f033ab6-02aa-4656-8ec3-e817864ef2aa",
@@ -1327,6 +1343,14 @@
             }
         },
         {
+            "Key": "fbfb6b21-ee21-4537-beeb-d1051ccfa80d",
+            "Value": {
+                "id": "17889d9b-e51a-4b73-9462-5f381debe720",
+                "resourcePath": "scripts\\scr_damage_block_trigger\\scr_damage_block_trigger.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "fc7888c1-eee4-46f6-a444-80bbe7548ce0",
             "Value": {
                 "id": "617f8458-2c26-4958-8a38-ed503f8cf948",
@@ -1408,7 +1432,10 @@
         "cd89c08f-d7af-4ef9-880b-d2bae1aeee3e",
         "48ab4849-c3fc-4537-aff4-92bdaaceab35",
         "a7052586-f18c-425d-93a2-33e2cd98b0dc",
-        "f1033382-3180-4569-adf2-d0f33347672b"
+        "f1033382-3180-4569-adf2-d0f33347672b",
+        "828e1fb7-0ca4-4173-957e-948083ce2b0f",
+        "fbfb6b21-ee21-4537-beeb-d1051ccfa80d",
+        "834c4adf-74d4-4f31-a97a-3c4c87bd55a9"
     ],
     "tutorial": ""
 }

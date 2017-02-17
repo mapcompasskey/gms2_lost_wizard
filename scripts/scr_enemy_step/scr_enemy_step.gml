@@ -81,7 +81,7 @@ if ( ! dying)
             hurting = false;
             recovering = false;
             recover_timer = 0;
-            can_be_damaged = true;
+            can_be_attacked = true;
         }
     }
     
@@ -100,14 +100,12 @@ if ( ! dying)
         {
             if (place_meeting(x, y, other))
             {
-                // if the player can be damaged
-                if (can_be_damaged && damage_from == noone)
+                // if the entity is damaged
+                if (scr_damage_entity(id, other, -damage))
                 {
-                    // update player
-                    damage_from = other;
-                    
                     break;
                 }
+                
             }
         }
     }
@@ -135,3 +133,4 @@ if ( ! dying && ! hurting)
         velocity_x = (speed_x * facing);
     }
 }
+

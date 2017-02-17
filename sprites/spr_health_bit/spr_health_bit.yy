@@ -1,7 +1,7 @@
 {
     "id": "f0e8002f-f6fc-42db-90bb-f593b9769eb8",
     "modelName": "GMSprite",
-    "mvc": "1.0",
+    "mvc": "1.12",
     "name": "spr_health_bit",
     "For3D": false,
     "HTile": false,

@@ -6,55 +6,64 @@
 //
 if ( ! dying && ! hurting && ! recovering)
 {
-    if (can_be_damaged)
+    if (can_be_attacked && attacker_id != noone)
     {
-        // if being damaged
-        if (damage_from != noone)
+        // apply horizontal knockback
+        if (attacker_x != 0)
         {
-            if (instance_exists(damage_from))
+            velocity_x = knockback_x;
+            if (x < attacker_x)
             {
-                // get values from attacker
-                with (damage_from)
-                {
-                    var attacker_damage = damage;
-                    var attacker_x = x;
-                }
-                
-                // update states
-                hurting = true;
-                recovering = true;
-                recover_timer = 0;
-                can_be_damaged = false;
-                
-                // apply vertical knockback
-                velocity_x = knockback_x;
-                if (x < attacker_x)
-                {
-                    velocity_x = -knockback_x;
-                }
-                
-                // apply vertical knockback
-                velocity_y = -knockback_y;
-                grounded = false;
-                
-                // reduce health
-                current_health = (current_health - attacker_damage);
-                if (current_health < 0)
-                {
-                    //dying = true;
-                    current_health = max_health;
-                }
-                
-                // update the player health
-                scr_update_globals_player_health();
+                velocity_x = -knockback_x;
             }
         }
         
+        // apply vertical knockback
+        velocity_y = -knockback_y;
+        grounded = false;
+        
+        // update states
+        hurting = true;
+        recovering = true;
+        recover_timer = 0;
+        can_be_attacked = false;
     }
 }
-    
-// reset collision referrence
-damage_from = noone;
+
+// reset referrence
+attacker_id = noone;
+attacker_x = 0;
+attacker_y = 0;
+
+
+//
+// Check if the Health was Updated
+//
+if ( ! dying)
+{
+    if (health_updated)
+    {
+        // update the health
+        current_health += health_updated_points;
+        
+        if (current_health > max_health)
+        {
+            current_health = max_health;
+        }
+        else if (current_health < 0)
+        {
+            //dying = true;
+            current_health = max_health;
+        }
+        
+        // update the player health
+        scr_update_globals_player_health();
+    }
+}
+
+// reset values
+health_updated = false;
+health_updated_points = 0;
 
 
 //
@@ -71,3 +80,4 @@ if ( ! dying)
 //
 scr_update_camera(x, y, false);
 //scr_camera_update(x, (y + sprite_bbox_top), false);
+

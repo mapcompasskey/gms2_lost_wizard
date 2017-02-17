@@ -39,7 +39,7 @@ if ( ! dying)
             hurting = false;
             recovering = false;
             recover_timer = 0;
-            can_be_damaged = true;
+            can_be_attacked = true;
         }
     }
     

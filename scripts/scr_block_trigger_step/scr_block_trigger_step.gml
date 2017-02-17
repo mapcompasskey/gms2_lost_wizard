@@ -24,7 +24,7 @@ if (recovering)
         // update states
         recovering = false;
         recover_timer = 0;
-        can_be_damaged = true;
+        can_be_attacked = true;
     }
 }
 
@@ -34,26 +34,21 @@ if (recovering)
 //
 if ( ! recovering)
 {
-    if (can_be_damaged)
+    if (can_be_attacked && attacker_id != noone)
     {
-        // if being damaged
-        if (damage_from != noone)
-        {
-            // update states
-            recovering = true;
-            recover_timer = 0;
-            can_be_damaged = false;
-            
-            // update instance variable
-            is_active = !is_active;
-            
-            // update global and object settings
-            script_execute(update_global_script);
-        }
+        // update states
+        recovering = true;
+        recover_timer = 0;
+        can_be_attacked = false;
         
+        // update instance variable
+        is_active = !is_active;
+        
+        // update global and object settings
+        script_execute(update_global_script);
     }
 }
     
-// reset collision referrence
-damage_from = noone;
+// reset referrence
+attacker_id = noone;
 
