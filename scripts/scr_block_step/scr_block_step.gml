@@ -1,4 +1,4 @@
-/// @descr scr_block_step()
+/// @desc scr_block_step()
 
 
 if (is_active != previous_is_active)

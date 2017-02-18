@@ -1,4 +1,4 @@
-/// @descr scr_npc_movement_collision()
+/// @desc scr_npc_movement_collision()
 
 //
 // NPC Movement Collision Tests

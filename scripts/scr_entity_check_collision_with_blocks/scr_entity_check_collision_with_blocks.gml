@@ -1,4 +1,4 @@
-/// @descr scr_entity_check_collision_with_blocks()
+/// @desc scr_entity_check_collision_with_blocks()
 
 
 //

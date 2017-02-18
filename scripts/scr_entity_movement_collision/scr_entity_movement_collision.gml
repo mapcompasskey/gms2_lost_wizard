@@ -1,4 +1,4 @@
-/// @descr scr_entity_movement_collision()
+/// @desc scr_entity_movement_collision()
 
 
 //

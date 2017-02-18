@@ -1,4 +1,4 @@
-/// @descr scr_enemy_create()
+/// @desc scr_enemy_create()
 
 event_inherited();
 

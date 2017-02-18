@@ -1,4 +1,4 @@
-/// @descr scr_room_stage_created()
+/// @desc scr_room_stage_created()
 
 
 //

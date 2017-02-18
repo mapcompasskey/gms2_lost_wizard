@@ -1,4 +1,4 @@
-/// @descr scr_hud_step()
+/// @desc scr_hud_step()
 
 
 //

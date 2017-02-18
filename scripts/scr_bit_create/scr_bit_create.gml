@@ -1,4 +1,4 @@
-/// @descr scr_bit_create()
+/// @desc scr_bit_create()
 
 
 // initial burst movement

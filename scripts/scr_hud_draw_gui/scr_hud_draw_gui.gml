@@ -1,4 +1,4 @@
-/// @descr scr_hud_draw_gui()
+/// @desc scr_hud_draw_gui()
 
 
 //

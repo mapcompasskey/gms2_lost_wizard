@@ -1,4 +1,4 @@
-/// @descr scr_player_create()
+/// @desc scr_player_create()
 
 
 event_inherited();

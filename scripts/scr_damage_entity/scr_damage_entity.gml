@@ -9,7 +9,7 @@ var inst2 = argument1;
 var points = argument2;
 if (instance_exists(inst))
 {
-    // check this instance is a child of obj_entity
+    // check if this instance is a child of obj_entity
     if (object_is_ancestor(inst.object_index, obj_entity))
     {
         with (inst)

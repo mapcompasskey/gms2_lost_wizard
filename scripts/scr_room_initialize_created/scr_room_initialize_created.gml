@@ -1,4 +1,4 @@
-/// @descr scr_room_initialize_created()
+/// @desc scr_room_initialize_created()
 
 // add the Game Start object
 instance_create_layer(0, 0, "Controllers", obj_game);

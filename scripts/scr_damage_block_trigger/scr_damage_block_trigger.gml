@@ -7,7 +7,7 @@ var inst = argument0;
 var inst2 = argument1;
 if (instance_exists(inst))
 {
-    // check this instance is a child of obj_block_trigger
+    // check if this instance is a child of obj_block_trigger
     if object_is_ancestor(inst.object_index, obj_block_trigger)
     {
         with (inst)

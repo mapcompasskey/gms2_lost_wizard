@@ -1,4 +1,4 @@
-/// @descr scr_projectile_create()
+/// @desc scr_projectile_create()
 
 event_inherited();
 

@@ -1,4 +1,4 @@
-/// @descr scr_enemy_step()
+/// @desc scr_enemy_step()
 
 event_inherited();
 
@@ -101,11 +101,7 @@ if ( ! dying)
             if (place_meeting(x, y, other))
             {
                 // if the entity is damaged
-                if (scr_damage_entity(id, other, -damage))
-                {
-                    break;
-                }
-                
+                scr_damage_entity(id, other, -damage)
             }
         }
     }

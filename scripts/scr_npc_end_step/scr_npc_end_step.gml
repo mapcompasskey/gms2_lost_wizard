@@ -1,4 +1,4 @@
-/// @descr scr_npc_end_step()
+/// @desc scr_npc_end_step()
 
 
 //

@@ -1,4 +1,4 @@
-/// @descr scr_player_step()
+/// @desc scr_player_step()
 
 event_inherited();
 

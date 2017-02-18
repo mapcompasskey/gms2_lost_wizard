@@ -1,4 +1,4 @@
-/// @descr scr_npc_create()
+/// @desc scr_npc_create()
 
 event_inherited();
 

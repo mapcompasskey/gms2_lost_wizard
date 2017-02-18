@@ -1,4 +1,4 @@
-/// @descr scr_entity_create()
+/// @desc scr_entity_create()
 
 // movement
 gravity_factor = 1;

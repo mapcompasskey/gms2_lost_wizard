@@ -1,1 +1,1 @@
-/// @descr scr_entity_step()
+/// @desc scr_entity_step()

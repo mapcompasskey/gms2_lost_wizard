@@ -1,4 +1,4 @@
-/// @descr scr_soul_bit_proximity_collision()
+/// @desc scr_soul_bit_proximity_collision()
 
 
 //

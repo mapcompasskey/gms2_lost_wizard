@@ -1,4 +1,4 @@
-/// @descr scr_game_create()
+/// @desc scr_game_create()
 
 
 // this object must be persistent

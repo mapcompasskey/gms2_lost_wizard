@@ -1,4 +1,4 @@
-/// @descr scr_game_step()
+/// @desc scr_game_step()
 
 
 //

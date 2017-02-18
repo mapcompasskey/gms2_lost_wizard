@@ -1,4 +1,4 @@
-/// @descr scr_health_bit_create()
+/// @desc scr_health_bit_create()
 
 
 event_inherited();

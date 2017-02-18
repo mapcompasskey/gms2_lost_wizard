@@ -1,4 +1,4 @@
-/// @descr scr_bit_step()
+/// @desc scr_bit_step()
 
 
 var tick = global.TICK;
@@ -73,6 +73,7 @@ if ( ! dying)
         if (following_id == noone)
         {
             // *if there were multiple players, this would target the closest
+            // and stick to them until they are out of range
             var previous_dist = proximity_max;
             with (obj_player)
             {

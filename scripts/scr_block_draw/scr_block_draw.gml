@@ -1,4 +1,4 @@
-/// @descr scr_block_draw()
+/// @desc scr_block_draw()
 
 
 // if using "draw_self()", the mask_index can't be set to noone

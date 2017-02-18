@@ -1,4 +1,4 @@
-/// @descr scr_soul_bit_create()
+/// @desc scr_soul_bit_create()
 
 
 event_inherited();

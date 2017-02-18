@@ -1,4 +1,4 @@
-/// @descr scr_hud_create()
+/// @desc scr_hud_create()
 
 
 // update globals

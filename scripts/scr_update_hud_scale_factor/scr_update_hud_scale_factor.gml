@@ -1,4 +1,4 @@
-/// @descr scr_update_hud_scale_factor()
+/// @desc scr_update_hud_scale_factor()
 
 
 //

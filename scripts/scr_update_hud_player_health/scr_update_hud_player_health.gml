@@ -1,4 +1,4 @@
-/// @descr scr_update_hud_player_health()
+/// @desc scr_update_hud_player_health()
 
 
 //

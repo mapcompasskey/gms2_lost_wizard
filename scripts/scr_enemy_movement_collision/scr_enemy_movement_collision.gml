@@ -1,4 +1,4 @@
-/// @descr scr_enemey_movement_collision()
+/// @desc scr_enemey_movement_collision()
 
 
 //

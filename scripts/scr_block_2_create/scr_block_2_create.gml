@@ -1,4 +1,4 @@
-/// @descr scr_block_1_create()
+/// @desc scr_block_1_create()
 
 
 event_inherited();

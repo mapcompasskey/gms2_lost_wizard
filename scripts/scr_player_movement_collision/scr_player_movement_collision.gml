@@ -1,4 +1,4 @@
-/// @descr scr_player_movement_collision()
+/// @desc scr_player_movement_collision()
 
 
 //

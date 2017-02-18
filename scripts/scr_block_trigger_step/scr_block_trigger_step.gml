@@ -1,4 +1,4 @@
-/// @descr scr_block_trigger_step()
+/// @desc scr_block_trigger_step()
 
 
 // update the image

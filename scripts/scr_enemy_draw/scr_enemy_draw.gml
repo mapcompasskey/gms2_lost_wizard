@@ -1,4 +1,4 @@
-/// @descr scr_enemy_draw()
+/// @desc scr_enemy_draw()
 
 event_inherited();
 

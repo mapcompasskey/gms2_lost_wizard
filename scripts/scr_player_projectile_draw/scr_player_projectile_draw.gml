@@ -1,4 +1,4 @@
-/// @descr scr_player_projectile_draw()
+/// @desc scr_player_projectile_draw()
 
 event_inherited();
 

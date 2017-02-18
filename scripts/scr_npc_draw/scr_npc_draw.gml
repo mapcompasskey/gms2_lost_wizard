@@ -1,4 +1,4 @@
-/// @descr scr_npc_draw()
+/// @desc scr_npc_draw()
 
 event_inherited();
 

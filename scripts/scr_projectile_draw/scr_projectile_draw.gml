@@ -1,3 +1,3 @@
-/// @descr scr_projectile_draw()
+/// @desc scr_projectile_draw()
 
 event_inherited();

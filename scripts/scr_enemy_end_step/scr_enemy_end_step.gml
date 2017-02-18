@@ -1,4 +1,4 @@
-/// @descr scr_enemy_end_step()
+/// @desc scr_enemy_end_step()
 
 
 //

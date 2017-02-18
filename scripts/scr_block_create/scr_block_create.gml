@@ -1,4 +1,4 @@
-/// @descr scr_block_create()
+/// @desc scr_block_create()
 
 
 // states

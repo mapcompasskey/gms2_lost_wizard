@@ -1,4 +1,4 @@
-/// @descr scr_npc_step()
+/// @desc scr_npc_step()
 
 event_inherited();
 

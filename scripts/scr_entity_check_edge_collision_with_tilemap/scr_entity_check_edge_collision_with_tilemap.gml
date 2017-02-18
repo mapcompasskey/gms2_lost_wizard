@@ -1,4 +1,4 @@
-/// @descr scr_entity_check_edge_collision_with_tilemap()
+/// @desc scr_entity_check_edge_collision_with_tilemap()
 
 
 //

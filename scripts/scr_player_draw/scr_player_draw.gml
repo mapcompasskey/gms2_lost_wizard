@@ -1,4 +1,4 @@
-/// @descr scr_player_draw()
+/// @desc scr_player_draw()
 
 event_inherited();
 

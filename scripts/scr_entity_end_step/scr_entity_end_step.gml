@@ -1,4 +1,4 @@
-/// @descr scr_entity_end_step()
+/// @desc scr_entity_end_step()
 
 
 //

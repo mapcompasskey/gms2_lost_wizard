@@ -1,4 +1,4 @@
-/// @descr scr_player_projectile_end_step()
+/// @desc scr_player_projectile_end_step()
 
 
 //

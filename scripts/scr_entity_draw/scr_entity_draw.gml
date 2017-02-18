@@ -1,3 +1,3 @@
-/// @descr scr_entity_draw()
+/// @desc scr_entity_draw()
 
 image_xscale = facing;

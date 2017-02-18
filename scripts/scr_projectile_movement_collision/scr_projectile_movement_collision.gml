@@ -1,4 +1,4 @@
-/// @descr scr_projectile_movement_collision()
+/// @desc scr_projectile_movement_collision()
 
 
 //

@@ -1,4 +1,4 @@
-/// @descr scr_block_trigger_create()
+/// @desc scr_block_trigger_create()
 
 
 event_inherited();
