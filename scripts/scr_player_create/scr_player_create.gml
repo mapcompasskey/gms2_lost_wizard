@@ -31,6 +31,9 @@ attack_cooldown_time = 0.5;
 attack_cooldown_timer = 0;
 
 // drawing
+bbox_width = sprite_get_bbox_right(sprite_index) - sprite_get_bbox_left(sprite_index)
+bbox_height = sprite_get_bbox_bottom(sprite_index) - sprite_get_bbox_top(sprite_index)
+
 sprite_bbox_left = sprite_get_bbox_left(sprite_index) - sprite_get_xoffset(sprite_index);
 sprite_bbox_right = sprite_get_bbox_right(sprite_index) - sprite_get_xoffset(sprite_index);
 sprite_bbox_bottom = sprite_get_bbox_bottom(sprite_index) - sprite_get_yoffset(sprite_index);

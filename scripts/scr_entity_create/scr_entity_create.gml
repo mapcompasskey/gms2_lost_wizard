@@ -73,6 +73,9 @@ facing = RIGHT;
 //sprite_index = noone;
 //mask_index = noone;
 
+bbox_width = 0; // sprite_get_bbox_right(sprite_index) - sprite_get_bbox_left(sprite_index)
+bbox_height = 0; // sprite_get_bbox_bottom(sprite_index) - sprite_get_bbox_top(sprite_index)
+
 sprite_bbox_left = 0; // sprite_get_bbox_left(sprite_index) - sprite_get_xoffset(sprite_index);
 sprite_bbox_right = 0; // sprite_get_bbox_right(sprite_index) - sprite_get_xoffset(sprite_index);
 sprite_bbox_bottom = 0; // sprite_get_bbox_bottom(sprite_index) - sprite_get_yoffset(sprite_index);
