@@ -31,8 +31,8 @@ if (irandom(1))
 }
 
 // object tracking
-following_id = noone;
-following_speed = 100;
+targeting_id = noone;
+targeting_speed = 100;
 proximity_max = 40;
 proximity_min = 1;
 
@@ -44,7 +44,7 @@ points = 1;
 // states
 dying = false;
 bursting = true;
-following = false;
+targeting = false;
 can_capture = false;
 can_follow = false;
 

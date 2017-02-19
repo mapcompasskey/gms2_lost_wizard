@@ -13,8 +13,8 @@ if (check_collision_with_block_1 || check_collision_with_block_2)
     // if not already inside a block
     if ( ! place_meeting(x, y, obj_block))
     {
-        var temp_my = 0 ;
-        var temp_mx = 0 ;
+        var temp_my = 0;
+        var temp_mx = 0;
 
         //
         // Vertical Collision Test

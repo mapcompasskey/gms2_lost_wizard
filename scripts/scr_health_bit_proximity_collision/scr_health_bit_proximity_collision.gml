@@ -6,7 +6,7 @@
 //
 
 // update the entity's health
-scr_update_entity_health(following_id, points);
+scr_update_entity_health(targeting_id, points);
 
 // kill the instance
 dying = true;

@@ -13,6 +13,9 @@ projectile_inside_tilemap = false;
 projectile_hit_tilemap_x = false;
 projectile_hit_tilemap_y = false;
 
+projectile_hit_enemy_x = false;
+projectile_hit_enemy_y = false;
+
 //movement_collision_script = scr_projectile_movement_collision;
 
 // states

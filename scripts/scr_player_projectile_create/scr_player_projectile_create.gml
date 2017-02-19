@@ -3,7 +3,9 @@
 event_inherited();
 
 // movement
-base_velocity = 200;
+base_velocity = 1200;//200;
+max_velocity_x = 0;
+max_velocity_y = 0;
 
 // drawing
 sprite_bbox_left = sprite_get_bbox_left(sprite_index) - sprite_get_xoffset(sprite_index);

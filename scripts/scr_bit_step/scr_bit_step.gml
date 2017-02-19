@@ -7,7 +7,7 @@ var tick = global.TICK;
 //
 // Update Movement
 //
-if ( ! dying && ! following)
+if ( ! dying && ! targeting)
 {
     // if moving outward
     if (bursting)
@@ -50,7 +50,7 @@ if ( ! dying && ! following)
 
 
 //
-// Check if Following an Instance
+// Check if Targeting an Instance
 //
 if ( ! dying)
 {
@@ -69,11 +69,11 @@ if ( ! dying)
     // else, the bit can be captured
     else
     {
-        // if not being pulled towards an instance
-        if (following_id == noone)
+        // if nothing is being targeted
+        if (targeting_id == noone)
         {
             // *if there were multiple players, this would target the closest
-            // and stick to them until they are out of range
+            // and stick to them until they were out of range
             var previous_dist = proximity_max;
             with (obj_player)
             {
@@ -82,21 +82,21 @@ if ( ! dying)
                 if (dist < previous_dist)
                 {
                     // update the bit
-                    other.following_id = id;
+                    other.targeting_id = id;
                     previous_dist = dist;
                 }
             }
             
         }
         
-        // else, being pulled towards an instance
+        // else, something is being targeted
         else
         {
-            var inst = following_id;
+            var inst = targeting_id;
             
             // reset the reference
-            following = false;
-            following_id = noone;
+            targeting = false;
+            targeting_id = noone;
             
             // if the instance still exsits
             if (instance_exists(inst))
@@ -106,18 +106,18 @@ if ( ! dying)
                 if (dist < proximity_max)
                 {
                     // update the reference
-                    following_id = inst;
+                    targeting_id = inst;
                     
                     // move towards the instance
                     if (can_follow)
                     {
-                        following = true;
+                        targeting = true;
                         
                         var pos_x = (inst.bbox_left + ((inst.bbox_right - inst.bbox_left) / 2));
                         var pos_y = (inst.bbox_top + ((inst.bbox_bottom - inst.bbox_top) / 2));
                         var deg = point_direction(x, y, pos_x, pos_y);
-                        x += dcos(deg) * following_speed * tick;
-                        y += dsin(deg) * following_speed * tick * -1;
+                        x += dcos(deg) * targeting_speed * tick;
+                        y += dsin(deg) * targeting_speed * tick * -1;
                     }
                     
                     // if close enough to be picked up
