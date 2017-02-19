@@ -3,7 +3,7 @@
 event_inherited();
 
 // movement
-base_velocity = 1200;//200;
+base_velocity = 200;
 max_velocity_x = 0;
 max_velocity_y = 0;
 
