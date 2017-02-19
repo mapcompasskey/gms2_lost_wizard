@@ -36,9 +36,11 @@ if ( ! dying)
         var attack_my = (velocity_y * global.TICK);
         var attack_distance = sqrt(sqr(attack_mx) + sqr(attack_my));
         
-        var min_side = min(bbox_width, bbox_height);
+        var angle_cos = dcos(angle);
+        var angle_sin = dsin(angle) * -1;
         
         var steps = 1;
+        var min_side = min(bbox_width, bbox_height);
         if (attack_distance > min_side)
         {
             steps = ceil(attack_distance / min_side);
@@ -47,8 +49,8 @@ if ( ! dying)
         
         for (var i = 1; i <= steps; i++)
         {
-            var temp_mx = (dcos(angle) * (step_size * i));
-            var temp_my = (dsin(angle) * (step_size * i) * -1);
+            var temp_mx = (angle_cos * step_size * i);
+            var temp_my = (angle_sin * step_size * i);
             
             if ( ! dying)
             {
