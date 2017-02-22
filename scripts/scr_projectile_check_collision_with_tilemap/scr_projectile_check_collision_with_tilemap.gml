@@ -106,14 +106,12 @@ if (bbox_width && bbox_height)
                 // if moving up
                 if (my < 0)
                 {
-                    // check the result won't push the instance down
                     result_y = ((target_y + TILE_SIZE) & ~NOT_TILE_SIZE);
                     collision = true;
                 }
                 // else, if moving down
                 else
                 {
-                    // check the result won't push the instance up
                     result_y = ((target_y & ~NOT_TILE_SIZE) - 1);
                     collision = true;
                 }
@@ -220,14 +218,12 @@ if (bbox_width && bbox_height)
                 // if moving right
                 if (mx > 0)
                 {
-                    // check the result won't push the instance to the left
                     result_x = ((target_x & ~NOT_TILE_SIZE) - 1);
                     collision = true;
                 }
                 // else, if moving left
                 else
                 {
-                    // check the result won't push the instance to the right
                     result_x = ((target_x + TILE_SIZE) & ~NOT_TILE_SIZE);
                     collision = true;
                 }

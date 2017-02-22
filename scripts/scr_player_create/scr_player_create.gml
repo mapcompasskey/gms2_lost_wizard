@@ -31,7 +31,7 @@ attack_cooldown_time = 0.5;
 attack_cooldown_timer = 0;
 
 // drawing
-sprite_index = spr_npc; //spr_player;
+sprite_index = spr_npc; //spr_npc_5//spr_player;
 
 bbox_width = sprite_get_bbox_right(sprite_index) - sprite_get_bbox_left(sprite_index)
 bbox_height = sprite_get_bbox_bottom(sprite_index) - sprite_get_bbox_top(sprite_index)
