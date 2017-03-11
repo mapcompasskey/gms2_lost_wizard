@@ -74,7 +74,7 @@
                     "m_originalParentID": "00000000-0000-0000-0000-000000000000",
                     "m_serialiseFrozen": false,
                     "name": "inst_31C6A3E3",
-                    "x": 94,
+                    "x": 80,
                     "y": 104,
                     "IsDnD": false,
                     "colour": {
@@ -123,7 +123,7 @@
                     "m_originalParentID": "00000000-0000-0000-0000-000000000000",
                     "m_serialiseFrozen": false,
                     "name": "inst_6B4734EB",
-                    "x": 104,
+                    "x": 112,
                     "y": 104,
                     "IsDnD": false,
                     "colour": {
@@ -171,7 +171,7 @@
                     "m_originalParentID": "00000000-0000-0000-0000-000000000000",
                     "m_serialiseFrozen": false,
                     "name": "inst_752F3181",
-                    "x": 104,
+                    "x": 112,
                     "y": 104,
                     "IsDnD": false,
                     "colour": {
