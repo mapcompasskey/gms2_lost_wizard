@@ -36,12 +36,21 @@ if (irandom(1))
     angle_speed_y = -(angle_speed_y);
 }
 
+// object tracking
+targeting_id = noone;
+targeting_speed = 50;
+proximity_max = 60;
+proximity_min = 1;
+
 // object collision
 max_health = 4;
 current_health = 4;
 
 // collision
 movement_collision_script = scr_enemy_bat_movement_collision;
+
+// states
+targeting = false;
 
 // drawing
 bbox_width = sprite_get_bbox_right(sprite_index) - sprite_get_bbox_left(sprite_index)
@@ -55,6 +64,9 @@ sprite_bbox_top = sprite_get_bbox_top(sprite_index) - sprite_get_yoffset(sprite_
 // timers
 //action_time = (random_range(2, 4) * 60) // 2 - 4 seconds
 //action_timer = action_time;
+
+track_time = 0.5;
+track_timer = 0;
 
 dead_time = 1;
 dead_timer = 0;

@@ -2,14 +2,14 @@
 
 event_inherited();
 
+var tick = global.TICK;
+
 
 //
 // Update Movement
 //
-if ( ! dying)
+if ( ! dying && ! targeting)
 {
-    var tick = global.TICK;
-    
     // update the x-axis curve
     motion_angle_x += (angle_speed_x * tick);
     if (motion_angle_x > 360)
@@ -26,16 +26,77 @@ if ( ! dying)
     }
     motion_y = dsin(motion_angle_y) * motion_radius_y;
     
-    // update position
-    //x += (previous_motion_x - motion_x);
-    //y += (previous_motion_y - motion_y);
-    
     // update velocity
     velocity_x = (previous_motion_x - motion_x) / tick;
     velocity_y = (previous_motion_y - motion_y) / tick;
     
     previous_motion_x = motion_x;
     previous_motion_y = motion_y;
+}
+
+
+//
+// Check if Targeting an Instance
+//
+if ( ! dying)
+{
+    // if nothing is being targeted
+    if (targeting_id == noone)
+    {
+        // find the closest player instance
+        var previous_dist = proximity_max;
+        with (obj_player)
+        {
+            // if this instance is within range
+            var dist = distance_to_object(other);
+            if (dist < previous_dist)
+            {
+                // update the enemy bat
+                other.targeting_id = id;
+                previous_dist = dist;
+            }
+        }
+        
+    }
+    
+    // else, something is being targeted
+    else
+    {
+        track_timer += tick;
+        if (track_timer > track_time)
+        {
+            var inst = targeting_id;
+            
+            // reset the reference
+            targeting = false;
+            targeting_id = noone;
+            
+            // if the instance still exsits
+            if (instance_exists(inst))
+            {
+                // if its still within range
+                var dist = distance_to_object(inst);
+                if (dist < proximity_max && dist > proximity_min)
+                {
+                    // update the reference
+                    targeting_id = inst;
+                    targeting = true;
+                    
+                    // find the center of the object
+                    var pos_x = (inst.bbox_left + ((inst.bbox_right - inst.bbox_left) / 2));
+                    var pos_y = (inst.bbox_top + ((inst.bbox_bottom - inst.bbox_top) / 2));
+                    var deg = point_direction(x, y, pos_x, pos_y);
+                    
+                    velocity_x = dcos(deg) * targeting_speed;
+                    velocity_y = dsin(deg) * targeting_speed * -1;
+                }
+            
+            }
+            
+            track_timer = 0;
+        }
+    }
+    
 }
 
 
