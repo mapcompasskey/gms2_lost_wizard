@@ -8,7 +8,7 @@ var tick = global.TICK;
 //
 // Update Movement
 //
-if ( ! dying && ! targeting)
+if ( ! dying && ! hurting && ! targeting)
 {
     // update the x-axis curve
     motion_angle_x += (angle_speed_x * tick);
@@ -38,7 +38,7 @@ if ( ! dying && ! targeting)
 //
 // Check if Targeting an Instance
 //
-if ( ! dying)
+if ( ! dying && ! hurting)
 {
     // if nothing is being targeted
     if (targeting_id == noone)

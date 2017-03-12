@@ -38,8 +38,8 @@ global.PLAYER = noone;
 global.GRAV = 500;
 global.TICK = 0;
 global.BLOCKS_ACTIVE = false;
-global.BLOCK_1_ACTIVE = false;
-global.BLOCK_2_ACTIVE = false;
+global.BLOCK_1_ACTIVE = true;//false;
+global.BLOCK_2_ACTIVE = true;//false;
 global.GAME_ASPECT_RATIO = 1;
 
 global.PLAYER_HEALTH = 10;

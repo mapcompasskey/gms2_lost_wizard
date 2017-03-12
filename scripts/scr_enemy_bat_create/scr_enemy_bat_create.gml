@@ -39,7 +39,7 @@ if (irandom(1))
 // object tracking
 targeting_id = noone;
 targeting_speed = 50;
-proximity_max = 60;
+proximity_max = 80;
 proximity_min = 1;
 
 // object collision
