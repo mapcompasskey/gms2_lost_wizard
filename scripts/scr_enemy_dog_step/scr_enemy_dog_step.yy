@@ -1,8 +1,8 @@
 {
-    "id": "457407d7-8c4f-4cec-b322-2355d389321f",
+    "id": "4c61a4ca-1132-4251-acfe-d644ac5b382f",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "scr_enemy_end_step",
+    "name": "scr_enemy_dog_step",
     "IsCompatibility": false,
     "IsDnD": false
 }

@@ -1,0 +1,1 @@
+scr_enemy_dog_end_step();

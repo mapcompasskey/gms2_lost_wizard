@@ -13,7 +13,7 @@ if ( ! dying && ! targeting)
     if (bursting)
     {
         // update movement
-        x += dcos(busrt_angle) * burst_speed * tick;;
+        x += dcos(busrt_angle) * burst_speed * tick;
         y += dsin(busrt_angle) * burst_speed * tick;
         
         // slow down burst speed

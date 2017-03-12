@@ -8,19 +8,23 @@ if ( ! dying && ! hurting && ! recovering)
 {
     if (can_be_attacked && attacker_id != noone)
     {
-        // apply horizontal knockback
-        if (attacker_x != 0)
+        // if the instnace has gravity
+        if (gravity_factor != 0)
         {
-            velocity_x = knockback_x;
-            if (x < attacker_x)
+            // apply horizontal knockback
+            if (attacker_x != 0)
             {
-                velocity_x = -knockback_x;
+                velocity_x = knockback_x;
+                if (x < attacker_x)
+                {
+                    velocity_x = -knockback_x;
+                }
             }
-        }
         
-        // apply vertical knockback
-        velocity_y = -knockback_y;
-        grounded = false;
+            // apply vertical knockback
+            velocity_y = -knockback_y;
+            grounded = false;
+        }
         
         // update states
         hurting = true;
