@@ -39,6 +39,7 @@ if (irandom(1))
 // object tracking
 targeting_id = noone;
 targeting_speed = 50;
+returning_speed = 20;
 proximity_max = 80;
 proximity_min = 1;
 
@@ -51,6 +52,7 @@ movement_collision_script = scr_enemy_bat_movement_collision;
 
 // states
 targeting = false;
+returning = false;
 
 // drawing
 bbox_width = sprite_get_bbox_right(sprite_index) - sprite_get_bbox_left(sprite_index)

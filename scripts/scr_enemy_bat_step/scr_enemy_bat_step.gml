@@ -8,7 +8,7 @@ var tick = global.TICK;
 //
 // Update Movement
 //
-if ( ! dying && ! hurting && ! targeting)
+if ( ! dying && ! hurting && ! targeting && ! returning)
 {
     // update the x-axis curve
     motion_angle_x += (angle_speed_x * tick);
@@ -67,7 +67,8 @@ if ( ! dying && ! hurting)
         {
             var inst = targeting_id;
             
-            // reset the reference
+            // assume the target is out of range
+            returning = true;
             targeting = false;
             targeting_id = noone;
             
@@ -79,8 +80,9 @@ if ( ! dying && ! hurting)
                 if (dist < proximity_max && dist > proximity_min)
                 {
                     // update the reference
-                    targeting_id = inst;
+                    returning = false;
                     targeting = true;
+                    targeting_id = inst;
                     
                     // find the center of the object
                     var pos_x = (inst.bbox_left + ((inst.bbox_right - inst.bbox_left) / 2));
@@ -97,6 +99,29 @@ if ( ! dying && ! hurting)
         }
     }
     
+}
+
+
+//
+// Check if Returning to Starting Position
+//
+if ( ! dying && ! hurting)
+{
+    if (returning)
+    {
+        velocity_x = 0;
+        velocity_y = 0;
+        returning = false;
+        
+        var dist = point_distance(x, y, starting_x, starting_y);
+        if (dist > 1)
+        {
+            var deg = point_direction(x, y, starting_x, starting_y);
+            velocity_x = dcos(deg) * returning_speed;
+            velocity_y = dsin(deg) * returning_speed * -1;
+            returning = true;
+        }
+    }
 }
 
 
@@ -158,12 +183,12 @@ if ( ! dying && ! hurting)
 //
 if ( ! dying)
 {
-    // if hurting and hit the ground
-    if (hurting && grounded)
+    if (hurting)
     {
-        hurting = false;
+        velocity_x = 0;
+        velocity_y = 0;
     }
-    
+
     // if recovering
     if (recovering)
     {
@@ -205,26 +230,3 @@ if ( ! dying)
 }
 
 
-/*
-//
-// Check if Walking
-//
-if ( ! dying && ! hurting)
-{
-    walking = false;
-    velocity_x = 0;
-     
-    if (key_left)
-    {
-        facing = LEFT;
-        walking = true;
-        velocity_x = (speed_x * facing);
-    }
-    else if (key_right)
-    {
-        facing = RIGHT;
-        walking = true;
-        velocity_x = (speed_x * facing);
-    }
-}
-*/
