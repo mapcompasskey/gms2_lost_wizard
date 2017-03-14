@@ -8,6 +8,7 @@ if ( ! dying && ! hurting && ! recovering)
 {
     if (can_be_attacked && attacker_id != noone)
     {
+        /*
         // apply horizontal knockback
         if (attacker_x != 0)
         {
@@ -21,6 +22,7 @@ if ( ! dying && ! hurting && ! recovering)
         // apply vertical knockback
         velocity_y = -knockback_y;
         grounded = false;
+        */
         
         // update states
         hurting = true;

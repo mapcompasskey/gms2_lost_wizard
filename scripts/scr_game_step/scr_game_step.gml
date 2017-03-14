@@ -13,7 +13,7 @@ global.TICK = min(0.125, dt);
 
 
 //
-// If the Game's Asepct Ratio has Changed
+// If the Game's Aspect Ratio has Changed
 //
 var a = application_get_position();
 var ratio = ((a[2] - a[0]) / view_get_wport(0));

@@ -41,6 +41,7 @@ global.BLOCKS_ACTIVE = false;
 global.BLOCK_1_ACTIVE = true;//false;
 global.BLOCK_2_ACTIVE = true;//false;
 global.GAME_ASPECT_RATIO = 1;
+global.DEBUG_MODE = true;
 
 global.PLAYER_HEALTH = 10;
 global.PLAYER_MAX_HEALTH = 10;
