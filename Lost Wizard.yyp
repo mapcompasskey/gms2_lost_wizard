@@ -343,6 +343,14 @@
             }
         },
         {
+            "Key": "3bbf2829-9fca-4df3-97aa-255a4ed8729e",
+            "Value": {
+                "id": "9230b2a8-3057-44b6-b9cb-0b12f0f52d25",
+                "resourcePath": "tilesets\\ts_tiles\\ts_tiles.yy",
+                "resourceType": "GMTileSet"
+            }
+        },
+        {
             "Key": "3d119acc-9416-4559-9bfa-791bb3f2630d",
             "Value": {
                 "id": "a19c9bd4-57e3-4296-b6c1-24ff595b2a87",
@@ -807,6 +815,14 @@
             }
         },
         {
+            "Key": "87a9cc39-a48f-416c-83c7-d278b02cfc64",
+            "Value": {
+                "id": "6e745744-f396-4aa3-a853-9249f2ab18f7",
+                "resourcePath": "sprites\\spr_tiles\\spr_tiles.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "88759275-ec37-41fd-b7a8-927112ebfe4e",
             "Value": {
                 "id": "d7c01014-9ddd-4b06-bfe2-378abccee315",
@@ -932,6 +948,14 @@
                 "id": "acf59ae7-a027-463f-a2f0-0fec69392722",
                 "resourcePath": "scripts\\scr_hud_step\\scr_hud_step.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "9bbef28e-271d-4f02-aa62-1212ba7eec48",
+            "Value": {
+                "id": "799d00e2-2b11-4072-982e-124fb5d1aa60",
+                "resourcePath": "rooms\\rm_stage_2\\rm_stage_2.yy",
+                "resourceType": "GMRoom"
             }
         },
         {
