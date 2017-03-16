@@ -31,15 +31,30 @@ attack_cooldown_time = 0.5;
 attack_cooldown_timer = 0;
 
 // drawing
-sprite_index = spr_player;
+idle_speed = 0.1;
+idle_sprite = spr_player_idle;
 
-bbox_width = sprite_get_bbox_right(sprite_index) - sprite_get_bbox_left(sprite_index)
-bbox_height = sprite_get_bbox_bottom(sprite_index) - sprite_get_bbox_top(sprite_index)
+jumping_speed = 0;
+jumping_sprite = spr_player_jump;
 
-sprite_bbox_left = sprite_get_bbox_left(sprite_index) - sprite_get_xoffset(sprite_index);
-sprite_bbox_right = sprite_get_bbox_right(sprite_index) - sprite_get_xoffset(sprite_index);
-sprite_bbox_bottom = sprite_get_bbox_bottom(sprite_index) - sprite_get_yoffset(sprite_index);
-sprite_bbox_top = sprite_get_bbox_top(sprite_index) - sprite_get_yoffset(sprite_index);
+falling_speed = 0;
+falling_sprite = spr_player_fall;
+
+walking_speed = 0.5;
+walking_sprite = spr_player_walk;
+
+sprite_index = idle_sprite;
+image_index = 0;
+image_speed = idle_speed;
+mask_index = spr_player;
+
+bbox_width = sprite_get_bbox_right(mask_index) - sprite_get_bbox_left(mask_index)
+bbox_height = sprite_get_bbox_bottom(mask_index) - sprite_get_bbox_top(mask_index)
+
+sprite_bbox_left = sprite_get_bbox_left(mask_index) - sprite_get_xoffset(mask_index);
+sprite_bbox_right = sprite_get_bbox_right(mask_index) - sprite_get_xoffset(mask_index);
+sprite_bbox_bottom = sprite_get_bbox_bottom(mask_index) - sprite_get_yoffset(mask_index);
+sprite_bbox_top = sprite_get_bbox_top(mask_index) - sprite_get_yoffset(mask_index);
 
 // inputs
 key_attack_pressed = false;

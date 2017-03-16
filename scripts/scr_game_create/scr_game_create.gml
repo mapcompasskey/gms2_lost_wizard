@@ -48,12 +48,13 @@ global.PLAYER_MAX_HEALTH = 10;
 global.PLAYER_SOULS = 0;
 
 // game size and scaling
-global.VIEW_SCALE = 3;
+global.VIEW_SCALE = 4;
 global.WINDOW_WIDTH = window_get_width();
 global.WINDOW_HEIGHT = window_get_height();
 global.VIEW_WIDTH = (global.WINDOW_WIDTH / global.VIEW_SCALE);
 global.VIEW_HEIGHT = (global.WINDOW_HEIGHT / global.VIEW_SCALE);
-global.BG_COLOR = make_color_rgb(24, 23, 76); // dark purple
+//global.BG_COLOR = make_color_rgb(24, 23, 76); // dark purple
+global.BG_COLOR = c_black;
 
 // room layer names
 global.ROOM_LAYER_CONTROLLERS = "Controllers";
