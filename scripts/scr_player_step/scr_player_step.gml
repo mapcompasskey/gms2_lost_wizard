@@ -8,6 +8,7 @@ event_inherited();
 //
 key_left = keyboard_check(vk_left);
 key_right = keyboard_check(vk_right);
+key_down = keyboard_check(vk_down);
 key_jump_pressed = keyboard_check_pressed(ord("X"));
 key_jump_released = keyboard_check_released(ord("X"));
 key_attack_pressed = keyboard_check(ord("Z"));//keyboard_check_pressed(ord("Z"));
@@ -49,7 +50,7 @@ if ( ! dying)
 //
 // Check if Jumping or Falling
 //
-if ( ! dying && ! hurting)
+if ( ! dying && ! hurting && ! crouching)
 {
     // if grounded and just pressed the JUMP button
     //if (grounded && ! jumping && key_jump_pressed)
@@ -134,11 +135,41 @@ if ( ! dying && ! hurting)
 
 
 //
-// Check if Walking
+// Check if Crouching
 //
+crouching = false;
+camera_offset_y = bbox_height;
 if ( ! dying && ! hurting)
 {
-    walking = false;
+    if (grounded && key_down)
+    {
+        velocity_x = 0;
+        velocity_y = 0;
+        crouching = true;
+    }
+    
+    if (crouching)
+    {
+        if (key_left)
+        {
+            facing = LEFT;
+        }
+        else if (key_right)
+        {
+            facing = RIGHT;
+        }
+        
+        camera_offset_y = -bbox_height;
+    }
+}
+
+
+//
+// Check if Walking
+//
+walking = false;
+if ( ! dying && ! hurting && ! crouching)
+{
     velocity_x = 0;
      
     if (key_left)
@@ -159,31 +190,40 @@ if ( ! dying && ! hurting)
 //
 // Update Sprite
 //
-if (falling)
+if (crouching)
 {
-    if (sprite_index != falling_sprite)
+    if (sprite_index != crouch_sprite)
     {
-        sprite_index = falling_sprite;
+        sprite_index = crouch_sprite;
         image_index = 0;
-        image_speed = falling_speed;
+        image_speed = crouch_speed;
+    }
+}
+else if (falling)
+{
+    if (sprite_index != fall_sprite)
+    {
+        sprite_index = fall_sprite;
+        image_index = 0;
+        image_speed = fall_speed;
     }
 }
 else if (jumping)
 {
-    if (sprite_index != jumping_sprite)
+    if (sprite_index != jump_sprite)
     {
-        sprite_index = jumping_sprite;
+        sprite_index = jump_sprite;
         image_index = 0;
-        image_speed = jumping_speed;
+        image_speed = jump_speed;
     }
 }
 else if (walking)
 {
-    if (sprite_index != walking_sprite)
+    if (sprite_index != walk_sprite)
     {
-        sprite_index = walking_sprite;
+        sprite_index = walk_sprite;
         image_index = 0;
-        image_speed = walking_speed;
+        image_speed = walk_speed;
     }
 }
 else

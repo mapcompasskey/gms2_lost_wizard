@@ -80,6 +80,5 @@ if ( ! dying)
 //
 // Update Camera
 //
-scr_update_camera(x, y, false);
-//scr_camera_update(x, (y + sprite_bbox_top), false);
+scr_update_camera(x, (y - camera_offset_y), false);
 

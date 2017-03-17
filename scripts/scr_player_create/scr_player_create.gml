@@ -25,6 +25,7 @@ movement_collision_script = scr_player_movement_collision;
 
 // states
 attacking = false;
+crouching = false;
 
 // timers
 attack_cooldown_time = 0.5;
@@ -34,14 +35,17 @@ attack_cooldown_timer = 0;
 idle_speed = 0.1;
 idle_sprite = spr_player_idle;
 
-jumping_speed = 0;
-jumping_sprite = spr_player_jump;
+crouch_speed = 0;
+crouch_sprite = spr_player_crouch;
 
-falling_speed = 0;
-falling_sprite = spr_player_fall;
+jump_speed = 0;
+jump_sprite = spr_player_jump;
 
-walking_speed = 0.5;
-walking_sprite = spr_player_walk;
+fall_speed = 0;
+fall_sprite = spr_player_fall;
+
+walk_speed = 0.5;
+walk_sprite = spr_player_walk;
 
 sprite_index = idle_sprite;
 image_index = 0;
@@ -57,5 +61,9 @@ sprite_bbox_bottom = sprite_get_bbox_bottom(mask_index) - sprite_get_yoffset(mas
 sprite_bbox_top = sprite_get_bbox_top(mask_index) - sprite_get_yoffset(mask_index);
 
 // inputs
+key_down = false;
 key_attack_pressed = false;
 key_attack_released = false;
+
+//instance variable
+camera_offset_y = bbox_height;
