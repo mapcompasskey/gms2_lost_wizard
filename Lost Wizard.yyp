@@ -119,6 +119,14 @@
             }
         },
         {
+            "Key": "0af37008-25e7-4e49-928b-e8bcecd08223",
+            "Value": {
+                "id": "aafd40b2-d558-4f04-91d0-589336579fa6",
+                "resourcePath": "sprites\\spr_enemy_dog_idle\\spr_enemy_dog_idle.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "0cde91a1-fed5-42ab-a9a7-9c6581e7ab87",
             "Value": {
                 "id": "5187ad68-cdf1-4e9f-a00c-daec4e404e28",
@@ -635,6 +643,14 @@
             "Value": {
                 "id": "189b268c-8ab3-4ff5-b9f8-19cda2b529dc",
                 "resourcePath": "views\\666e34e1-f777-455d-a975-7d69bcb936c2.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "680ab5cf-3cf3-42cd-ac71-e0c5694507a1",
+            "Value": {
+                "id": "e34c43d6-481a-41ee-8326-fe1c8b703975",
+                "resourcePath": "views\\680ab5cf-3cf3-42cd-ac71-e0c5694507a1.yy",
                 "resourceType": "GMFolder"
             }
         },
@@ -1167,6 +1183,14 @@
             }
         },
         {
+            "Key": "c1b6e332-75db-4bae-ba5b-42f1007546af",
+            "Value": {
+                "id": "d78f05e6-a38a-4364-8878-6f7a221d2a22",
+                "resourcePath": "views\\c1b6e332-75db-4bae-ba5b-42f1007546af.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "c41946d6-c92c-499a-9df8-a3fa98691237",
             "Value": {
                 "id": "f3a70e2e-bb69-4eb2-8189-6bc3b234d5dc",
@@ -1444,6 +1468,14 @@
                 "id": "9c6274a0-cefe-4643-b041-d30c0b4eb9f0",
                 "resourcePath": "views\\e66551f6-21aa-46d4-8bab-540bcbb39be0.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "e6ced209-ff02-42ed-9c26-e8e93b9dad64",
+            "Value": {
+                "id": "c4fde975-a317-4b55-a666-07636b60f354",
+                "resourcePath": "sprites\\spr_enemy_dog_walk\\spr_enemy_dog_walk.yy",
+                "resourceType": "GMSprite"
             }
         },
         {

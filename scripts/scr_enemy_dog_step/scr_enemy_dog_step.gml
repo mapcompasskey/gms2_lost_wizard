@@ -130,3 +130,25 @@ if ( ! dying && ! hurting)
     }
 }
 
+
+//
+// Update Sprite
+//
+if (walking)
+{
+    if (sprite_index != walk_sprite)
+    {
+        sprite_index = walk_sprite;
+        image_index = 0;
+        image_speed = walk_speed;
+    }
+}
+else
+{
+    if (sprite_index != idle_sprite)
+    {
+        sprite_index = idle_sprite;
+        image_index = 0;
+        image_speed = idle_speed;
+    }
+}

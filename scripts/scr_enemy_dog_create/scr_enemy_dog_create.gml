@@ -3,7 +3,7 @@
 event_inherited();
 
 // movement
-speed_x = 30;
+speed_x = 40;
 speed_y = 50;
 
 knockback_x = 60;
@@ -23,13 +23,23 @@ current_health = 4;
 movement_collision_script = scr_enemy_dog_movement_collision;
 
 // drawing
-bbox_width = sprite_get_bbox_right(sprite_index) - sprite_get_bbox_left(sprite_index)
-bbox_height = sprite_get_bbox_bottom(sprite_index) - sprite_get_bbox_top(sprite_index)
+idle_speed = 0.1;
+idle_sprite = spr_enemy_dog_idle;
 
-sprite_bbox_left = sprite_get_bbox_left(sprite_index) - sprite_get_xoffset(sprite_index);
-sprite_bbox_right = sprite_get_bbox_right(sprite_index) - sprite_get_xoffset(sprite_index);
-sprite_bbox_bottom = sprite_get_bbox_bottom(sprite_index) - sprite_get_yoffset(sprite_index);
-sprite_bbox_top = sprite_get_bbox_top(sprite_index) - sprite_get_yoffset(sprite_index);
+walk_speed = 0.9;
+walk_sprite = spr_enemy_dog_walk;
+
+sprite_index = idle_sprite;
+image_index = 0;
+image_speed = idle_speed;
+mask_index = spr_enemy_dog;
+
+bbox_width = sprite_get_bbox_right(mask_index) - sprite_get_bbox_left(mask_index)
+bbox_height = sprite_get_bbox_bottom(mask_index) - sprite_get_bbox_top(mask_index)
+sprite_bbox_left = sprite_get_bbox_left(mask_index) - sprite_get_xoffset(mask_index);
+sprite_bbox_right = sprite_get_bbox_right(mask_index) - sprite_get_xoffset(mask_index);
+sprite_bbox_bottom = sprite_get_bbox_bottom(mask_index) - sprite_get_yoffset(mask_index);
+sprite_bbox_top = sprite_get_bbox_top(mask_index) - sprite_get_yoffset(mask_index);
 
 // inputs
 key_right = true;

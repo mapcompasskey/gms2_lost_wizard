@@ -54,7 +54,6 @@ mask_index = spr_player;
 
 bbox_width = sprite_get_bbox_right(mask_index) - sprite_get_bbox_left(mask_index)
 bbox_height = sprite_get_bbox_bottom(mask_index) - sprite_get_bbox_top(mask_index)
-
 sprite_bbox_left = sprite_get_bbox_left(mask_index) - sprite_get_xoffset(mask_index);
 sprite_bbox_right = sprite_get_bbox_right(mask_index) - sprite_get_xoffset(mask_index);
 sprite_bbox_bottom = sprite_get_bbox_bottom(mask_index) - sprite_get_yoffset(mask_index);

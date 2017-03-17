@@ -6,8 +6,8 @@
     "children": [
         "30905f98-f9ee-4d12-b652-30c5f47acf49",
         "f17bddd6-35c1-4c72-91d5-d775257eed59",
-        "649c5c0e-f867-4891-af6c-6efbf4197cf8",
-        "700953c2-afe5-4f91-948f-81302e8a0612"
+        "700953c2-afe5-4f91-948f-81302e8a0612",
+        "680ab5cf-3cf3-42cd-ac71-e0c5694507a1"
     ],
     "filterType": "GMSprite",
     "folderName": "Entities",
