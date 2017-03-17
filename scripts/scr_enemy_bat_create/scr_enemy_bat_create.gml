@@ -38,9 +38,9 @@ if (irandom(1))
 
 // object tracking
 targeting_id = noone;
-targeting_speed = 50;
+targeting_speed = 40;
 returning_speed = 20;
-proximity_max = 80;
+proximity_max = 50;
 proximity_min = 1;
 
 // object collision
@@ -55,13 +55,20 @@ targeting = false;
 returning = false;
 
 // drawing
-bbox_width = sprite_get_bbox_right(sprite_index) - sprite_get_bbox_left(sprite_index)
-bbox_height = sprite_get_bbox_bottom(sprite_index) - sprite_get_bbox_top(sprite_index)
+idle_speed = 0.5;
+idle_sprite = spr_enemy_bat_idle;
 
-sprite_bbox_left = sprite_get_bbox_left(sprite_index) - sprite_get_xoffset(sprite_index);
-sprite_bbox_right = sprite_get_bbox_right(sprite_index) - sprite_get_xoffset(sprite_index);
-sprite_bbox_bottom = sprite_get_bbox_bottom(sprite_index) - sprite_get_yoffset(sprite_index);
-sprite_bbox_top = sprite_get_bbox_top(sprite_index) - sprite_get_yoffset(sprite_index);
+sprite_index = idle_sprite;
+image_index = 0;
+image_speed = idle_speed;
+mask_index = spr_enemy_dog;
+
+bbox_width = sprite_get_bbox_right(mask_index) - sprite_get_bbox_left(mask_index)
+bbox_height = sprite_get_bbox_bottom(mask_index) - sprite_get_bbox_top(mask_index)
+sprite_bbox_left = sprite_get_bbox_left(mask_index) - sprite_get_xoffset(mask_index);
+sprite_bbox_right = sprite_get_bbox_right(mask_index) - sprite_get_xoffset(mask_index);
+sprite_bbox_bottom = sprite_get_bbox_bottom(mask_index) - sprite_get_yoffset(mask_index);
+sprite_bbox_top = sprite_get_bbox_top(mask_index) - sprite_get_yoffset(mask_index);
 
 // timers
 //action_time = (random_range(2, 4) * 60) // 2 - 4 seconds
