@@ -61,7 +61,7 @@ idle_sprite = spr_enemy_bat_idle;
 sprite_index = idle_sprite;
 image_index = 0;
 image_speed = idle_speed;
-mask_index = spr_enemy_dog;
+mask_index = spr_enemy_bat;
 
 bbox_width = sprite_get_bbox_right(mask_index) - sprite_get_bbox_left(mask_index)
 bbox_height = sprite_get_bbox_bottom(mask_index) - sprite_get_bbox_top(mask_index)

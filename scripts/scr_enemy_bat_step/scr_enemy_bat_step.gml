@@ -126,6 +126,19 @@ if ( ! dying && ! hurting)
 
 
 //
+// Update Direction Facing
+//
+if ( ! dying && ! hurting)
+{
+    facing = RIGHT;
+    if (velocity_x < 0)
+    {
+        facing = LEFT;
+    }
+}
+
+
+//
 // Check if Dead
 //
 if (dying)
