@@ -11,7 +11,7 @@
         "59554a65-7439-4ffd-b13e-e962566dd56b"
     ],
     "filterType": "GMScript",
-    "folderName": "Enemy Bat",
+    "folderName": "Bat",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

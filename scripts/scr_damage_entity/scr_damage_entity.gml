@@ -9,20 +9,20 @@ var inst2 = argument1;
 var points = argument2;
 if (instance_exists(inst))
 {
-    // check if this instance is a child of obj_entity
+    // check if the victim instance is a child of obj_entity
     if (object_is_ancestor(inst.object_index, obj_entity))
     {
         with (inst)
         {
-            // if the entity can be damaged
+            // if the victim entity can be damaged
             if (can_be_attacked && attacker_id == noone)
             {
-                // update instance
+                // update victim instance with attacker information
                 attacker_id = inst2;
                 attacker_x = inst2.x;
                 attacker_y = inst2.y;
                 
-                // update entity's health
+                // update victim entity's health
                 scr_update_entity_health(inst, points);
                 
                 return true;

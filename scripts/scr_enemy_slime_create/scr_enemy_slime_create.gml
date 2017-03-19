@@ -1,15 +1,15 @@
-/// @desc scr_enemy_dog_create()
+/// @desc scr_enemy_slime_create()
 
 event_inherited();
 
 // movement
-speed_x = 40;
+speed_x = 10;
 speed_y = 50;
 
-knockback_x = 20;
+knockback_x = 30;
 knockback_y = 50;
 
-max_velocity_x = 80;
+max_velocity_x = 30;
 max_velocity_y = 100;
 
 starting_x = x;
@@ -20,19 +20,19 @@ max_health = 4;
 current_health = 4;
 
 // collision
-movement_collision_script = scr_enemy_dog_movement_collision;
+movement_collision_script = scr_enemy_slime_movement_collision;
 
 // drawing
 idle_speed = 0.1;
-idle_sprite = spr_enemy_dog_idle;
+idle_sprite = spr_enemy_slime_idle;
 
-walk_speed = 0.9;
-walk_sprite = spr_enemy_dog_walk;
+walk_speed = 0.3;
+walk_sprite = spr_enemy_slime_walk;
 
 sprite_index = idle_sprite;
 image_index = 0;
 image_speed = idle_speed;
-mask_index = spr_enemy_dog;
+mask_index = spr_enemy_slime;
 
 bbox_width = sprite_get_bbox_right(mask_index) - sprite_get_bbox_left(mask_index)
 bbox_height = sprite_get_bbox_bottom(mask_index) - sprite_get_bbox_top(mask_index)
