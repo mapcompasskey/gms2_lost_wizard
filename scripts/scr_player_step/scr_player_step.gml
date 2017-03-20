@@ -4,6 +4,22 @@ event_inherited();
 
 
 //
+// Update Camera's Y-Offset
+//
+var camera_offset_target_y = camera_offset_distance_y;
+if (crouching)
+{
+    camera_offset_target_y = -camera_offset_distance_y;
+}
+
+// if not within one pixel of the target y-offset
+if (camera_offset_y > (camera_offset_target_y + 1) || camera_offset_y < (camera_offset_target_y - 1))
+{
+    camera_offset_y = lerp(camera_offset_y, camera_offset_target_y, 0.1);
+}
+
+
+//
 // Update Inputs
 //
 key_left = keyboard_check(vk_left);
@@ -138,7 +154,7 @@ if ( ! dying && ! hurting)
 // Check if Crouching
 //
 crouching = false;
-camera_offset_y = bbox_height;
+test_tile_solid_top = true;
 if ( ! dying && ! hurting)
 {
     if (grounded && key_down)
@@ -159,7 +175,10 @@ if ( ! dying && ! hurting)
             facing = RIGHT;
         }
         
-        camera_offset_y = -bbox_height;
+        if (key_jump_released)
+        {
+            test_tile_solid_top = false;
+        }
     }
 }
 

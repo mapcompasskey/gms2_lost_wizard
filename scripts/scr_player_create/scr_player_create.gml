@@ -64,5 +64,7 @@ key_down = false;
 key_attack_pressed = false;
 key_attack_released = false;
 
-//instance variable
-camera_offset_y = bbox_height;
+// instance variable
+camera_offset_distance_y = bbox_height;
+camera_offset_y = camera_offset_distance_y;
+

@@ -48,6 +48,8 @@ entity_at_edge_of_tilemap = false;
 
 movement_collision_script = scr_entity_movement_collision;
 
+test_tile_solid_top = true;
+
 // collision tile map
 var collision_layer_id = layer_get_id("CollisionMap");
 tilemap = layer_tilemap_get_id(collision_layer_id);
@@ -73,13 +75,13 @@ facing = RIGHT;
 //sprite_index = noone;
 //mask_index = noone;
 
-bbox_width = 0; // sprite_get_bbox_right(sprite_index) - sprite_get_bbox_left(sprite_index)
-bbox_height = 0; // sprite_get_bbox_bottom(sprite_index) - sprite_get_bbox_top(sprite_index)
+bbox_width = 0; // sprite_get_bbox_right(mask_index) - sprite_get_bbox_left(mask_index)
+bbox_height = 0; // sprite_get_bbox_bottom(mask_index) - sprite_get_bbox_top(mask_index)
 
-sprite_bbox_left = 0; // sprite_get_bbox_left(sprite_index) - sprite_get_xoffset(sprite_index);
-sprite_bbox_right = 0; // sprite_get_bbox_right(sprite_index) - sprite_get_xoffset(sprite_index);
-sprite_bbox_bottom = 0; // sprite_get_bbox_bottom(sprite_index) - sprite_get_yoffset(sprite_index);
-sprite_bbox_top = 0; // sprite_get_bbox_top(sprite_index) - sprite_get_yoffset(sprite_index);
+sprite_bbox_left = 0; // sprite_get_bbox_left(mask_index) - sprite_get_xoffset(mask_index);
+sprite_bbox_right = 0; // sprite_get_bbox_right(mask_index) - sprite_get_xoffset(mask_index);
+sprite_bbox_bottom = 0; // sprite_get_bbox_bottom(mask_index) - sprite_get_yoffset(mask_index);
+sprite_bbox_top = 0; // sprite_get_bbox_top(mask_index) - sprite_get_yoffset(mask_index);
 
 // inputs
 key_left = false;

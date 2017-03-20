@@ -23,8 +23,8 @@ if (bbox_width && bbox_height)
     var result_y = 0;
     
     var collision = false;
-    var tile_1 = 0;
-    var tile_2 = 0;
+    var tile_1 = TILE_SOLID;
+    var tile_2 = TILE_SOLID;
     var tile_at_point = 0;
     
     
@@ -41,7 +41,7 @@ if (bbox_width && bbox_height)
             steps = ceil(abs(my) / min(bbox_height, TILE_SIZE));
         }
         step_size = (my / steps);
-    
+        
         // if the sprite is wider than a tile,
         // check in increments along its width
         steps_2 = 1;
@@ -50,12 +50,13 @@ if (bbox_width && bbox_height)
             steps_2 = ceil(bbox_width / TILE_SIZE);
         }
         step_size_2 = (bbox_width / steps_2);
-    
+        
         for (var i = 1; i <= steps; i++)
         {
             collision = false;
             tile_1 = TILE_SOLID;
-        
+            tile_2 = TILE_SOLID;
+            
             // if moving up
             if (my < 0)
             {
@@ -66,12 +67,15 @@ if (bbox_width && bbox_height)
             else
             {
                 offset_y = sprite_bbox_bottom;
-                tile_2 = TILE_SOLID_TOP;
+                if (test_tile_solid_top)
+                {
+                    tile_2 = TILE_SOLID_TOP;
+                }
             }
-        
+            
             // get top or bottom position
             target_y = round(y + offset_y + (step_size * i));
-        
+            
             // check left edge and mid points
             if ( ! collision)
             {
@@ -86,7 +90,7 @@ if (bbox_width && bbox_height)
                     }
                 }
             }
-        
+            
             // check right edge
             if ( ! collision)
             {
@@ -97,11 +101,11 @@ if (bbox_width && bbox_height)
                     collision = true;
                 }
             }
-        
+            
             if (collision)
             {
                 collision = false;
-            
+                
                 // if moving up
                 if (my < 0)
                 {
@@ -122,7 +126,7 @@ if (bbox_width && bbox_height)
                         collision = true;
                     }
                 }
-            
+                
                 if (collision)
                 {
                     my = result_y - offset_y - y;
@@ -136,8 +140,8 @@ if (bbox_width && bbox_height)
         }
     
     }
-
-
+    
+    
     //
     // Horizontal Collision Test
     //
@@ -151,7 +155,7 @@ if (bbox_width && bbox_height)
             steps = ceil(abs(mx) / min(bbox_width, TILE_SIZE));
         }
         step_size = (mx / steps);
-    
+        
         // if the sprite is taller than a tile,
         // check in increments along its height
         steps_2 = 1;
@@ -160,12 +164,13 @@ if (bbox_width && bbox_height)
             steps_2 = ceil(bbox_height / TILE_SIZE);
         }
         step_size_2 = (bbox_height / steps_2);
-    
+        
         for (var i = 1; i <= steps; i++)
         {
             collision = false;
             tile_1 = TILE_SOLID;
-        
+            tile_2 = TILE_SOLID;
+            
             // if moving right
             if (mx > 0)
             {
@@ -178,10 +183,10 @@ if (bbox_width && bbox_height)
                 offset_x = sprite_bbox_left;
                 tile_2 = TILE_SOLID_LEFT;
             }
-        
+            
             // get left or right position
             target_x = round(x + offset_x + (step_size * i));
-        
+            
             // check bottom edge and mid points
             if ( ! collision)
             {
@@ -196,7 +201,7 @@ if (bbox_width && bbox_height)
                     }
                 }
             }
-        
+            
             // check top edge
             if ( ! collision)
             {
@@ -207,11 +212,11 @@ if (bbox_width && bbox_height)
                     collision = true;
                 }
             }
-        
+            
             if (collision)
             {
                 collision = false;
-            
+                
                 // if moving right
                 if (mx > 0)
                 {
@@ -232,7 +237,7 @@ if (bbox_width && bbox_height)
                         collision = true;
                     }
                 }
-            
+                
                 if (collision)
                 {
                     mx = result_x - offset_x - x;
