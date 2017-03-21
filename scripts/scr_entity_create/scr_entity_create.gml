@@ -51,7 +51,7 @@ movement_collision_script = scr_entity_movement_collision;
 test_tile_solid_top = true;
 
 // collision tile map
-var collision_layer_id = layer_get_id("CollisionMap");
+var collision_layer_id = layer_get_id(global.ROOM_LAYER_COLLISION_TILEMAP);
 tilemap = layer_tilemap_get_id(collision_layer_id);
 
 // collision with blocks

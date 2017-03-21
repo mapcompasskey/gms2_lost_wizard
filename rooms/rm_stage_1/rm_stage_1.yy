@@ -606,7 +606,7 @@
             ],
             "m_parentID": "00000000-0000-0000-0000-000000000000",
             "m_serialiseFrozen": false,
-            "name": "CollisionMap",
+            "name": "CollisionTilemap",
             "userdefined_depth": false,
             "visible": true,
             "prev_tileheight": 8,

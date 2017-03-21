@@ -60,6 +60,8 @@ global.BG_COLOR = c_black;
 global.ROOM_LAYER_CONTROLLERS = "Controllers";
 global.ROOM_LAYER_PLAYER = "Player";
 global.ROOM_LAYER_INSTANCES = "Instances";
+global.ROOM_LAYER_COLLISION_TILEMAP = "CollisionTilemap";
+global.ROOM_LAYER_BACKGROUND = "Background";
 
 // input keys to listen for
 // *set as globals so they can be remapped

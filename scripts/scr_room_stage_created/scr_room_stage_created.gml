@@ -2,6 +2,21 @@
 
 
 //
+// Set the Background Layer's Color
+//
+var layer_id = layer_get_id(global.ROOM_LAYER_BACKGROUND);
+var layer_background_id = layer_background_get_id(layer_id);
+layer_background_blend(layer_background_id, global.BG_COLOR);
+
+
+//
+// Hide the Collision Tilemap Layer
+//
+var layer_id = layer_get_id(global.ROOM_LAYER_COLLISION_TILEMAP);
+layer_set_visible(layer_id, false);
+
+
+//
 // Create the Camera
 //
 
@@ -14,11 +29,6 @@ view_set_visible(0, true);
 // set the port bounds of view 0
 view_set_wport(0, global.VIEW_WIDTH);
 view_set_hport(0, global.VIEW_HEIGHT);
-
-// set the background layer's background color
-var layer_id = layer_get_id("Background");
-var layer_background_id = layer_background_get_id(layer_id);
-layer_background_blend(layer_background_id, global.BG_COLOR);
 
 // build a camera
 var camera_width = view_get_wport(0);

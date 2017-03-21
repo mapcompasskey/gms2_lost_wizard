@@ -61,4 +61,5 @@ if (view_camera[0])
     
     // update the view position
     camera_set_view_pos(view_camera[0], camera_x, camera_y);
+    //camera_set_view_pos(view_camera[0], round(camera_x), round(camera_y));
 }
