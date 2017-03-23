@@ -31,6 +31,7 @@ if ( ! persistent)
 //
 
 // instances
+global.CAMERA = noone;
 global.HUD = noone;
 global.PLAYER = noone;
 

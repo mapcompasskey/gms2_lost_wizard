@@ -1,0 +1,1 @@
+scr_hud_room_end();
