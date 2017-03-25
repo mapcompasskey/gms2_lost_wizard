@@ -1,12 +1,7 @@
 /// @desc scr_camera_room_end()
 
-/*
-//Destroy any leftover camera
-if (camera != noone){
-    camera_destroy(camera);
-}
-*/
 
+// destroy the camera when leaving a room (*prevents memory leaks)
 if (camera != noone)
 {
     camera_destroy(camera);

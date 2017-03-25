@@ -1,19 +1,31 @@
 /// @desc scr_room_initialize_created()
 
-// add the Game object
+
+//
+// Add the Game Object
+//
 instance_create_layer(0, 0, "Controllers", obj_game);
 
-// add the Camera object
+
+//
+// Add the Camera Object
+//
 if (global.CAMERA == noone)
 {
     instance_create_layer(0, 0, "Controllers", obj_camera);
 }
 
-// if debug mode
+
+//
+// Add the Debug Object
+//
 if (global.DEBUG_MODE)
 {
     instance_create_layer(0, 0, "Controllers", obj_debug);
 }
 
-// goto the next Room
+
+//
+// Goto the Next Room
+//
 room_goto_next();

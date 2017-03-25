@@ -335,6 +335,14 @@
             }
         },
         {
+            "Key": "2c386f77-4025-48b4-9804-8bd237f6c277",
+            "Value": {
+                "id": "76bd714c-12a3-4933-8cab-1b57ddd58570",
+                "resourcePath": "scripts\\scr_update_camera_setup\\scr_update_camera_setup.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "2fefbdcc-bba9-4c05-a41b-2e4890381712",
             "Value": {
                 "id": "30608a8b-a02e-41f8-8954-0ef830bfd33b",
@@ -575,14 +583,6 @@
             }
         },
         {
-            "Key": "4dc9887f-db61-4281-abe8-8edefe6443ae",
-            "Value": {
-                "id": "83d2294c-58a8-49b9-b714-4b9b5c299e41",
-                "resourcePath": "scripts\\scr_camera_destroy\\scr_camera_destroy.yy",
-                "resourceType": "GMScript"
-            }
-        },
-        {
             "Key": "4e73499a-03f8-47d2-86ec-0dcc16797af4",
             "Value": {
                 "id": "fbb7d89e-be5f-45d7-96d9-9ae78408d4d7",
@@ -655,18 +655,18 @@
             }
         },
         {
-            "Key": "58f41a4b-8112-4fbf-b490-319b66c8a799",
-            "Value": {
-                "id": "6c0d6aa7-628b-49a3-853f-bff66de683b4",
-                "resourcePath": "scripts\\scr_camera_draw_gui\\scr_camera_draw_gui.yy",
-                "resourceType": "GMScript"
-            }
-        },
-        {
             "Key": "59554a65-7439-4ffd-b13e-e962566dd56b",
             "Value": {
                 "id": "71534928-01d2-4f20-b591-17d5177ccd24",
                 "resourcePath": "scripts\\scr_enemy_bat_draw\\scr_enemy_bat_draw.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "5c58c1ae-fc3b-4fed-828f-514fc061d983",
+            "Value": {
+                "id": "9408a982-281f-4bab-9e5b-fe42de84a404",
+                "resourcePath": "scripts\\scr_camera_step\\scr_camera_step.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -875,6 +875,14 @@
             "Value": {
                 "id": "a81b8784-1ee9-4179-8889-b85046e533e3",
                 "resourcePath": "scripts\\scr_bit_step\\scr_bit_step.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "751d5e9a-cf05-44c7-b0ea-f5bbe60746fd",
+            "Value": {
+                "id": "7cc78b72-54aa-4803-9dd7-746ad673ac25",
+                "resourcePath": "scripts\\scr_update_camera_position\\scr_update_camera_position.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -1703,14 +1711,6 @@
             }
         },
         {
-            "Key": "f59eae95-2c6e-4c19-9333-048d06cf7184",
-            "Value": {
-                "id": "0d825c41-2b37-4053-af7f-0600f026fe36",
-                "resourcePath": "scripts\\scr_update_camera\\scr_update_camera.yy",
-                "resourceType": "GMScript"
-            }
-        },
-        {
             "Key": "f5ddb650-765a-4a24-9530-c9fe60fa5536",
             "Value": {
                 "id": "d78b082e-7d00-43f2-a935-4093357acf8a",
@@ -1763,9 +1763,8 @@
         "b682d571-16cf-44a3-8132-1ceec029dd73",
         "842f7020-3b84-4bfc-8761-6a2368daeb80",
         "2213b8cd-a696-4bf1-b370-2108f9d45885",
+        "5c58c1ae-fc3b-4fed-828f-514fc061d983",
         "356ca5ce-da81-4c15-bc57-93b335fc80fc",
-        "58f41a4b-8112-4fbf-b490-319b66c8a799",
-        "4dc9887f-db61-4281-abe8-8edefe6443ae",
         "960094d5-9367-41ac-bdd7-184f6dfaa8ff",
         "6f1e8605-9ef1-40c8-936e-5131efc4f5fd",
         "c9f8d808-1b9d-4348-89fb-9655f75e37a4",
@@ -1831,7 +1830,8 @@
         "8a206780-7698-42e2-b456-806e13cad41d",
         "28e4b675-562f-4356-ae1e-cccdc9909f9b",
         "91e4f3fc-da84-4d6f-92ef-ab739e4372a2",
-        "f59eae95-2c6e-4c19-9333-048d06cf7184",
+        "2c386f77-4025-48b4-9804-8bd237f6c277",
+        "751d5e9a-cf05-44c7-b0ea-f5bbe60746fd",
         "38747276-736a-477f-9655-9f1f34a9dd64",
         "cd89c08f-d7af-4ef9-880b-d2bae1aeee3e",
         "48ab4849-c3fc-4537-aff4-92bdaaceab35",

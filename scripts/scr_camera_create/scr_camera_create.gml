@@ -1,23 +1,5 @@
 /// @desc scr_camera_create()
 
-/*
-//Grab the window width/height from the viewport in the set-up room
-global.window_width = view_get_wport(0);
-global.window_height = view_get_hport(0);
-
-//Set up dimensions for camera view and surface (divide by a higher number to zoom in further)
-global.game_width = global.window_width / 2;
-global.game_height = global.window_height / 2;
-
-//Initialise the camera with nothing
-camera = noone;
-
-//Create the surface
-surf = surface_create(global.game_width, global.game_height);
-
-//Now go to the main game room: This will skip the first room_start event (in the set-up room)
-room = rmDungeonReborn;
-*/
 
 // this object must be persistent
 if ( ! persistent)
@@ -29,4 +11,23 @@ if ( ! persistent)
 global.CAMERA = id;
 
 // instance variables
+setup_camera = false;
+target_x = 0;
+target_y = 0;
+lerp_rate = 0.5;
+sanp_to = false;
+reposition = false;
+            
 camera = noone;
+camera_width = 0;
+camera_height = 0;
+camera_width_half = 0;
+camera_height_half = 0;
+
+position_min_x = 0;
+position_min_y = 0;
+position_max_x = (room_width - camera_width);
+position_max_y = (room_height - camera_height);
+    
+distance_min = 1;
+distance_max = point_distance(0, 0, camera_width_half, camera_height_half);
