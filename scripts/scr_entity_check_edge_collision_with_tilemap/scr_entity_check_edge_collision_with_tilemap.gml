@@ -7,6 +7,11 @@
 
 entity_at_edge_of_tilemap = false;
 
+if (tilemap == noone)
+{
+    exit;
+}
+
 if (bbox_width && bbox_height)
 {
     // if grounded, and moving horizontally

@@ -1,8 +1,8 @@
 {
-    "id": "5c58c1ae-fc3b-4fed-828f-514fc061d983",
+    "id": "f9246231-841e-4427-b968-dc28322c289e",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "scr_camera_step",
+    "name": "scr_stage_camera_room_end",
     "IsCompatibility": false,
     "IsDnD": false
 }

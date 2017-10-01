@@ -8,6 +8,11 @@
 entity_hit_tilemap_x = false;
 entity_hit_tilemap_y = false;
 
+if (tilemap == noone)
+{
+    exit;
+}
+
 if (bbox_width && bbox_height)
 {
     var steps = 0;

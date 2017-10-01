@@ -1,8 +1,8 @@
 {
-    "id": "2c386f77-4025-48b4-9804-8bd237f6c277",
+    "id": "e945f7b5-330d-4dc9-8fff-277535dd51cd",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "scr_update_camera_setup",
+    "name": "scr_stage_camera_create",
     "IsCompatibility": false,
     "IsDnD": false
 }

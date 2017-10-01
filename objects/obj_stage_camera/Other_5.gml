@@ -1,0 +1,1 @@
+scr_stage_camera_room_end();

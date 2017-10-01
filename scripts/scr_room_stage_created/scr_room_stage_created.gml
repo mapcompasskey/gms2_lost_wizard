@@ -2,28 +2,42 @@
 
 
 //
+// Get the Layer IDs
+//
+
+global.BACKGROUND_LAYER_ID = layer_get_id(BACKGROUND_LAYER_NAME);
+global.COLLISION_TILEMAP_LAYER_ID = layer_get_id(COLLISION_TILEMAP_LAYER_NAME);
+global.TILES_LAYER_ID = layer_get_id(TILES_LAYER_NAME);
+global.INSTANCES_LAYER_ID = layer_get_id(INSTANCES_LAYER_NAME);
+global.PLAYER_LAYER_ID = layer_get_id(PLAYER_LAYER_NAME);
+global.CONTROLLERS_LAYER_ID = layer_get_id(CONTROLLERS_LAYER_NAME);
+
+
+//
 // Set the Background Layer's Color
 //
-var layer_id = layer_get_id(global.ROOM_LAYER_BACKGROUND);
-var layer_background_id = layer_background_get_id(layer_id);
+
+var layer_background_id = layer_background_get_id(global.BACKGROUND_LAYER_ID);
 layer_background_blend(layer_background_id, global.BG_COLOR);
 
 
 //
 // Hide the Collision Tilemap Layer
 //
-var layer_id = layer_get_id(global.ROOM_LAYER_COLLISION_TILEMAP);
-layer_set_visible(layer_id, false);
+
+layer_set_visible(global.COLLISION_TILEMAP_LAYER_ID, false);
 
 
 //
-// Setup the Camera
+// Create the Stage Camera
 //
-scr_update_camera_setup();
+
+instance_create_layer(0, 0, global.CONTROLLERS_LAYER_ID, obj_stage_camera);
 
 
 //
 // Create the HUD
 //
-instance_create_layer(0, 0, "Controllers", obj_hud);
+
+instance_create_layer(0, 0, global.CONTROLLERS_LAYER_ID, obj_hud);
 

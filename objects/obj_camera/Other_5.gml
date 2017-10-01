@@ -1,1 +1,0 @@
-scr_camera_room_end();

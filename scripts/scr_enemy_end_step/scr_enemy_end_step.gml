@@ -61,12 +61,12 @@ if ( ! dying)
             // add bits
             var pos_x = (bbox_left + ((bbox_right - bbox_left) / 2));
             var pos_y = (bbox_top + ((bbox_bottom - bbox_top) / 2));
-            instance_create_layer(pos_x, pos_y, global.ROOM_LAYER_PLAYER, obj_soul_bit);
-            instance_create_layer(pos_x, pos_y, global.ROOM_LAYER_PLAYER, obj_soul_bit);
-            instance_create_layer(pos_x, pos_y, global.ROOM_LAYER_PLAYER, obj_soul_bit);
-            instance_create_layer(pos_x, pos_y, global.ROOM_LAYER_PLAYER, obj_soul_bit);
-            instance_create_layer(pos_x, pos_y, global.ROOM_LAYER_PLAYER, obj_soul_bit);
-            instance_create_layer(pos_x, pos_y, global.ROOM_LAYER_PLAYER, obj_soul_bit);
+            instance_create_layer(pos_x, pos_y, global.PLAYER_LAYER_ID, obj_soul_bit);
+            instance_create_layer(pos_x, pos_y, global.PLAYER_LAYER_ID, obj_soul_bit);
+            instance_create_layer(pos_x, pos_y, global.PLAYER_LAYER_ID, obj_soul_bit);
+            instance_create_layer(pos_x, pos_y, global.PLAYER_LAYER_ID, obj_soul_bit);
+            instance_create_layer(pos_x, pos_y, global.PLAYER_LAYER_ID, obj_soul_bit);
+            instance_create_layer(pos_x, pos_y, global.PLAYER_LAYER_ID, obj_soul_bit);
             
             // reset variables
             velocity_x = 0;

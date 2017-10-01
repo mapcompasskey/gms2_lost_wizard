@@ -11,7 +11,7 @@ var dt = (1/1000000 * delta_time);
 // limit TICK to 8fps: (1 / 1,000,000) * (1,000,000 / 8) = 0.125
 global.TICK = min(0.125, dt);
 
-
+    
 //
 // If the Game's Aspect Ratio has Changed
 //
@@ -50,6 +50,6 @@ if (keyboard_check_pressed(ord("T")))
     }
     else
     {
-        instance_create_layer(0, 0, global.ROOM_LAYER_PLAYER, obj_player);
+        instance_create_layer(0, 0, global.PLAYER_LAYER_ID, obj_player);
     }
 }
